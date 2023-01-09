@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Toolbar from './components/Toolbar';
+import ColdEmail from './pages/ColdEmail';
+import EmailGen from './pages/EmailGen';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Toolbar />
+      <Routes>
+        <Route exact path="/email-gen" element={<EmailGen />} />
+        <Route exact path="/blog-article" />
+        <Route exact path="/twitter-assist" />
+        <Route exact path="/cold-email" element={<ColdEmail />} />
+        <Route exact path="/social-ads" />
+        <Route exact path="/code-gen" />
+        <Route exact path="/" />
+      </Routes>
     </div>
   );
 }

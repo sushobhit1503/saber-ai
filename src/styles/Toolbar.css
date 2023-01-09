@@ -1,0 +1,21 @@
+.logo-image {
+    width: 4rem;
+}
+
+.logo-name {
+    font-size: 2rem;
+    margin-left: 1rem;
+    color: var(--white-color);
+}
+
+.toolbar-content {
+    color: var(--green-color);
+    margin: 10px;
+    transition: all 0.1s ease-in-out;
+}
+
+.toolbar-content:hover {
+    border: 1px solid var(--white-color);
+    border-radius: 8px;
+    color: var(--green-color);
+}

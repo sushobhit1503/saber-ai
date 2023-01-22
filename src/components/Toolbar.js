@@ -21,7 +21,7 @@ function Toolbar() {
 
   return (
     <div>
-      <Navbar full color='transparent' expand="sm">
+      <Navbar color='transparent' expand="sm">
       <NavbarBrand style={{display:"flex", alignItems:"center"}}>
         <img src={Logo} alt="saber-ai" className='logo-image' />
         <div className='logo-name'>SABER AI</div>
@@ -36,7 +36,7 @@ function Toolbar() {
               <DropdownToggle className='toolbar-content' nav caret>
                 Services
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem href='/email-gen'>Email Gen</DropdownItem>
                 <DropdownItem href='/blog-article'>Blog Article</DropdownItem>
                 <DropdownItem href='/twitter-assist'>Twitter Assist</DropdownItem>
@@ -55,7 +55,7 @@ function Toolbar() {
               <DropdownToggle className='toolbar-content' nav caret>
                 Profile
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem href='/manage-account'>Manage Account</DropdownItem>
                 <DropdownItem href='/help'>Help</DropdownItem>
                 <DropdownItem href='/pricing'>Pricing</DropdownItem>

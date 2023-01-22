@@ -1,0 +1,32 @@
+.home-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.home-page-desc {
+    margin-top: 5rem;
+}
+
+.home-action-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6rem;
+}
+
+.home-page-services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-page-services {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-page-services-card {
+    border-radius: 5px;
+    background: rgba(60, 179, 113, 0.15);
+    width: 30%;
+    height: 35rem;
+}

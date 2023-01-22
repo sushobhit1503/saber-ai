@@ -1,0 +1,24 @@
+.profile-photo-container {
+    width: 15.75rem;
+    height: 15.75rem;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    margin: auto;
+    margin-top: 20px;
+}
+
+.profile-container {
+    width: 90%;
+    background-color: rgba(60, 179, 113, 0.15);
+    margin: auto;
+    height: 40rem;
+    border-radius: 8px;
+    margin-top: -9.875rem;
+    padding: 2rem;
+}
+
+.profile-box {
+    border-radius: 8px;
+    background-color: var(--white-color);
+    height: 36rem;
+}

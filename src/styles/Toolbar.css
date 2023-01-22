@@ -19,3 +19,13 @@
     border-radius: 8px;
     color: var(--green-color);
 }
+
+@media screen and (max-width: 575px) {
+    .logo-image {
+        width: 3rem;
+    }
+    .logo-name {
+        font-size: 1.25rem;
+        margin-left: 0.5rem;
+    }
+}

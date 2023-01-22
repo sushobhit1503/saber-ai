@@ -16,7 +16,19 @@ class Profile extends React.Component {
                         <div className="plan-name">BLAZE PLAN</div>
                         <div className="profile-user-name">JACK WILSON</div>
                         <div className="profile-stat-container">
-
+                            <div></div>
+                            <div className="profile-stat">
+                                <div className="profile-stat-title">PLAN EXPIRES ON</div>
+                                <div className="profile-stat-value">23 Feb 2023</div>
+                            </div>
+                            <div className="profile-stat">
+                                <div className="profile-stat-title">PLAN RENEWAL ON</div>
+                                <div className="profile-stat-value">24 Feb 2023</div>
+                            </div>
+                            <div className="profile-stat">
+                                <div className="profile-stat-title">TOTAL WORDS GENERATED</div>
+                                <div className="profile-stat-value">123 Words</div>
+                            </div>
                         </div>
                         <div className="profile-upgrade">
                             <Button className="page-action-buttons1">

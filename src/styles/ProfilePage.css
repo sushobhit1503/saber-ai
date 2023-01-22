@@ -21,4 +21,42 @@
     border-radius: 8px;
     background-color: var(--white-color);
     height: 36rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-name {
+    color: var(--green-color);
+    margin: 1rem;
+    text-align: end;
+    font-size: 1.5rem;
+}
+
+.profile-user-name {
+    color: var(--black-color);
+    font-family: "Mirza", cursive;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-upgrade {
+    display: flex;
+    justify-content: center;
+    color: var(--white-color);
+}
+
+.page-action-buttons1 {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    margin-top: 1.75rem;
+    transition: all 0.1s ease-in;
+    border: none;
+    width: 8rem;
+}
+
+.page-action-buttons1:hover {
+    border: 1px solid var(--green-color);
+    color: var(--green-color);
+    background-color: transparent;
 }

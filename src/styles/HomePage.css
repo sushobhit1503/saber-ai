@@ -1,6 +1,7 @@
 .home-container {
     display: flex;
     justify-content: space-around;
+    margin-top: 2rem;
 }
 
 .home-page-desc {
@@ -22,6 +23,8 @@
 .home-page-services {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
 }
 
 .home-page-services-card {
@@ -29,4 +32,14 @@
     background: rgba(60, 179, 113, 0.15);
     width: 30%;
     height: 35rem;
+    margin: 3rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.chat-image-container {
+    align-self: center;
+}
+
+.chat-text-container {
+    width: 50%;
 }

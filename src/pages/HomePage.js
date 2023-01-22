@@ -4,6 +4,7 @@ import ChatIllustration from "../assets/chat.gif"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
 import { Button } from "reactstrap"
+import ServiceData from "../data/Data Files.json"
 
 class HomePage extends React.Component {
     render () {
@@ -34,15 +35,29 @@ class HomePage extends React.Component {
                 <div className="home-page-services-container">
                     <div className="page-heading">SERVICES</div>
                     <div className="home-page-services">
-                        
+                        {ServiceData.map(eachElement => {
+                            return (
+                                <div className="home-page-services-card">
+                                    <div>
+                                        {eachElement.name}
+                                    </div>
+                                    <div>
+                                        {eachElement.description}
+                                    </div>
+                                    <Button className="page-action-buttons1">
+                                        TRY NOW
+                                    </Button>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="page-heading">ASK ME ANYTHING</div>
                 <div className="home-container">
-                    <div>
+                    <div className="chat-image-container">
                         <img src={ChatIllustration} alt="saber" />
                     </div>
-                    <div>
+                    <div className="chat-text-container">
                         <div className="page-heading">BEST RESPONSES</div>
                         <div className="page-description home-page-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing 

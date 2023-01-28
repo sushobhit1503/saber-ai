@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "reactstrap";
+import { Card, TextField, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class ColdEmail extends React.Component {
@@ -24,22 +24,22 @@ class ColdEmail extends React.Component {
                     daily on cold email content that is created by AI technology.  
                 </div>
                 <div className="page-container">
-                    <div className="page-card">
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">ENTER THE SERVICES YOUR COMPANY PROVIDES</div>
                         <div className="page-card-label">Company Name</div>
-                        <Input placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
+                        <TextField placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
                         <div className="page-card-label">Services Provided</div>
-                        <Input className="mailBox" placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" />
+                        <TextField height={320} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" />
                         <div>Describe the service you provide for the email content.</div>
-                        <Button className="page-action-buttons">
+                        <Button>
                             Generate Email
                         </Button>
-                    </div>
+                    </Card>
                     <div className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <Input disabled={true} className="mailBox" value={this.state.reply} />
-                        <Button className="page-action-buttons">
+                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Button>
                             Copy
                         </Button>
                     </div>

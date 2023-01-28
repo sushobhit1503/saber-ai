@@ -3,7 +3,7 @@ import HomeIllustration from "../assets/home.gif"
 import ChatIllustration from "../assets/chat.gif"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
-import { Button } from "reactstrap"
+import { Button, Card, CardContent, CardAction, Body2, H6 } from "ui-neumorphism"
 import ServiceData from "../data/Data Files.json"
 
 class HomePage extends React.Component {
@@ -12,10 +12,10 @@ class HomePage extends React.Component {
             <div>
                 <div className="home-container">
                     <div>
-                        <img src={HomeIllustration} alt="saber" />
+                        <img src={HomeIllustration} alt="saber" className="home-page-illustration" />
                     </div>
                     <div>
-                        <div className="page-heading">WORLD's BEST <br /> AI-CONTENT WRITING</div>
+                        <div className="page-heading">WORLD's BEST AI-CONTENT WRITING</div>
                         <div className="page-description home-page-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing 
                             elit, sed do eiusmod tempor incididunt ut labore et 
@@ -26,7 +26,7 @@ class HomePage extends React.Component {
                             eu fugiat nulla pariatur.
                         </div>
                         <div className="home-action-button">
-                            <Button className="page-action-buttons">
+                            <Button>
                                 TRY NOW
                             </Button>
                         </div>
@@ -37,17 +37,21 @@ class HomePage extends React.Component {
                     <div className="home-page-services">
                         {ServiceData.map(eachElement => {
                             return (
-                                <div className="home-page-services-card">
-                                    <div>
-                                        {eachElement.name}
-                                    </div>
-                                    <div>
-                                        {eachElement.description}
-                                    </div>
-                                    <Button className="page-action-buttons1">
-                                        TRY NOW
-                                    </Button>
-                                </div>
+                                <Card width={300} className="home-page-services-card">
+                                    <CardContent>
+                                        <H6 secondary style={{ marginBottom: '4px' }} >
+                                            {eachElement.name}
+                                        </H6>
+                                        <Body2>
+                                            {eachElement.description}
+                                        </Body2>
+                                    </CardContent>
+                                    <CardAction>
+                                        <Button text color='var(--success)'>
+                                            TRY NOW
+                                        </Button>
+                                    </CardAction>
+                                </Card>
                             )
                         })}
                     </div>
@@ -55,7 +59,7 @@ class HomePage extends React.Component {
                 <div className="page-heading">ASK ME ANYTHING</div>
                 <div className="home-container">
                     <div className="chat-image-container">
-                        <img src={ChatIllustration} alt="saber" />
+                        <img src={ChatIllustration} alt="saber" className="chat-image-container" />
                     </div>
                     <div className="chat-text-container">
                         <div className="page-heading">BEST RESPONSES</div>
@@ -69,7 +73,7 @@ class HomePage extends React.Component {
                             eu fugiat nulla pariatur.
                         </div>
                         <div className="home-action-button">
-                            <Button className="page-action-buttons">
+                            <Button>
                                 TRY NOW
                             </Button>
                         </div>

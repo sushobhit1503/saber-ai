@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "reactstrap";
+import { Card, TextField, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class EmailGen extends React.Component {
@@ -25,24 +25,24 @@ class EmailGen extends React.Component {
                     generation AI.  
                 </div>
                 <div className="page-container">
-                    <div className="page-card">
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">ENTER THE INPUT HERE</div>
                         <div className="page-card-label">Enter Previous Email (optional)</div>
-                        <Input className="mailBox" placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" />
+                        <TextField height={320} placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" />
                         <div className="page-card-label">Enter Bullet Points</div>
-                        <Input placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
-                        <Button className="page-action-buttons">
+                        <TextField style={{width:"100%"}} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
+                        <Button>
                             Generate Email
                         </Button>
-                    </div>
-                    <div className="page-card">
+                    </Card>
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <Input disabled={true} className="mailBox" value={this.state.reply} />
-                        <Button className="page-action-buttons">
+                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Button>
                             Copy
                         </Button>
-                    </div>
+                    </Card>
                 </div>
             </div>
         )

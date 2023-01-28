@@ -5,34 +5,34 @@
 }
 
 .home-page-desc {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 .home-action-button {
     display: flex;
     justify-content: center;
     margin-bottom: 6rem;
+    margin-top: 1rem;
 }
 
 .home-page-services-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
 .home-page-services {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .home-page-services-card {
     border-radius: 5px;
-    background: rgba(60, 179, 113, 0.15);
-    width: 30%;
-    height: 35rem;
-    margin: 3rem;
+    width: 25%;
+    margin: 2rem;
     padding: 1.5rem 1rem 1rem 1rem;
 }
 
@@ -42,4 +42,40 @@
 
 .chat-text-container {
     width: 50%;
+}
+
+@media screen and (max-width: 1075px) {
+    .home-page-services-card {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .home-page-illustration {
+        width: 350px;
+        display: flex;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .home-page-illustration {
+        width: 200px;
+    }
+    .chat-image-container {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .chat-image-container {
+        margin-bottom: 1rem;
+    }
+    .chat-text-container {
+        width: 300px;
+    }
 }

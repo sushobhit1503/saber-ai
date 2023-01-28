@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "reactstrap";
+import { Card, TextField, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class GenTweets extends React.Component {
@@ -23,23 +23,23 @@ class GenTweets extends React.Component {
                     Create endless unique tweet ideas, no more writers block.
                 </div>
                 <div className="page-container">
-                    <div className="page-card">
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">WHAT IS YOUR TWEET ABOUT?</div>
                         <div className="page-card-label">Tweet Prompt</div>
-                        <Input placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
+                        <TextField placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
-                        <Button className="page-action-buttons">
+                        <Button>
                             Get Recommendations
                         </Button>
-                    </div>
-                    <div className="page-card">
+                    </Card>
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <Input disabled={true} className="mailBox" value={this.state.reply} />
-                        <Button className="page-action-buttons">
+                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Button>
                             Copy
                         </Button>
-                    </div>
+                    </Card>
                 </div>
             </div>
         )

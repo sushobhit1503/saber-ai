@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "reactstrap";
+import { Card, TextField, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class BlogArticle extends React.Component {
@@ -24,26 +24,26 @@ class BlogArticle extends React.Component {
                     Give keywords for good fit with Search Engine Optimization.
                 </div>
                 <div className="page-container">
-                    <div className="page-card">
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">ENTER THE DETAILS OF YOUR ARTICLE</div>
                         <div className="page-card-label">Article Title</div>
-                        <Input placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
+                        <TextField placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
                         <div>Enter the title. Be as descriptive as possible</div>
                         <div className="page-card-label">Keywords</div>
-                        <Input className="mailBox" placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" />
+                        <TextField height={320} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" />
                         <div>Give keywords that are better searchable</div>
-                        <Button className="page-action-buttons">
+                        <Button>
                             Generate Article
                         </Button>
-                    </div>
-                    <div className="page-card">
+                    </Card>
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <Input disabled={true} className="mailBox" value={this.state.reply} />
-                        <Button className="page-action-buttons">
+                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Button>
                             Copy
                         </Button>
-                    </div>
+                    </Card>
                 </div>
             </div>
         )

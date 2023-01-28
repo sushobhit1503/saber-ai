@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "reactstrap";
+import { Card, TextField, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class SocialMedia extends React.Component {
@@ -23,23 +23,23 @@ class SocialMedia extends React.Component {
                     campaigns on Facebook, Twitter or Instagram? We got you.
                 </div>
                 <div className="page-container">
-                    <div className="page-card">
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">WHAT IS YOUR AD CAMPAIGN ABOUT?</div>
                         <div className="page-card-label">Subject or Title</div>
-                        <Input placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
+                        <TextField placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
                         <div>Describe the subject or title for the ad campaign.</div>
-                        <Button className="page-action-buttons">
+                        <Button>
                             Generate Ad
                         </Button>
-                    </div>
-                    <div className="page-card">
+                    </Card>
+                    <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <Input disabled={true} className="mailBox" value={this.state.reply} />
-                        <Button className="page-action-buttons">
+                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Button>
                             Copy
                         </Button>
-                    </div>
+                    </Card>
                 </div>
             </div>
         )

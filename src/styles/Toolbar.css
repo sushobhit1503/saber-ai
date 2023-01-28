@@ -1,5 +1,7 @@
 .logo-image {
     width: 4rem;
+    background-color: var(--black-color);
+    border-radius: 50%;
 }
 
 .logo-name {

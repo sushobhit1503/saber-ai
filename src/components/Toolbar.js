@@ -13,6 +13,7 @@ import {
   DropdownItem
 } from 'reactstrap';
 import Logo from '../assets/saber-logo.png';
+import { Card } from 'ui-neumorphism';
 import "../styles/Toolbar.css";
 
 function Toolbar() {
@@ -20,7 +21,7 @@ function Toolbar() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <Card>
       <Navbar color='transparent' expand="sm">
       <NavbarBrand style={{display:"flex", alignItems:"center"}}>
         <img src={Logo} alt="saber-ai" className='logo-image' />
@@ -30,12 +31,18 @@ function Toolbar() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink className='toolbar-content' href="/">Home</NavLink>
+              <NavLink href="/">
+                <Card style={{padding:"0.5rem 1rem"}}>
+                  Home
+                </Card>
+              </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className='toolbar-content' nav caret>
-                Services
-              </DropdownToggle>
+              <Card style={{padding:"0.5rem 1 rem", margin:"0.5rem"}}>
+                <DropdownToggle nav caret>
+                  Services
+                </DropdownToggle>
+              </Card>
               <DropdownMenu end>
                 <DropdownItem href='/email-gen'>Email Gen</DropdownItem>
                 <DropdownItem href='/blog-article'>Blog Article</DropdownItem>
@@ -46,15 +53,24 @@ function Toolbar() {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink className='toolbar-content' href="/ask-me-anything">
-                Ask Me Anything
+              <NavLink href="/ask-me-anything">
+                <Card style={{padding:"0.5rem 1rem"}}>
+                  Ask me anything
+                </Card>
               </NavLink>
             </NavItem>
           </Nav>
-          <UncontrolledDropdown>
-              <DropdownToggle className='toolbar-content' nav caret>
-                Profile
-              </DropdownToggle>
+          <NavLink href="/ask-me-anything">
+            <Card inset style={{padding:"0.5rem 1rem"}}>
+              Upgrade to Pro
+            </Card>
+          </NavLink>
+               <UncontrolledDropdown>
+               <Card style={{padding:"0.5rem 1 rem", margin:"0.5rem"}}>
+                <DropdownToggle nav caret>
+                  Profile
+                </DropdownToggle>
+              </Card>
               <DropdownMenu end>
                 <DropdownItem href='/manage-account'>Manage Account</DropdownItem>
                 <DropdownItem href='/help'>Help</DropdownItem>
@@ -66,7 +82,7 @@ function Toolbar() {
             </UncontrolledDropdown>
         </Collapse>
       </Navbar>
-    </div>
+    </Card>
   );
 }
 

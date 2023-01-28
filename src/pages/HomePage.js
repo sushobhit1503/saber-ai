@@ -14,7 +14,7 @@ class HomePage extends React.Component {
                     <div>
                         <img src={HomeIllustration} alt="saber" className="home-page-illustration" />
                     </div>
-                    <div>
+                    <div style={{color:"var(--white-color)"}}>
                         <div className="page-heading">WORLD's BEST AI-CONTENT WRITING</div>
                         <div className="page-description home-page-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing 
@@ -57,13 +57,13 @@ class HomePage extends React.Component {
                     </div>
                 </div>
                 <div className="page-heading">ASK ME ANYTHING</div>
-                <div className="home-container">
+                <div className="home-container1">
                     <div className="chat-image-container">
                         <img src={ChatIllustration} alt="saber" className="chat-image-container" />
                     </div>
                     <div className="chat-text-container">
                         <div className="page-heading">BEST RESPONSES</div>
-                        <div className="page-description home-page-desc">
+                        <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing 
                             elit, sed do eiusmod tempor incididunt ut labore et 
                             dolore magna aliqua. Ut enim ad minim veniam, quis 

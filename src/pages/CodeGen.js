@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button } from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class CodeGen extends React.Component {
@@ -18,9 +18,10 @@ class CodeGen extends React.Component {
         }
         return (
             <div>
-                <div className="page-heading">CODE GENERATION</div>
-                <div className="page-description">
-                    Generate code by giving the usecase.
+                <div className="page-heading">
+                <Tooltip top content={<div>Generate code by giving the usecase.</div>}>
+                    CODE GENERATION
+                </Tooltip>
                 </div>
                 <div className="page-container">
                     <Card style={{width:"50%"}} className="page-card">

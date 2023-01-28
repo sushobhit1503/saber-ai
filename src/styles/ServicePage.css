@@ -1,4 +1,6 @@
 .page-heading {
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-family: "Mirza", cursive;
     font-size: 2.5rem;

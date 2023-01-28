@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button } from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip} from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class EmailGen extends React.Component {
@@ -18,11 +18,12 @@ class EmailGen extends React.Component {
         }
         return (
             <div>
-                <div className="page-heading">EMAIL GENERATION</div>
-                <div className="page-description">
-                    The Saber writing will allow you to generate full fledged 
+                <div className="page-heading">
+                <Tooltip top content={<div>The Saber writing will allow you to generate full fledged 
                     emails out of bullet points using GPT3’ s advance text 
-                    generation AI.  
+                    generation AI. </div>}>
+                        EMAIL GENERATION
+                </Tooltip>
                 </div>
                 <div className="page-container">
                     <Card style={{width:"50%"}} className="page-card">

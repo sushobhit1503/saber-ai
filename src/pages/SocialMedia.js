@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button } from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class SocialMedia extends React.Component {
@@ -17,10 +17,11 @@ class SocialMedia extends React.Component {
         }
         return (
             <div>
-                <div className="page-heading">SOCIAL MEDIA ADVERTS</div>
-                <div className="page-description">
-                    Looking for some creative social media advert ideas for your online
-                    campaigns on Facebook, Twitter or Instagram? We got you.
+                <div className="page-heading">
+                <Tooltip top content={<div>Looking for some creative social media advert ideas for your online
+                    campaigns on Facebook, Twitter or Instagram? We got you.</div>}>
+                    SOCIAL MEDIA ADVERTS
+                </Tooltip>
                 </div>
                 <div className="page-container">
                     <Card style={{width:"50%"}} className="page-card">

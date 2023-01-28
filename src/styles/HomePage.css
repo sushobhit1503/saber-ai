@@ -2,6 +2,14 @@
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
+    background-image: url("../assets/background.png");
+    background-repeat: no-repeat;
+}
+
+.home-container1 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
 }
 
 .home-page-desc {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button } from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class ColdEmail extends React.Component {
@@ -18,10 +18,11 @@ class ColdEmail extends React.Component {
         }
         return (
             <div>
-                <div className="page-heading">COLD EMAIL TEMPLATE</div>
-                <div className="page-description">
-                    This is perfect for marketing agents or companies who need fresh ideas
-                    daily on cold email content that is created by AI technology.  
+                <div className="page-heading">
+                <Tooltip top content={<div>This is perfect for marketing agents or companies who need fresh ideas
+                    daily on cold email content that is created by AI technology.  </div>}>
+                    COLD EMAIL TEMPLATE
+                </Tooltip>
                 </div>
                 <div className="page-container">
                     <Card style={{width:"50%"}} className="page-card">

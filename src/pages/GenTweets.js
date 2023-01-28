@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button } from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class GenTweets extends React.Component {
@@ -17,10 +17,11 @@ class GenTweets extends React.Component {
         }
         return (
             <div>
-                <div className="page-heading">GENERATE TWEETS</div>
-                <div className="page-description">
-                    Start generating tweet ideas with hashtags for your online social media campaigns on twitter.
-                    Create endless unique tweet ideas, no more writers block.
+                <div className="page-heading">
+                <Tooltip top content={<div>Start generating tweet ideas with hashtags for your online social media campaigns on twitter.
+                    Create endless unique tweet ideas, no more writers block.</div>}>
+                    GENERATE TWEETS
+                </Tooltip>
                 </div>
                 <div className="page-container">
                     <Card style={{width:"50%"}} className="page-card">

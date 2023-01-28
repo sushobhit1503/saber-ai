@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button } from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class BlogArticle extends React.Component {
@@ -18,10 +18,11 @@ class BlogArticle extends React.Component {
         }
         return (
             <div>
-                <div className="page-heading">BLOG ARTICLE GENERATION</div>
-                <div className="page-description">
-                    Generate professional article and blogs by giving outline. 
-                    Give keywords for good fit with Search Engine Optimization.
+                <div className="page-heading">
+                <Tooltip top content={<div>Generate professional article and blogs by giving outline. 
+                    Give keywords for good fit with Search Engine Optimization. </div>}>
+                    BLOG ARTICLE GENERATION
+                </Tooltip>
                 </div>
                 <div className="page-container">
                     <Card style={{width:"50%"}} className="page-card">

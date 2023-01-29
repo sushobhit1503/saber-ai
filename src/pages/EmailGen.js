@@ -36,7 +36,7 @@ class EmailGen extends React.Component {
                         <TextField height={320} placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" />
                         <div className="page-card-label">Enter Bullet Points</div>
                         <TextField style={{width:"100%"}} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
-                        <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i className="fa fa-down-arrow"></i></div>
+                        <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
                             <Switch color="var(--success)" /> Is this a sales email? <br />
                             <Switch color="var(--success)" /> Use keyword optimization for SEO?

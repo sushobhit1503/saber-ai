@@ -23,7 +23,7 @@ function Toolbar() {
   return (
     <Card>
       <Navbar color='transparent' expand="sm">
-      <NavbarBrand style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+      <NavbarBrand style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
         <img src={Logo} alt="saber-ai" className='logo-image' />
         <div className='logo-name'>SABER AI</div>
       </NavbarBrand>

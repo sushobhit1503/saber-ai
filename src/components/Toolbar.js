@@ -23,7 +23,7 @@ function Toolbar() {
   return (
     <Card>
       <Navbar color='transparent' expand="sm">
-      <NavbarBrand style={{display:"flex", alignItems:"center"}}>
+      <NavbarBrand style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
         <img src={Logo} alt="saber-ai" className='logo-image' />
         <div className='logo-name'>SABER AI</div>
       </NavbarBrand>
@@ -31,7 +31,7 @@ function Toolbar() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/">
+              <NavLink style={{textDecoration:"none"}} href="/">
                 <Card style={{padding:"0.5rem 1rem"}}>
                   Home
                 </Card>
@@ -39,7 +39,7 @@ function Toolbar() {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <Card style={{padding:"0.5rem 1 rem", margin:"0.5rem"}}>
-                <DropdownToggle nav caret>
+                <DropdownToggle style={{textDecoration:"none"}} nav caret>
                   Services
                 </DropdownToggle>
               </Card>
@@ -53,21 +53,21 @@ function Toolbar() {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href="/ask-me-anything">
+              <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
                 <Card style={{padding:"0.5rem 1rem"}}>
                   Ask me anything
                 </Card>
               </NavLink>
             </NavItem>
           </Nav>
-          <NavLink href="/ask-me-anything">
+          <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
             <Card inset style={{padding:"0.5rem 1rem"}}>
               Upgrade to Pro
             </Card>
           </NavLink>
                <UncontrolledDropdown>
                <Card style={{padding:"0.5rem 1 rem", margin:"0.5rem"}}>
-                <DropdownToggle nav caret>
+                <DropdownToggle style={{textDecoration:"none"}} nav caret>
                   Profile
                 </DropdownToggle>
               </Card>

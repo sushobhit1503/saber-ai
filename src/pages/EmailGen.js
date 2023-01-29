@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, TextField, Button, Tooltip} from "ui-neumorphism";
+import { Card, TextField, Button, Tooltip, Switch} from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class EmailGen extends React.Component {
@@ -8,13 +8,17 @@ class EmailGen extends React.Component {
         this.state = {
             previousMail: "",
             bulletPoints: "",
-            reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards"
+            reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards",
+            showAdvancedOptions: false
         }
     }
     render () {
         const onChange = (event) => {
             const { name, value } = event.target
             this.setState ({[name]: value})
+        }
+        const toggleAdvanced = () => {
+            this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
         }
         return (
             <div>
@@ -32,6 +36,11 @@ class EmailGen extends React.Component {
                         <TextField height={320} placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" />
                         <div className="page-card-label">Enter Bullet Points</div>
                         <TextField style={{width:"100%"}} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
+                        <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i className="fa fa-down-arrow"></i></div>
+                        <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
+                            <Switch color="var(--success)" /> Is this a sales email? <br />
+                            <Switch color="var(--success)" /> Use keyword optimization for SEO?
+                        </div>
                         <Button>
                             Generate Email
                         </Button>

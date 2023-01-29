@@ -37,6 +37,17 @@
     height: 20rem;
 }
 
+.advanced-options {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.display-options {
+    display: none;
+    transition: all 3s ease-in;
+}
+
 .page-action-buttons {
     background-color: var(--green-color);
     color: var(--black-color);

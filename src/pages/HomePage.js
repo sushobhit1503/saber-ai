@@ -3,7 +3,7 @@ import HomeIllustration from "../assets/home.gif"
 import ChatIllustration from "../assets/chat.gif"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
-import { Button, Card, CardContent, CardAction, Body2, H6 } from "ui-neumorphism"
+import { Button, Card, CardContent, Body2, H6 } from "ui-neumorphism"
 import ServiceData from "../data/Data Files.json"
 
 class HomePage extends React.Component {
@@ -45,12 +45,10 @@ class HomePage extends React.Component {
                                         <Body2>
                                             {eachElement.description}
                                         </Body2>
-                                    </CardContent>
-                                    <CardAction>
-                                        <Button text color='var(--success)'>
+                                        <Button color='var(--success)'>
                                             TRY NOW
                                         </Button>
-                                    </CardAction>
+                                    </CardContent>
                                 </Card>
                             )
                         })}

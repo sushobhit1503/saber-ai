@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
+import { Input } from "reactstrap";
+import { Card, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class ColdEmail extends React.Component {
@@ -19,7 +20,7 @@ class ColdEmail extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip top content={<div>This is perfect for marketing agents or companies who need fresh ideas
+                <Tooltip bottom content={<div>This is perfect for marketing agents or companies who need fresh ideas
                     daily on cold email content that is created by AI technology.  </div>}>
                     COLD EMAIL TEMPLATE
                 </Tooltip>
@@ -28,9 +29,9 @@ class ColdEmail extends React.Component {
                     <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">ENTER THE SERVICES YOUR COMPANY PROVIDES</div>
                         <div className="page-card-label">Company Name</div>
-                        <TextField placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
+                        <Input className="input" placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
                         <div className="page-card-label">Services Provided</div>
-                        <TextField height={320} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" />
+                        <Input className="input mailBox" height={320} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" />
                         <div>Describe the service you provide for the email content.</div>
                         <Button>
                             Generate Email
@@ -39,7 +40,7 @@ class ColdEmail extends React.Component {
                     <div className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} />
                         <Button>
                             Copy
                         </Button>

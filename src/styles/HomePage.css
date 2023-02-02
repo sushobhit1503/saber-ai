@@ -3,6 +3,7 @@
     justify-content: space-around;
     background-image: url("../assets/background.png");
     background-repeat: no-repeat;
+    margin: 0px 1rem 0rem 1rem;
 }
 
 .home-container1 {

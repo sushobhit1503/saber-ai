@@ -27,7 +27,9 @@ class HomePage extends React.Component {
                         </div>
                         <div className="home-action-button">
                             <Button>
-                                TRY NOW
+                                <a style={{textDecoration:"none"}} href="/email-gen">
+                                    TRY NOW
+                                </a>
                             </Button>
                         </div>
                     </div>
@@ -45,8 +47,10 @@ class HomePage extends React.Component {
                                         <Body2>
                                             {eachElement.description}
                                         </Body2>
-                                        <Button color='var(--success)'>
-                                            TRY NOW
+                                        <Button>
+                                            <a style={{textDecoration:"none"}} href={eachElement.link}>
+                                                TRY NOW
+                                            </a>
                                         </Button>
                                     </CardContent>
                                 </Card>
@@ -72,7 +76,9 @@ class HomePage extends React.Component {
                         </div>
                         <div className="home-action-button">
                             <Button>
-                                TRY NOW
+                                <a style={{textDecoration:"none"}} href="/ask-me-anything">
+                                    TRY NOW
+                                </a>
                             </Button>
                         </div>
                     </div>

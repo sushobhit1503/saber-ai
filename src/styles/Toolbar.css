@@ -1,18 +1,18 @@
 .logo-image {
-    width: 3rem;
+    width: 2.5rem;
     background-color: var(--black-color);
     border-radius: 50%;
 }
 
 .logo-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
     color: var(--black-color);
 }
 
 .toolbar-content {
     color: var(--green-color);
-    margin: 10px;
+    margin:5px;
     transition: all 0.1s ease-in-out;
 }
 
@@ -22,9 +22,16 @@
     color: var(--green-color);
 }
 
+.toolbar-comp:hover, .toolbar-comp {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+}
+
 @media screen and (max-width: 575px) {
     .logo-image {
-        width: 3rem;
+        width: 2.5rem;
     }
     .logo-name {
         font-size: 1.25rem;

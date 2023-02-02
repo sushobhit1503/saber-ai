@@ -32,13 +32,13 @@ function Toolbar() {
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/">
-                <Card style={{padding:"0.5rem 1rem"}}>
+                <Card style={{padding:"0.25rem 0.5rem", fontSize:"1rem"}}>
                   Home
                 </Card>
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <Card style={{padding:"0.5rem 1 rem", margin:"0.5rem"}}>
+              <Card style={{padding:"0.25rem 0.5rem", margin:"0.5rem", fontSize: "1rem"}}>
                 <DropdownToggle style={{textDecoration:"none"}} nav caret>
                   Services
                 </DropdownToggle>
@@ -54,19 +54,19 @@ function Toolbar() {
             </UncontrolledDropdown>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
-                <Card style={{padding:"0.5rem 1rem"}}>
+                <Card className="toolbar-comp" style={{padding:"0.25rem 0.5rem"}}>
                   Ask me anything
                 </Card>
               </NavLink>
             </NavItem>
           </Nav>
           <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
-            <Card inset style={{padding:"0.5rem 1rem"}}>
+            <Card inset style={{padding:"0.25rem 0.5rem"}}>
               Upgrade to Pro
             </Card>
           </NavLink>
                <UncontrolledDropdown>
-               <Card style={{padding:"0.5rem 1 rem", margin:"0.5rem"}}>
+               <Card style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>
                 <DropdownToggle style={{textDecoration:"none"}} nav caret>
                   Profile
                 </DropdownToggle>

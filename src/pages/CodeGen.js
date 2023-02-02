@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, TextField, Button, Tooltip } from "ui-neumorphism";
+import { Input } from "reactstrap";
+import { Card, Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class CodeGen extends React.Component {
@@ -19,7 +20,7 @@ class CodeGen extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip top content={<div>Generate code by giving the usecase.</div>}>
+                <Tooltip bottom content={<div>Generate code by giving the usecase.</div>}>
                     CODE GENERATION
                 </Tooltip>
                 </div>
@@ -27,9 +28,9 @@ class CodeGen extends React.Component {
                     <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">WHAT IS YOUR CODE's PURPOSE?</div>
                         <div className="page-card-label">Describe the usecase of your code</div>
-                        <TextField placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
+                        <Input className="input" placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
                         <div className="page-card-label">Programming Language</div>
-                        <TextField placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
+                        <Input className="input" placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
                         <Button>
                             Generate Code
                         </Button>
@@ -37,7 +38,7 @@ class CodeGen extends React.Component {
                     <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <TextField disabled={true} height={320} value={this.state.reply} />
+                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} />
                         <Button>
                             Copy
                         </Button>

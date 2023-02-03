@@ -3,4 +3,8 @@
     outline: none;
     background: none;
     box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    text-align: start;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }

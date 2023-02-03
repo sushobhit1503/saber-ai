@@ -9,6 +9,7 @@ import GenTweets from './pages/GenTweets';
 import Profile from './pages/Profile';
 import SocialMedia from './pages/SocialMedia';
 import Home from './pages/HomePage';
+import Payments from './pages/Payments';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/social-ads" element={<SocialMedia />} />
         <Route exact path="/code-gen" element={<CodeGen />} />
         <Route exact path="/manage-account" element={<Profile />} />
+        <Route exact path="/payments" element={<Payments />} />
         <Route exact path="/" element={<Home />} />
       </Routes>
     </div>

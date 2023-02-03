@@ -31,15 +31,15 @@ class CodeGen extends React.Component {
                         <Input className="input" placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
                         <div className="page-card-label">Programming Language</div>
                         <Input className="input" placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
-                        <Button>
+                        <Button style={{marginTop: "1rem"}}>
                             Generate Code
                         </Button>
                     </Card>
                     <Card style={{width:"50%"}} className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
-                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} />
-                        <Button>
+                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <Button style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </Card>

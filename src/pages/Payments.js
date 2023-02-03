@@ -1,9 +1,9 @@
 import React from "react";
 import { Input } from "reactstrap";
-import { Card, Button, Tooltip } from "ui-neumorphism";
+import { Card, Button} from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
-class GenTweets extends React.Component {
+class Payments extends React.Component {
     constructor () {
         super ()
         this.state = {
@@ -19,14 +19,11 @@ class GenTweets extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>Start generating tweet ideas with hashtags for your online social media campaigns on twitter.
-                    Create endless unique tweet ideas, no more writers block.</div>}>
-                    GENERATE TWEETS
-                </Tooltip>
+                    PLANS
                 </div>
-                <div className="page-container">
-                    <Card style={{width:"50%"}} className="page-card">
-                        <div className="page-card-heading">WHAT IS YOUR TWEET ABOUT?</div>
+                <div style={{display:"flex"}}>
+                    <Card style={{textAlign:"center"}} className="page-card">
+                        <div className="page-card-heading">FREE PLAN</div>
                         <div className="page-card-label">Tweet Prompt</div>
                         <Input className="input" placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
@@ -34,11 +31,11 @@ class GenTweets extends React.Component {
                             Get Recommendations
                         </Button>
                     </Card>
-                    <Card style={{width:"50%"}} className="page-card">
+                    <Card style={{textAlign:"center"}}  className="page-card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
-                        <Button style={{marginTop: "1rem"}}>
+                        <Button>
                             Copy
                         </Button>
                     </Card>
@@ -48,4 +45,4 @@ class GenTweets extends React.Component {
     }
 }
 
-export default GenTweets
+export default Payments

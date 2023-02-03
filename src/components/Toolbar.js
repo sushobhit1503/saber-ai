@@ -13,7 +13,7 @@ import {
   DropdownItem
 } from 'reactstrap';
 import Logo from '../assets/saber-logo.png';
-import { Card } from 'ui-neumorphism';
+import { Button, Card } from 'ui-neumorphism';
 import "../styles/Toolbar.css";
 
 function Toolbar() {
@@ -32,17 +32,17 @@ function Toolbar() {
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/">
-                <Card style={{padding:"0.25rem 0.5rem", fontSize:"1rem"}}>
+                <Button style={{padding:"0.25rem 0.5rem", fontSize:"1rem"}}>
                   Home
-                </Card>
+                </Button>
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <Card style={{padding:"0.25rem 0.5rem", margin:"0.5rem", fontSize: "1rem"}}>
+              <Button style={{padding:"0.25rem 0.5rem", margin:"0.5rem", fontSize: "1rem"}}>
                 <DropdownToggle style={{textDecoration:"none"}} nav caret>
                   Services
                 </DropdownToggle>
-              </Card>
+              </Button>
               <DropdownMenu end>
                 <DropdownItem href='/email-gen'>Email Gen</DropdownItem>
                 <DropdownItem href='/blog-article'>Blog Article</DropdownItem>
@@ -54,23 +54,23 @@ function Toolbar() {
             </UncontrolledDropdown>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
-                <Card className="toolbar-comp" style={{padding:"0.25rem 0.5rem"}}>
+                <Button className="toolbar-comp" style={{padding:"0.25rem 0.5rem"}}>
                   Ask me anything
-                </Card>
+                </Button>
               </NavLink>
             </NavItem>
           </Nav>
-          <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
+          <NavLink style={{textDecoration:"none"}} href="/payments">
             <Card inset style={{padding:"0.25rem 0.5rem"}}>
               Upgrade to Pro
             </Card>
           </NavLink>
-               <UncontrolledDropdown>
-               <Card style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>
+          <UncontrolledDropdown>
+              <Button style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>
                 <DropdownToggle style={{textDecoration:"none"}} nav caret>
                   Profile
                 </DropdownToggle>
-              </Card>
+              </Button>
               <DropdownMenu end>
                 <DropdownItem href='/manage-account'>Manage Account</DropdownItem>
                 <DropdownItem href='/help'>Help</DropdownItem>
@@ -79,7 +79,7 @@ function Toolbar() {
                 <DropdownItem divider />
                 <DropdownItem>Log Out</DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+          </UncontrolledDropdown>
         </Collapse>
       </Navbar>
     </Card>

@@ -10,6 +10,8 @@ import Profile from './pages/Profile';
 import SocialMedia from './pages/SocialMedia';
 import Home from './pages/HomePage';
 import Payments from './pages/Payments';
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route exact path="/code-gen" element={<CodeGen />} />
         <Route exact path="/manage-account" element={<Profile />} />
         <Route exact path="/payments" element={<Payments />} />
+        <Route exact path="/sign-up" element={<SignUp />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/" element={<Home />} />
       </Routes>
     </div>

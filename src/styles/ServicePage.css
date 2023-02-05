@@ -2,15 +2,15 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    font-family: "Mirza", cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 
 .page-description {
     width: 80%;
     margin: auto;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .page-container {

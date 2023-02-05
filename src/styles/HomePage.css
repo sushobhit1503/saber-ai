@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-around;
     background-image: url("../assets/background.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-position: center;
     margin: 0px 1rem 0rem 1rem;
 }
 
@@ -14,6 +15,8 @@
 
 .home-page-desc {
     margin-top: 3rem;
+
+    
 }
 
 .home-action-button {

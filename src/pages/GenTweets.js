@@ -30,7 +30,7 @@ class GenTweets extends React.Component {
                         <div className="page-card-label">Tweet Prompt</div>
                         <Input className="input" placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
-                        <Button>
+                        <Button style={{marginTop: "1rem", width:"100%"}}>
                             Get Recommendations
                         </Button>
                     </Card>

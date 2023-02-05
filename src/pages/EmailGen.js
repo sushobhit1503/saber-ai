@@ -52,9 +52,9 @@ class EmailGen extends React.Component {
                                 <option value="Sales">Sales</option>
                             </Input>
                             <Label style={{margin:"10px"}}>Specify number of words</Label> <br />
-                            <Slider style={{marginLeft:"1.5rem", marginBottom: "1rem"}} axis="x" x={this.state.words} xstep={50} xmin={100} xmax={1000} />
+                            <Slider style={{marginLeft:"1.5rem"}} axis="x" x={this.state.words} xstep={50} xmin={100} xmax={1000} />
                         </div>
-                        <Button>
+                        <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email
                         </Button>
                     </Card>

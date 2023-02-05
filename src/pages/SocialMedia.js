@@ -45,7 +45,7 @@ class SocialMedia extends React.Component {
                                 <option value="Sales">Sales</option>
                             </Input>
                         </div>
-                        <Button>
+                        <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Ad
                         </Button>
                     </Card>

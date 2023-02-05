@@ -59,7 +59,7 @@ class BlogArticle extends React.Component {
                             <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 2" onChange={onChange} value={this.state.ref2} name="ref2" type="text" />
                             <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 3" onChange={onChange} value={this.state.ref3} name="ref3" type="text" />
                         </div>
-                        <Button>
+                        <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Article
                         </Button>
                     </Card>

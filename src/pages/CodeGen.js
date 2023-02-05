@@ -31,7 +31,7 @@ class CodeGen extends React.Component {
                         <Input className="input" placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
                         <div className="page-card-label">Programming Language</div>
                         <Input className="input" placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
-                        <Button style={{marginTop: "1rem"}}>
+                        <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Code
                         </Button>
                     </Card>

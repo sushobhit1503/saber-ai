@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                     <div className="home-page-services">
                         {ServiceData.map(eachElement => {
                             return (
-                                <Card width={300} className="home-page-services-card">
+                                <Card width={350} className="home-page-services-card">
                                     <CardContent>
                                         <H6 secondary style={{ marginBottom: '4px' }} >
                                             {eachElement.name}
@@ -47,12 +47,12 @@ class HomePage extends React.Component {
                                         <Body2>
                                             {eachElement.description}
                                         </Body2>
-                                        <Button>
-                                            <a style={{textDecoration:"none"}} href={eachElement.link}>
-                                                TRY NOW
-                                            </a>
-                                        </Button>
                                     </CardContent>
+                                    <Button>
+                                        <a style={{textDecoration:"none"}} href={eachElement.link}>
+                                            TRY NOW
+                                        </a>
+                                    </Button>
                                 </Card>
                             )
                         })}

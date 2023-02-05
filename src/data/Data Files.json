@@ -1,38 +1,38 @@
 [
     {
         "name": "EMAIL GENERATION",
-        "description": "Lorem Ipsum",
+        "description": "The Saber writing tool will allow you to generate full fledged emails out of bullet points using GPT3's advance text generation AI.",
         "icon": "email",
         "link":"/email-gen"
     },
     {
-        "name": "TWITTER ASSIST",
-        "description": "Lorem Ipsum",
+        "name": "BLOG/ARTICLE GENERATION",
+        "description": "Generate professional article and blogs by giving outline. Give keywords for good fit with Search Engine Optimization.",
         "icon": "email",
-        "link":"/email-gen"
+        "link":"/blog-article"
+    },
+    {
+        "name": "GENERATE TWEETS",
+        "description": "Start generating tweet ideas with hashtags for your online social media campaigns on twitter.",
+        "icon": "email",
+        "link":"/twitter-assist"
+    },
+    {
+        "name": "COLD EMAIL TEMPLATE",
+        "description": "Perfect for marketing agents or companies who need fresh ideas daily on cold email content that is created by using Artificial Intelligence.",
+        "icon": "email",
+        "link":"/cold-email"
+    },
+    {
+        "name": "SOCIAL MEDIA ADVERTS",
+        "description": "Looking for some creative social media advert ideas for your online campaigns on Facebook, Twitter or Instagram? We got you.",
+        "icon": "email",
+        "link":"/social-ads"
     },
     {
         "name": "CODE GENERATION",
-        "description": "Lorem Ipsum",
+        "description": "Generate code by giving its usecase.",
         "icon": "email",
-        "link":"/email-gen"
-    },
-    {
-        "name": "EMAIL GENERATION",
-        "description": "Lorem Ipsum",
-        "icon": "email",
-        "link":"/email-gen"
-    },
-    {
-        "name": "EMAIL GENERATION",
-        "description": "Lorem Ipsum",
-        "icon": "email",
-        "link":"/email-gen"
-    },
-    {
-        "name": "EMAIL GENERATION",
-        "description": "Lorem Ipsum",
-        "icon": "email",
-        "link":"/email-gen"
+        "link":"/code-gen"
     }
 ]

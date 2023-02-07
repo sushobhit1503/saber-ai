@@ -15,15 +15,12 @@ class HomePage extends React.Component {
                         <img src={HomeIllustration} alt="saber" className="home-page-illustration" />
                     </div>
                     <div style={{color:"var(--white-color)"}}>
-                        <div className="page-heading">WORLD's BEST AI-CONTENT WRITING</div>
-                        <div className="page-description home-page-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing 
-                            elit, sed do eiusmod tempor incididunt ut labore et 
-                            dolore magna aliqua. Ut enim ad minim veniam, quis 
-                            nostrud exercitation ullamco laboris nisi ut aliquip 
-                            ex ea commodo consequat. Duis aute irure dolor in 
-                            reprehenderit in voluptate velit esse cillum dolore 
-                            eu fugiat nulla pariatur.
+                        <div className="page-heading">WORLD CLASS AI WRITING SOLUTIONS</div>
+                        <div style={{textAlign:"left"}} className="page-description home-page-desc">
+                            Cut down the average emailing time from 28% to 9% ={`>`} Save 40 hours every month. <div style={{marginBottom: "1.5rem"}}></div>
+                            Ultimate platform for all your content needs. <div style={{marginBottom: "1.5rem"}}></div>
+                            Delivering expert copywriting, complete email automation, and SEO-optimised adverts generator  - all in one easy-to-use package. <div style={{marginBottom: "1.5rem"}}></div>
+                            Supercharge your content with Saber!
                         </div>
                         <div className="home-action-button">
                             <Button>
@@ -35,7 +32,7 @@ class HomePage extends React.Component {
                     </div>
                 </div>
                 <div className="home-page-services-container">
-                    <div className="page-heading">SERVICES</div>
+                    <div style={{marginTop:"3rem"}} className="page-heading card">SERVICES</div>
                     <div className="home-page-services">
                         {ServiceData.map(eachElement => {
                             return (
@@ -58,7 +55,7 @@ class HomePage extends React.Component {
                         })}
                     </div>
                 </div>
-                <div className="page-heading">ASK ME ANYTHING</div>
+                <div className="page-heading card">ASK ME ANYTHING</div>
                 <div className="home-container1">
                     <div className="chat-image-container">
                         <img src={ChatIllustration} alt="saber" className="chat-image-container" />
@@ -66,13 +63,7 @@ class HomePage extends React.Component {
                     <div className="chat-text-container">
                         <div className="page-heading">BEST RESPONSES</div>
                         <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing 
-                            elit, sed do eiusmod tempor incididunt ut labore et 
-                            dolore magna aliqua. Ut enim ad minim veniam, quis 
-                            nostrud exercitation ullamco laboris nisi ut aliquip 
-                            ex ea commodo consequat. Duis aute irure dolor in 
-                            reprehenderit in voluptate velit esse cillum dolore 
-                            eu fugiat nulla pariatur.
+                            
                         </div>
                         <div className="home-action-button">
                             <Button>

@@ -4,7 +4,9 @@
     background-image: url("../assets/background.png");
     background-repeat: repeat;
     background-position: center;
-    margin: 0px 5rem 0rem 5rem;
+    border-radius: 1rem;
+    margin: 1rem 5rem 0rem 5rem;
+    box-shadow: 15px 15px 8px #BEC8E4, -4px -4px 10px #FFFFFF;
 }
 
 .home-container1 {

@@ -45,7 +45,7 @@ class Payments extends React.Component {
                 <PaymentsPart elementName="Pricing" element={pricing} />
                 <PaymentsPart elementName="Usage" element={usage} />
                 <PaymentsPart elementName="Services" element={services} />
-                <PaymentsPart elementName="Intgerations" element={integration} />
+                <PaymentsPart elementName="Integrations" element={integration} />
                 <div style={{display:"flex", margin: "auto", width:"80%"}}>
                     <div style={{width:"25%"}}>
 
@@ -57,7 +57,7 @@ class Payments extends React.Component {
                     </div>
                     <div style={{width:"25%"}}>
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <Button style={{fontSize:"1.25rem"}} color="danger">
+                            <Button style={{fontSize:"1.25rem", margin:"0px"}} color="danger">
                                 SUBSCRIBE
                             </Button>
                         </div> <br />

@@ -22,7 +22,7 @@ function Toolbar() {
 
   return (
     <Card>
-      <Navbar color='transparent' expand="sm">
+      <Navbar expand="sm">
       <NavbarBrand href='/' style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
         <img src={Logo} alt="saber-ai" className='logo-image card' />
         <div className='logo-name'>SABER AI</div>
@@ -32,7 +32,7 @@ function Toolbar() {
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/">
-                <Button className="card-inset" style={{padding:"0.25rem 0.5rem", fontSize:"1rem"}}>
+                <Button style={{padding:"0.25rem 0.5rem", fontSize:"1rem", backgroundColor:"#BEC8E4"}}>
                   Home
                 </Button>
               </NavLink>
@@ -43,7 +43,7 @@ function Toolbar() {
                   Services
                 </DropdownToggle>
               </Button>
-              <DropdownMenu end>
+              <DropdownMenu style={{backgroundColor: "#BEC8E4"}} end>
                 <DropdownItem href='/email-gen'>Email Gen</DropdownItem>
                 <DropdownItem href='/blog-article'>Blog Article</DropdownItem>
                 <DropdownItem href='/twitter-assist'>Twitter Assist</DropdownItem>
@@ -61,9 +61,9 @@ function Toolbar() {
             </NavItem>
           </Nav>
           <NavLink style={{textDecoration:"none"}} href="/payments">
-            <Card inset style={{padding:"0.25rem 0.5rem"}}>
+            <Button style={{padding:"0.25rem 0.5rem"}}>
               UPGRADE TO PRO
-            </Card>
+            </Button>
           </NavLink>
           <UncontrolledDropdown>
               <Button style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>

@@ -12,14 +12,22 @@ class EmailGen extends React.Component {
             bulletPoints: "",
             reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards",
             showAdvancedOptions: false,
+            sales: false,
+            seo: false,
             tone: "",
-            words: 200
+            words: 0
         }
     }
     render () {
         const onChange = (event) => {
             const { name, value } = event.target
             this.setState ({[name]: value})
+        }
+        const onChangeSales = (event) => {
+            this.setState ({sales: event.checked})
+        }
+        const onChangeSeo = (event) => {
+            this.setState ({seo: event.checked})
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
@@ -42,8 +50,8 @@ class EmailGen extends React.Component {
                         <Input className="input" placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
                         <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch color="var(--success)" /> Is this a sales email? <br />
-                            <Switch color="var(--success)" /> Use keyword optimization for SEO? <br /> 
+                            <Switch onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a sales email? <br />
+                            <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
                             <Input onChange={onChange} name="tone" value={this.state.tone} style={{margin:"0px 0px 20px 10px", width:"250px"}} className="input" type="select">
                                 <option value="Friendly">Friendly</option>
@@ -52,7 +60,8 @@ class EmailGen extends React.Component {
                                 <option value="Sales">Sales</option>
                             </Input>
                             <Label style={{margin:"10px"}}>Specify number of words</Label> <br />
-                            <Slider style={{marginLeft:"1.5rem"}} axis="x" x={this.state.words} xstep={50} xmin={100} xmax={1000} />
+                            <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
+                            {this.state.words} words
                         </div>
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email

@@ -11,13 +11,18 @@ class ColdEmail extends React.Component {
             companyName: "",
             serviceDescription: "",
             reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards",
-            tone: ""
+            tone: "",
+            seo: false,
+            words: 0
         }
     }
     render () {
         const onChange = (event) => {
             const { name, value } = event.target
             this.setState ({[name]: value})
+        }
+        const onChangeSeo = (event) => {
+            this.setState ({seo: event.checked})
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
@@ -40,7 +45,7 @@ class ColdEmail extends React.Component {
                         <div>Describe the service you provide for the email content.</div>
                         <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch color="var(--success)" /> Use keyword optimization for SEO? <br /> 
+                        <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} />  Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
                             <Input style={{width:"250px"}} onChange={onChange} value={this.state.tone} name="tone" className="input" type="select">
                                 <option value="Friendly">Friendly</option>
@@ -49,7 +54,8 @@ class ColdEmail extends React.Component {
                                 <option value="Sales">Sales</option>
                             </Input>
                             <Label style={{margin:"10px"}}>Specify number of words</Label> <br />
-                            <Slider style={{marginLeft:"1.5rem"}} axis="x" x={this.state.words} xstep={50} xmin={100} xmax={1000} />
+                            <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
+                            {this.state.words} words <br />
                         </div>
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email

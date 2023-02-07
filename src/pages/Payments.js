@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Payments.css";
-import { plans, services, description, usage, pricing, integration } from "../data/Payments"
-import { Divider } from "ui-neumorphism";
+import { plans, services, usage, pricing, integration, description } from "../data/Payments"
+import { Divider, Card } from "ui-neumorphism";
 import { Button } from "reactstrap";
 import PaymentsPart from "../components/PaymentsPart";
 
@@ -9,33 +9,39 @@ class Payments extends React.Component {
     render () {
         return (
             <div style={{marginBottom:"3rem"}}>
-                <div className="page-heading">
+                <div className="page-heading card">
                     PLANS
                 </div>
                 <div style={{display:"flex", margin: "auto", width:"80%"}}>
                     <div style={{width:"25%"}}>
 
                     </div>
-                    {plans.map((eachPlan, index) => {
+                    {plans.map((eachPlan) => {
                         return (
                             <div key={eachPlan} className="payment-plan-container">
                                 <div className="payment-plan-name" key={eachPlan}>
                                     {eachPlan}
-                                </div>
-                                <div className="payment-plan-description">
-                                    {description[index].map(eachDescription => {
-                                        return (
-                                            <div>
-                                                {eachDescription}
-                                            </div>
-                                        )
-                                    })}
                                 </div>
                             </div>
                         )
                     })}
                 </div>
                 <Divider />
+                <div style={{width:"80%", margin:"auto"}}>
+                <div className="payment-field-heading">Description</div>
+                    <Card inset style={{display:"flex", margin:"1rem", padding:"1rem"}}>
+                        <div style={{width:"25%"}}>
+                           
+                        </div>
+                        {description.map(eachValue => {
+                            return (
+                                <div className="payment-field-text" key={eachValue}>
+                                    {eachValue}
+                                </div>
+                            )
+                        })}
+                    </Card>
+            </div>
                 <PaymentsPart elementName="Pricing" element={pricing} />
                 <PaymentsPart elementName="Usage" element={usage} />
                 <PaymentsPart elementName="Services" element={services} />
@@ -51,24 +57,24 @@ class Payments extends React.Component {
                     </div>
                     <div style={{width:"25%"}}>
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <Button color="danger">
+                            <Button style={{fontSize:"1.25rem"}} color="danger">
                                 SUBSCRIBE
                             </Button>
                         </div> <br />
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <Button>
+                            <Button style={{fontSize:"0.75rem"}}>
                                 TRY FOR 1 MONTH
                             </Button>
                         </div>
                     </div>
                     <div style={{width:"25%"}}>
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <Button color="danger">
+                            <Button style={{fontSize:"1.25rem"}} color="danger">
                                 SUBSCRIBE
                             </Button>
                         </div> <br />
                         <div style={{display:"flex", justifyContent:"center"}}>
-                            <Button>
+                            <Button style={{fontSize:"0.75rem"}}>
                                 TRY FOR 1 MONTH
                             </Button>
                         </div>

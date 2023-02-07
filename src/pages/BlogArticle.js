@@ -14,13 +14,17 @@ class BlogArticle extends React.Component {
             words: 0,
             ref1: "",
             ref2: "",
-            ref3: ""
+            ref3: "",
+            seo: false
         }
     }
     render () {
         const onChange = (event) => {
             const { name, value } = event.target
             this.setState ({[name]: value})
+        }
+        const onChangeSeo = (event) => {
+            this.setState ({seo: event.checked})
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
@@ -44,7 +48,7 @@ class BlogArticle extends React.Component {
                         <div>Give keywords that are better searchable</div>
                         <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch color="var(--success)" /> Use keyword optimization for SEO? <br />
+                            <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br />
                             <Label style={{padding:"5px"}}>Tone of the email</Label>
                             <Input style={{width:"250px"}} onChange={onChange} value={this.state.tone} name="tone" className="input" type="select">
                                 <option value="Friendly">Friendly</option>
@@ -53,7 +57,8 @@ class BlogArticle extends React.Component {
                                 <option value="Sales">Sales</option>
                             </Input> 
                             <Label style={{padding:"5px"}}>Specify Max Length</Label> <br />
-                            <Slider style={{marginLeft:"1.5rem", marginBottom: "1rem"}} axis="x" x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
+                            <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
+                            {this.state.words} words <br />
                             <Label style={{padding:"5px"}}>Add Reference Links</Label> <br />
                             <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 1" onChange={onChange} value={this.state.ref1} name="ref1" type="text" />
                             <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 2" onChange={onChange} value={this.state.ref2} name="ref2" type="text" />

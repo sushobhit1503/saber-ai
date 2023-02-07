@@ -4,7 +4,7 @@
     background-image: url("../assets/background.png");
     background-repeat: repeat;
     background-position: center;
-    margin: 0px 1rem 0rem 1rem;
+    margin: 0px 5rem 0rem 5rem;
 }
 
 .home-container1 {
@@ -15,8 +15,6 @@
 
 .home-page-desc {
     margin-top: 3rem;
-
-
 }
 
 .home-action-button {

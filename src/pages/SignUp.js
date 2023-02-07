@@ -3,6 +3,7 @@ import { Input, Label } from "reactstrap";
 import { Card, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 import { signup } from "../backend-calls/authentication";
+import Logo from '../assets/saber-logo.png';
 
 class SignUp extends React.Component {
     constructor () {
@@ -27,6 +28,10 @@ class SignUp extends React.Component {
         }
         return (
             <div>
+                <div style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
+                    <img src={Logo} alt="saber-ai" className='logo-image' />
+                    <div className='logo-name'>SABER AI</div>
+                </div>
                 <div className="page-heading">
                     CREATE AN ACCOUNT
                 </div>

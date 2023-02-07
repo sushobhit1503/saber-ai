@@ -3,6 +3,7 @@ import { Input, Label } from "reactstrap";
 import { Card, Button} from "ui-neumorphism";
 import { login } from "../backend-calls/authentication";
 import "../styles/ServicePage.css";
+import Logo from '../assets/saber-logo.png';
 
 class Login extends React.Component {
     constructor () {
@@ -21,10 +22,15 @@ class Login extends React.Component {
             const response = login(this.state.email, this.state.password)
             response.then (result => {
                 console.log(result);
+                
             }).catch (err => console.log(err.message))
         }
         return (
             <div>
+                <div style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
+                    <img src={Logo} alt="saber-ai" className='logo-image' />
+                    <div className='logo-name'>SABER AI</div>
+                </div>
                 <div className="page-heading">
                     LOGIN TO YOUR ACCOUNT
                 </div>

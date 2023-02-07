@@ -23,7 +23,7 @@ function Toolbar() {
   return (
     <Card>
       <Navbar color='transparent' expand="sm">
-      <NavbarBrand style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
+      <NavbarBrand href='/' style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
         <img src={Logo} alt="saber-ai" className='logo-image' />
         <div className='logo-name'>SABER AI</div>
       </NavbarBrand>
@@ -74,8 +74,8 @@ function Toolbar() {
               <DropdownMenu end>
                 <DropdownItem href='/manage-account'>Manage Account</DropdownItem>
                 <DropdownItem href='/help'>Help</DropdownItem>
-                <DropdownItem href='/pricing'>Pricing</DropdownItem>
-                <DropdownItem href='/help'>Terms & Policies</DropdownItem>
+                <DropdownItem href='/payments'>Pricing</DropdownItem>
+                <DropdownItem href='https://www.saber-ai.com/t-c'>Terms & Policies</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>Log Out</DropdownItem>
               </DropdownMenu>

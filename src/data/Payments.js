@@ -5,9 +5,9 @@ export const pricing = [{
     value: ["$0/month", "$15/month", "$25/month"]
 }]
 
-export const description = [["Free Always with limited number of uses", "Access to all services on platform", "No Chrome extension access"],
-["Medium use plan", "Access to All Services and Chrome Extension", "Good for a casual emailer"],
-["Access to All Services and Chrome Extension", "Designed for the Heavy users"]
+export const description = ["Free Always with limited number of uses, Access to all services on platform, No Chrome extension access",
+"Medium use plan, Access to All Services and Chrome Extension, Good for a casual emailer",
+"Access to All Services and Chrome Extension, Designed for the Heavy users"
 ]
 
 export const usage = [{

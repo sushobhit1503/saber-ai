@@ -9,13 +9,17 @@ class SocialMedia extends React.Component {
         this.state = {
             title: "",
             reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards",
-            tone: ""
+            tone: "",
+            seo: false
         }
     }
     render () {
         const onChange = (event) => {
             const { name, value } = event.target
             this.setState ({[name]: value})
+        }
+        const onChangeSeo = (event) => {
+            this.setState ({seo: event.checked})
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
@@ -36,7 +40,7 @@ class SocialMedia extends React.Component {
                         <div>Describe the subject or title for the ad campaign.</div>
                         <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch color="var(--success)" /> Use keyword optimization for SEO? <br /> 
+                            <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
                             <Input style={{width:"250px", margin: "0px 0px 10px 10px"}} onChange={onChange} value={this.state.tone} name="tone" className="input" type="select">
                                 <option value="Friendly">Friendly</option>

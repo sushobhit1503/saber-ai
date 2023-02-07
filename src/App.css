@@ -8,3 +8,16 @@
     align-items: flex-start;
     justify-content: center;
 }
+
+.card {
+    box-shadow: 5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF;
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #E4EBF5;
+    border: none;
+    outline: none;
+}

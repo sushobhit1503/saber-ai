@@ -21,3 +21,10 @@
     border: none;
     outline: none;
 }
+
+.card-inset {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+}

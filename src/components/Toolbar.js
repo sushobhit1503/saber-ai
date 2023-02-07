@@ -24,7 +24,7 @@ function Toolbar() {
     <Card>
       <Navbar color='transparent' expand="sm">
       <NavbarBrand href='/' style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
-        <img src={Logo} alt="saber-ai" className='logo-image' />
+        <img src={Logo} alt="saber-ai" className='logo-image card' />
         <div className='logo-name'>SABER AI</div>
       </NavbarBrand>
         <NavbarToggler onClick={toggle} />
@@ -32,14 +32,14 @@ function Toolbar() {
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/">
-                <Button style={{padding:"0.25rem 0.5rem", fontSize:"1rem"}}>
+                <Button className="card-inset" style={{padding:"0.25rem 0.5rem", fontSize:"1rem"}}>
                   Home
                 </Button>
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <Button style={{padding:"0.25rem 0.5rem", margin:"0.5rem", fontSize: "1rem"}}>
-                <DropdownToggle style={{textDecoration:"none"}} nav caret>
+                <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
                   Services
                 </DropdownToggle>
               </Button>
@@ -62,12 +62,12 @@ function Toolbar() {
           </Nav>
           <NavLink style={{textDecoration:"none"}} href="/payments">
             <Card inset style={{padding:"0.25rem 0.5rem"}}>
-              Upgrade to Pro
+              UPGRADE TO PRO
             </Card>
           </NavLink>
           <UncontrolledDropdown>
               <Button style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>
-                <DropdownToggle style={{textDecoration:"none"}} nav caret>
+                <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
                   Profile
                 </DropdownToggle>
               </Button>

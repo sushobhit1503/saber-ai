@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create ({
-    baseURL: "http://saberwrite.com/",
+    baseURL: "http://localhost:8080/",
     headers: {
         Authorization: ""
     },
-    timeout: 1000
+    timeout: 5000
 })
 
 export const axiosAuthInstance = axios.create ({

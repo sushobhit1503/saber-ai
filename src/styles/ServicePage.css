@@ -106,10 +106,9 @@
         align-items: center;
     }
     .page-card {
-        width: 70%;
+        width: 90%;
     }
     .page-heading {
-        margin-top: -0.5rem;
         font-size: 1.25rem;
     }
 }

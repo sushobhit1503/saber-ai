@@ -33,7 +33,7 @@ class SocialMedia extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <Card style={{width:"50%"}} className="page-card">
+                    <div className="page-card card">
                         <div className="page-card-heading">WHAT IS YOUR AD CAMPAIGN ABOUT?</div>
                         <div className="page-card-label">Subject or Title</div>
                         <Input className="input" placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
@@ -52,15 +52,15 @@ class SocialMedia extends React.Component {
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Ad
                         </Button>
-                    </Card>
-                    <Card style={{width:"50%"}} className="page-card">
+                    </div>
+                    <div className="page-card card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
-                    </Card>
+                    </div>
                 </div>
             </div>
         )

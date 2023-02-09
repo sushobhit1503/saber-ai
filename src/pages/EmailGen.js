@@ -42,7 +42,7 @@ class EmailGen extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <Card style={{width:"50%"}} className="page-card">
+                    <div className="page-card card">
                         <div className="page-card-heading">ENTER THE INPUT HERE</div>
                         <div className="page-card-label">Enter Previous Email (optional)</div>
                         <Input className="input mailBox" placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
@@ -66,15 +66,15 @@ class EmailGen extends React.Component {
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email
                         </Button>
-                    </Card>
-                    <Card style={{width:"50%"}} className="page-card">
+                    </div>
+                    <div className="page-card card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
                         <Button style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
-                    </Card>
+                    </div>
                 </div>
             </div>
         )

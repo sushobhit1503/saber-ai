@@ -25,7 +25,7 @@ class CodeGen extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <Card style={{width:"50%"}} className="page-card">
+                    <div className="page-card card">
                         <div className="page-card-heading">WHAT IS YOUR CODE's PURPOSE?</div>
                         <div className="page-card-label">Describe the usecase of your code</div>
                         <Input className="input" placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
@@ -34,15 +34,15 @@ class CodeGen extends React.Component {
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Code
                         </Button>
-                    </Card>
-                    <Card style={{width:"50%"}} className="page-card">
+                    </div>
+                    <div className="page-card card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
-                    </Card>
+                    </div>
                 </div>
             </div>
         )

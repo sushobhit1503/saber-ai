@@ -36,7 +36,7 @@ class ColdEmail extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <Card style={{width:"50%"}} className="page-card">
+                    <div className="page-card card">
                         <div className="page-card-heading">ENTER THE SERVICES YOUR COMPANY PROVIDES</div>
                         <div className="page-card-label">Company Name</div>
                         <Input className="input" placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
@@ -60,8 +60,8 @@ class ColdEmail extends React.Component {
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email
                         </Button>
-                    </Card>
-                    <div className="page-card">
+                    </div>
+                    <div className="page-card card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />

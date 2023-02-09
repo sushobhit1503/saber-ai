@@ -38,7 +38,7 @@ class BlogArticle extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <Card style={{width:"50%"}} className="page-card">
+                    <div className="page-card card">
                         <div className="page-card-heading">ENTER THE DETAILS OF YOUR ARTICLE</div>
                         <div className="page-card-label">Article Title</div>
                         <Input className="input" placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
@@ -67,15 +67,15 @@ class BlogArticle extends React.Component {
                         <Button style={{marginTop: "1rem", width:"100%"}}>
                             Generate Article
                         </Button>
-                    </Card>
-                    <Card style={{width:"50%"}} className="page-card">
+                    </div>
+                    <div className="page-card card">
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
-                    </Card>
+                    </div>
                 </div>
             </div>
         )

@@ -22,13 +22,13 @@ class Login extends React.Component {
             const response = login(this.state.email, this.state.password)
             response.then (result => {
                 console.log(result);
-                
+                localStorage.setItem("token", result.data)
             }).catch (err => console.log(err.message))
         }
         return (
-            <div>
+            <div style={{marginTop: "5rem"}}>
                 <div style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
-                    <img src={Logo} alt="saber-ai" className='logo-image' />
+                    <img src={Logo} alt="saber-ai" className='logo-image card' />
                     <div className='logo-name'>SABER AI</div>
                 </div>
                 <div className="page-heading">

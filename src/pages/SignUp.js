@@ -52,7 +52,7 @@ class SignUp extends React.Component {
                             Already have an account? <a href="/login" >Login Here</a>
                         </div>
                         <div style={{fontSize:"0.75rem", textAlign:"center"}}>
-                            By clicking Sign Up, you agree to our Terms of Service <br /> and that you have read our Privacy Policy
+                            By clicking Register, you agree to our Terms of Service <br /> and that you have read our Privacy Policy
                         </div>
                     </Card>
                 </div>

@@ -31,53 +31,53 @@ function Toolbar() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink style={{textDecoration:"none"}} href="/">
+              <NavLink className="toolbar-comp" style={{textDecoration:"none"}} href="/">
                 <Button style={{padding:"0.25rem 0.5rem", fontSize:"1rem", backgroundColor:"#BEC8E4"}}>
                   Home
                 </Button>
               </NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <UncontrolledDropdown className="toolbar-comp" nav inNavbar>
               <Button style={{padding:"0.25rem 0.5rem", margin:"0.5rem", fontSize: "1rem"}}>
                 <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
                   Services
                 </DropdownToggle>
               </Button>
-              <DropdownMenu style={{backgroundColor: "#BEC8E4"}} end>
-                <DropdownItem href='/email-gen'>Email Gen</DropdownItem>
-                <DropdownItem href='/blog-article'>Blog Article</DropdownItem>
-                <DropdownItem href='/twitter-assist'>Twitter Assist</DropdownItem>
-                <DropdownItem href='/cold-email'>Cold Email</DropdownItem>
-                <DropdownItem href='/social-ads'>Social Ads</DropdownItem>
-                <DropdownItem href='/code-gen'>Code Gen</DropdownItem>
+              <DropdownMenu style={{backgroundColor: "#E4EBF5", boxShadow: "5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF"}} end>
+                <DropdownItem className='toolbar-comp' href='/email-gen'>Email Gen</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/blog-article'>Blog Article</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/twitter-assist'>Twitter Assist</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/cold-email'>Cold Email</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/social-ads'>Social Ads</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/code-gen'>Code Gen</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
-                <Button className="toolbar-comp" style={{padding:"0.25rem 0.5rem"}}>
+              <NavLink className="toolbar-comp" style={{textDecoration:"none"}} href="/ask-me-anything">
+                <Button style={{padding:"0.25rem 0.5rem"}}>
                   Ask me anything
                 </Button>
               </NavLink>
             </NavItem>
           </Nav>
-          <NavLink style={{textDecoration:"none"}} href="/payments">
-            <Button style={{padding:"0.25rem 0.5rem"}}>
+          <NavLink className="toolbar-comp" style={{textDecoration:"none"}} href="/payments">
+            <Button>
               UPGRADE TO PRO
             </Button>
           </NavLink>
-          <UncontrolledDropdown>
+          <UncontrolledDropdown className="toolbar-comp">
               <Button style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>
                 <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
                   Profile
                 </DropdownToggle>
               </Button>
-              <DropdownMenu end>
-                <DropdownItem href='/manage-account'>Manage Account</DropdownItem>
-                <DropdownItem href='/help'>Help</DropdownItem>
-                <DropdownItem href='/payments'>Pricing</DropdownItem>
-                <DropdownItem href='https://www.saber-ai.com/t-c'>Terms & Policies</DropdownItem>
+              <DropdownMenu style={{backgroundColor: "#E4EBF5", boxShadow: "5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF"}} end>
+                <DropdownItem className='toolbar-comp' href='/manage-account'>Manage Account</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/help'>Help</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='/payments'>Pricing</DropdownItem>
+                <DropdownItem className='toolbar-comp' href='https://www.saber-ai.com/t-c'>Terms & Policies</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>Log Out</DropdownItem>
+                <DropdownItem className='toolbar-comp'>Log Out</DropdownItem>
               </DropdownMenu>
           </UncontrolledDropdown>
         </Collapse>

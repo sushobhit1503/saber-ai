@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create ({
-    baseURL: "http://localhost:8080/",
+    baseURL: "http://www.saberwrite.com:8080/",
     headers: {
         Authorization: ""
     },
@@ -9,7 +9,7 @@ const axiosInstance = axios.create ({
 })
 
 export const axiosAuthInstance = axios.create ({
-    baseURL: "http://saberwrite.com/",
+    baseURL: "http://www.saberwrite.com:8080/",
     headers: {
         Authorization: `${localStorage.getItem("token")}`
     },

@@ -23,11 +23,12 @@
     color: var(--green-color);
 }
 
-.toolbar-comp:hover, .toolbar-comp {
+.toolbar-comp:hover {
     border: none;
     outline: none;
     background: none;
     box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 575px) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Input, Label } from "reactstrap";
-import { Card, Button, Tooltip, Switch } from "ui-neumorphism";
+import { Button, Tooltip, Switch } from "ui-neumorphism";
 import Slider from "react-input-slider";
 import "../styles/ServicePage.css";
 
@@ -10,7 +10,7 @@ class BlogArticle extends React.Component {
         this.state = {
             keywords: "",
             articleTitle: "",
-            reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards",
+            reply: "",
             words: 0,
             ref1: "",
             ref2: "",
@@ -46,7 +46,7 @@ class BlogArticle extends React.Component {
                         <div className="page-card-label">Keywords</div>
                         <Input className="input mailBox" height={320} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
                         <div>Give keywords that are better searchable</div>
-                        <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
+                        <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
                             <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br />
                             <Label style={{padding:"5px"}}>Tone of the email</Label>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "reactstrap";
-import { Card, Button, Tooltip } from "ui-neumorphism";
+import { Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class CodeGen extends React.Component {
@@ -9,7 +9,7 @@ class CodeGen extends React.Component {
         this.state = {
             usecase: "",
             language: "",
-            reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards"
+            reply: ""
         }
     }
     render () {

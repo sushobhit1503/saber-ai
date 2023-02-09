@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "reactstrap";
-import { Card, Button, Tooltip } from "ui-neumorphism";
+import { Button, Tooltip } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class GenTweets extends React.Component {
@@ -8,7 +8,7 @@ class GenTweets extends React.Component {
         super ()
         this.state = {
             tweet: "",
-            reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards"
+            reply: ""
         }
     }
     render () {

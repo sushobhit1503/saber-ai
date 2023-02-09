@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, Label } from "reactstrap";
 import Slider from "react-input-slider";
-import { Card, Button, Tooltip, Switch} from "ui-neumorphism";
+import { Button, Tooltip, Switch} from "ui-neumorphism";
 import "../styles/ServicePage.css";
 
 class EmailGen extends React.Component {
@@ -10,7 +10,7 @@ class EmailGen extends React.Component {
         this.state = {
             previousMail: "",
             bulletPoints: "",
-            reply: "Dear Saber, Thanks for inviting me to your wedding ! Will surely attend it.Thanks.Regards",
+            reply: "",
             showAdvancedOptions: false,
             sales: false,
             seo: false,
@@ -48,7 +48,7 @@ class EmailGen extends React.Component {
                         <Input className="input mailBox" placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
                         <div className="page-card-label">Enter Bullet Points</div>
                         <Input className="input" placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
-                        <div onClick={toggleAdvanced} className="advanced-options">Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
+                        <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
                             <Switch onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a sales email? <br />
                             <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 

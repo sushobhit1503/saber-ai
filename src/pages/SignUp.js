@@ -27,9 +27,9 @@ class SignUp extends React.Component {
             }).catch (err => console.log(err.message))
         }
         return (
-            <div>
+            <div style={{marginTop:"2rem"}}>
                 <div style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
-                    <img src={Logo} alt="saber-ai" className='logo-image' />
+                    <img src={Logo} alt="saber-ai" className='logo-image card' />
                     <div className='logo-name'>SABER AI</div>
                 </div>
                 <div className="page-heading">

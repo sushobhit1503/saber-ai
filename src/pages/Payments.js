@@ -5,8 +5,7 @@ import { Divider, Card } from "ui-neumorphism";
 import { Button } from "reactstrap";
 import PaymentsPart from "../components/PaymentsPart";
 
-class Payments extends React.Component {
-    render () {
+const Payments = () => {
         return (
             <div style={{marginBottom:"3rem"}}>
                 <div className="page-heading card">
@@ -82,7 +81,6 @@ class Payments extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Payments

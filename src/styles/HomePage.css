@@ -29,9 +29,6 @@
 .home-page-services-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    align-content: space-between;
-    justify-content: space-between;
     margin-bottom: 3rem;
 }
 
@@ -44,6 +41,9 @@
 
 .home-page-services-card {
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 25%;
     margin: 2rem;
     padding: 1.5rem 1rem 1rem 1rem;
@@ -60,6 +60,9 @@
 @media screen and (max-width: 1075px) {
     .home-page-services-card {
         width: 300px;
+    }
+    .home-container {
+        margin: 1rem 3.5rem 0rem 3.5rem;
     }
 }
 
@@ -80,8 +83,27 @@
     }
 }
 
+@media screen and (max-width: 575px) {
+    .page-heading-home {
+        margin-top: 1rem;
+    }
+    .home-container {
+        margin: 1rem 2rem 0rem 2rem;
+    }
+    .home-page-desc {
+        margin-top: 1.5rem;
+    }
+    .chat-image-container {
+        width: 8rem;
+    }
+}
+
 @media screen and (max-width: 475px) {
     .home-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-container1 {
         flex-direction: column;
         align-items: center;
     }

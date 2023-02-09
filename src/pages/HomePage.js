@@ -3,7 +3,7 @@ import HomeIllustration from "../assets/home.gif"
 import ChatIllustration from "../assets/chat.gif"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
-import { Button, Card, CardContent, Body2, H6 } from "ui-neumorphism"
+import { Button, CardContent, Body2, H6 } from "ui-neumorphism"
 import ServiceData from "../data/Data Files.json"
 
 class HomePage extends React.Component {
@@ -15,7 +15,7 @@ class HomePage extends React.Component {
                         <img src={HomeIllustration} alt="saber" className="home-page-illustration" />
                     </div>
                     <div style={{color:"var(--white-color)"}}>
-                        <div className="page-heading">WORLD CLASS AI WRITING SOLUTIONS</div>
+                        <div className="page-heading page-heading-home">WORLD CLASS AI WRITING SOLUTIONS</div>
                         <div style={{textAlign:"left"}} className="page-description home-page-desc">
                             Cut down the average emailing time from 28% to 9% ={`>`} Save 40 hours every month. <div style={{marginBottom: "1.5rem"}}></div>
                             Ultimate platform for all your content needs. <div style={{marginBottom: "1.5rem"}}></div>
@@ -36,21 +36,25 @@ class HomePage extends React.Component {
                     <div className="home-page-services">
                         {ServiceData.map(eachElement => {
                             return (
-                                <Card width={350} className="home-page-services-card">
-                                    <CardContent>
-                                        <H6 secondary style={{ marginBottom: '4px' }} >
-                                            {eachElement.name}
-                                        </H6>
-                                        <Body2>
-                                            {eachElement.description}
-                                        </Body2>
-                                    </CardContent>
-                                    <Button>
-                                        <a style={{textDecoration:"none"}} href={eachElement.link}>
-                                            TRY NOW
-                                        </a>
-                                    </Button>
-                                </Card>
+                                <div className="home-page-services-card card">
+                                    <div>
+                                        <CardContent style={{margin:"0px"}}>
+                                            <H6 secondary style={{ marginBottom: '4px' }} >
+                                                {eachElement.name}
+                                            </H6>
+                                            <Body2>
+                                                {eachElement.description}
+                                            </Body2>
+                                        </CardContent>
+                                    </div>
+                                    <div>
+                                        <Button>
+                                            <a style={{textDecoration:"none"}} href={eachElement.link}>
+                                                TRY NOW
+                                            </a>
+                                        </Button>
+                                    </div>
+                                </div>
                             )
                         })}
                     </div>
@@ -63,7 +67,8 @@ class HomePage extends React.Component {
                     <div className="chat-text-container">
                         <div className="page-heading">BEST RESPONSES</div>
                         <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
-                            
+                            AI at Your Fingertips with Ask Me Anything. Get accurate answers, fast. 
+                            Experience the convenience of a personal AI search engine. Chat Your Way to Knowledge!
                         </div>
                         <div className="home-action-button">
                             <Button>

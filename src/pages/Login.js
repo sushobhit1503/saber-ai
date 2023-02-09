@@ -1,28 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input, Label } from "reactstrap";
 import { Card, Button} from "ui-neumorphism";
 import { login } from "../backend-calls/authentication";
 import "../styles/ServicePage.css";
 import Logo from '../assets/saber-logo.png';
+import { useCookies } from "react-cookie";
 
-class Login extends React.Component {
-    constructor () {
-        super ()
-        this.state = {
-            email: "",
-            password: ""
-        }
-    }
-    render () {
-        const onChange = (event) => {
+const Login = () => {
+    const [email, setEmail] = useState ("")
+    const [password, setPassword] = useState ("")
+    const [cookies, setCookies] = useCookies (["user"])
+    const onChange = (event) => {
             const { name, value } = event.target
-            this.setState ({[name]: value})
+            if (name === "email")
+                setEmail(value)
+            else 
+                setPassword (value)
         }
         const loginCall = () => {
-            const response = login(this.state.email, this.state.password)
+            const response = login(email, password)
             response.then (result => {
                 console.log(result);
-                localStorage.setItem("token", result.data)
+                setCookies ("user", result.data, {path: "/"})
+                console.log(cookies);
             }).catch (err => console.log(err.message))
         }
         return (
@@ -37,9 +37,9 @@ class Login extends React.Component {
                 <div style={{display:"flex", justifyContent:"center"}}>
                     <Card className="page-card">
                         <Label>Enter your email</Label>
-                        <Input className="input" placeholder="Your Email" onChange={onChange} value={this.state.email} name="email" />
+                        <Input className="input" placeholder="Your Email" onChange={onChange} value={email} name="email" />
                         <Label>Enter Password</Label>
-                        <Input className="input" placeholder="Password" onChange={onChange} value={this.state.password} name="password" type="password" />
+                        <Input className="input" placeholder="Password" onChange={onChange} value={password} name="password" type="password" />
                         <Button onClick={loginCall} style={{marginTop: "1rem", marginBottom: "1rem"}}>
                             Login
                         </Button>
@@ -50,7 +50,6 @@ class Login extends React.Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Login

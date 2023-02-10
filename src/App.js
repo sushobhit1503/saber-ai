@@ -12,18 +12,19 @@ import Home from './pages/HomePage';
 import Payments from './pages/Payments';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
       <Toolbar />
       <Routes>
-        <Route exact path="/email-gen" element={<EmailGen />} />
-        <Route exact path="/blog-article" element={<BlogArticle />} />
-        <Route exact path="/twitter-assist" element={<GenTweets />} />
-        <Route exact path="/cold-email" element={<ColdEmail />} />
-        <Route exact path="/social-ads" element={<SocialMedia />} />
-        <Route exact path="/code-gen" element={<CodeGen />} />
+        <Route exact path="/email-gen" element={<PrivateRoute><EmailGen /></PrivateRoute>} />
+        <Route exact path="/blog-article" element={<PrivateRoute><BlogArticle /></PrivateRoute>} />
+        <Route exact path="/twitter-assist" element={<PrivateRoute><GenTweets /></PrivateRoute>} />
+        <Route exact path="/cold-email" element={<PrivateRoute><ColdEmail /></PrivateRoute>} />
+        <Route exact path="/social-ads" element={<PrivateRoute><SocialMedia /></PrivateRoute>} />
+        <Route exact path="/code-gen" element={<PrivateRoute><CodeGen /></PrivateRoute>} />
         <Route exact path="/manage-account" element={<Profile />} />
         <Route exact path="/payments" element={<Payments />} />
         <Route exact path="/sign-up" element={<SignUp />} />

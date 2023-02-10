@@ -15,11 +15,14 @@ import {
 import Logo from '../assets/saber-logo.png';
 import { Card } from 'ui-neumorphism';
 import "../styles/Toolbar.css";
+import { useCookies } from 'react-cookie';
 
 function Toolbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropDown, setDropDown] = useState (false);
   const [isDropDown1, setDropDown1] = useState (false);
+  const [cookies, setCookie]= useCookies()
+
   const toggle = () => setIsOpen(!isOpen);
   const changeDropDown = () => {
     setDropDown(true)
@@ -78,6 +81,7 @@ function Toolbar() {
               UPGRADE TO PRO
             </div>
           </NavLink>
+          {cookies.user ? 
           <UncontrolledDropdown onMouseOut={changeDropDownClose1} onMouseOver={changeDropDown1}>
               <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0rem"}}>
                 <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
@@ -92,7 +96,12 @@ function Toolbar() {
                 <DropdownItem divider />
                 <DropdownItem className='toolbar-comp'>Log Out</DropdownItem>
               </DropdownMenu>
-          </UncontrolledDropdown>
+          </UncontrolledDropdown> : 
+          <NavLink style={{textDecoration:"none"}} href="/login">
+            <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
+              LOGIN
+            </div>
+        </NavLink>}
         </Collapse>
       </Navbar>
     </Card>

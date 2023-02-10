@@ -4,12 +4,12 @@ import { Card, Button} from "ui-neumorphism";
 import { login } from "../backend-calls/authentication";
 import "../styles/ServicePage.css";
 import Logo from '../assets/saber-logo.png';
-import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState ("")
     const [password, setPassword] = useState ("")
-    const [cookies, setCookies] = useCookies (["user"])
+    const navigate = useNavigate ()
     const onChange = (event) => {
             const { name, value } = event.target
             if (name === "email")
@@ -20,9 +20,9 @@ const Login = () => {
         const loginCall = () => {
             const response = login(email, password)
             response.then (result => {
-                console.log(result);
-                setCookies ("user", result.data, {path: "/"})
-                console.log(cookies);
+                console.log(result.data);
+                localStorage.setItem("token", result.data)
+                navigate("/")
             }).catch (err => console.log(err.message))
         }
         return (

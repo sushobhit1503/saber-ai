@@ -28,7 +28,9 @@ class SocialMedia extends React.Component {
         const submitAd = () => {
             const { title } = this.state
             const res = socialAd(title)
-            console.log(res);
+            res.then(result => {
+                console.log(result);
+            }).catch(err => console.log(err.message))
         }
         return (
             <div>

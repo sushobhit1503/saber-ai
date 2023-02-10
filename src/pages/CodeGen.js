@@ -21,7 +21,9 @@ class CodeGen extends React.Component {
         const submitCode = () => {
             const { usecase, language } = this.state
             const res = codeGen(usecase, language)
-            console.log(res);
+            res.then(result => {
+                console.log(result);
+            }).catch (err => console.log(err.message))
         }
         return (
             <div>

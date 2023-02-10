@@ -1,4 +1,4 @@
-import axiosInstance from './axiosInstance';
+import axiosInstance, {axiosAuthInstance} from './axiosInstance';
 
 export const emailGen = async (prevEmail, bulletPoints, isSales, maxLength, useSeo, tone) => {
     const data = {
@@ -88,7 +88,7 @@ export const socialAd = async (socialMedia) => {
         socialMedia: socialMedia
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/social-media",
             method:"post",
             data: data
@@ -96,17 +96,17 @@ export const socialAd = async (socialMedia) => {
         return res.data;
         
     } catch (error) {
-        return "Some Error Occurred"
+        return error.message
     }
 }
 
 export const codeGen = async (purpose, language) => {
     const data = {
-        purpose: purpose,
-        language: language
+        "purpose": purpose,
+        "language": language
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/code-gen",
             method:"post",
             data: data
@@ -114,6 +114,6 @@ export const codeGen = async (purpose, language) => {
         return res.data;
         
     } catch (error) {
-        return "Some Error Occurred"
+        return error.message
     }
 }

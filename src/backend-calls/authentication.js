@@ -37,3 +37,21 @@ export const signup = async (name, email, password, confirmPassword) => {
         return error.message
     }
 }
+
+export const verifyEmail = async (email, otp) => {
+    const data = {
+        email: email,
+        otp: otp
+    }
+    try {
+        const res = await axiosInstance ({
+            url: "/api/verifyEmail",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return error.message
+    }
+}

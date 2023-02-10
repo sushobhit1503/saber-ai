@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "reactstrap";
 import { Button, Tooltip } from "ui-neumorphism";
+import { codeGen } from "../backend-calls/services";
 import "../styles/ServicePage.css";
 
 class CodeGen extends React.Component {
@@ -17,6 +18,11 @@ class CodeGen extends React.Component {
             const { name, value } = event.target
             this.setState ({[name]: value})
         }
+        const submitCode = () => {
+            const { usecase, language } = this.state
+            const res = codeGen(usecase, language)
+            console.log(res);
+        }
         return (
             <div>
                 <div className="page-heading">
@@ -31,7 +37,7 @@ class CodeGen extends React.Component {
                         <Input className="input" placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
                         <div className="page-card-label">Programming Language</div>
                         <Input className="input" placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
-                        <Button style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitCode} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Code
                         </Button>
                     </div>

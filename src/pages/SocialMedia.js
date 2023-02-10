@@ -1,6 +1,7 @@
 import React from "react";
 import { Input, Label } from "reactstrap";
 import { Button, Tooltip, Switch } from "ui-neumorphism";
+import { socialAd } from "../backend-calls/services";
 import "../styles/ServicePage.css";
 
 class SocialMedia extends React.Component {
@@ -23,6 +24,11 @@ class SocialMedia extends React.Component {
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
+        }
+        const submitAd = () => {
+            const { title } = this.state
+            const res = socialAd(title)
+            console.log(res);
         }
         return (
             <div>
@@ -49,7 +55,7 @@ class SocialMedia extends React.Component {
                                 <option value="Sales">Sales</option>
                             </Input>
                         </div>
-                        <Button style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitAd} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Ad
                         </Button>
                     </div>

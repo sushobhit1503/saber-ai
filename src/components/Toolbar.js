@@ -51,8 +51,8 @@ function Toolbar() {
               </NavLink>
             </NavItem>
             <UncontrolledDropdown onMouseOut={changeDropDownClose} onMouseOver={changeDropDown} nav inNavbar>
-              <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0rem"}}>
-                <DropdownToggle onMou style={{textDecoration:"none"}} nav caret>
+              <div className='toolbar-comp card' style={{fontSize:"0.8rem", marginTop:"7px", padding:"0rem"}}>
+                <DropdownToggle style={{textDecoration:"none", color:"black"}} nav caret>
                   Services
                 </DropdownToggle>
               </div>
@@ -79,7 +79,7 @@ function Toolbar() {
             </div>
           </NavLink>
           <UncontrolledDropdown onMouseOut={changeDropDownClose1} onMouseOver={changeDropDown1}>
-              <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
+              <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0rem"}}>
                 <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
                   Profile
                 </DropdownToggle>

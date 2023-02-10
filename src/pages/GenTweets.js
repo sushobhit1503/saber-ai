@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "reactstrap";
 import { Button, Tooltip } from "ui-neumorphism";
+import { tweetGen } from "../backend-calls/services";
 import "../styles/ServicePage.css";
 
 class GenTweets extends React.Component {
@@ -16,6 +17,11 @@ class GenTweets extends React.Component {
             const { name, value } = event.target
             this.setState ({[name]: value})
         }
+        const submitTweet = () => {
+            const { tweet } = this.state
+            const res = tweetGen(tweet)
+            console.log(res);
+        }
         return (
             <div>
                 <div className="page-heading">
@@ -30,7 +36,7 @@ class GenTweets extends React.Component {
                         <div className="page-card-label">Tweet Prompt</div>
                         <Input className="input" placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
-                        <Button style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitTweet} style={{marginTop: "1rem", width:"100%"}}>
                             Get Recommendations
                         </Button>
                     </div>

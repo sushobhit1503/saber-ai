@@ -3,6 +3,7 @@ import { Input, Label } from "reactstrap";
 import Slider from "react-input-slider";
 import { Button, Tooltip, Switch } from "ui-neumorphism";
 import "../styles/ServicePage.css";
+import { coldEmail } from "../backend-calls/services";
 
 class ColdEmail extends React.Component {
     constructor () {
@@ -26,6 +27,11 @@ class ColdEmail extends React.Component {
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
+        }
+        const submitEmail = () => {
+            const { companyName, serviceDescription} = this.state
+            const res = coldEmail(companyName, serviceDescription)
+            console.log(res);
         }
         return (
             <div>
@@ -57,7 +63,7 @@ class ColdEmail extends React.Component {
                             <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
                             {this.state.words} words <br />
                         </div>
-                        <Button style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email
                         </Button>
                     </div>

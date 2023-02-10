@@ -3,6 +3,7 @@ import { Input, Label } from "reactstrap";
 import { Button, Tooltip, Switch } from "ui-neumorphism";
 import Slider from "react-input-slider";
 import "../styles/ServicePage.css";
+import { blogArticle } from "../backend-calls/services";
 
 class BlogArticle extends React.Component {
     constructor () {
@@ -28,6 +29,11 @@ class BlogArticle extends React.Component {
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
+        }
+        const submitBlogs = () => {
+            const { keywords, articleTitle, words, ref1, ref2, ref3, seo } = this.state
+            const res = blogArticle("", articleTitle, "", keywords, words, seo, ref1, ref2, ref3)
+            console.log(res);
         }
         return (
             <div>
@@ -64,7 +70,7 @@ class BlogArticle extends React.Component {
                             <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 2" onChange={onChange} value={this.state.ref2} name="ref2" type="text" />
                             <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 3" onChange={onChange} value={this.state.ref3} name="ref3" type="text" />
                         </div>
-                        <Button style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitBlogs} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Article
                         </Button>
                     </div>

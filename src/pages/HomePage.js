@@ -1,6 +1,7 @@
 import React from "react"
 import HomeIllustration from "../assets/home.gif"
 import ChatIllustration from "../assets/chat.gif"
+import Extension from "../assets/Extension.mov"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
 import { Button, CardContent, Body2, H6 } from "ui-neumorphism"
@@ -77,6 +78,20 @@ class HomePage extends React.Component {
                                 </a>
                             </Button>
                         </div>
+                    </div>
+                </div>
+                <div className="page-heading card">UPGRADE TO PREMIUM</div>
+                <div className="home-container1">
+                    <div className="chat-text-container">
+                        <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
+                            Premium Members get access to our magical browser and Outlook extensions. 
+                            Compose and Reply to emails in one click! Right from your inbox.
+                        </div>
+                    </div>
+                    <div className="chat-image-container">
+                        <video loop autoPlay>
+                            <source src={Extension} type="video/mov" />
+                        </video>
                     </div>
                 </div>
             </div>

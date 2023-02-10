@@ -1,14 +1,114 @@
 import axiosInstance from './axiosInstance';
 
-export const emailGen = async (loginInput, inputType) => {
+export const emailGen = async (prevEmail, bulletPoints, isSales, maxLength, useSeo, tone) => {
     const data = {
-        loginInput: loginInput,
-        inputType: inputType
+        prev_email: prevEmail,
+        bullet_points: bulletPoints,
+        is_sales_email: isSales,
+        max_length: maxLength,
+        use_SEO: useSeo,
+        tone: tone
     }
     try {
         const res = await axiosInstance ({
-            url: "/user_profile",
-            method:"get",
+            url: "/api/email-gen",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
+    }
+}
+
+export const blogArticle = async (writeUpType, title, description, keywords, maxLength, useSeo, tone, url1, url2, url3) => {
+    const data = {
+        writeup_type: writeUpType,
+        title: title,
+        description: description,
+        keywords: keywords,
+        max_length: maxLength,
+        use_SEO: useSeo,
+        tone: tone,
+        url1: url1,
+        url2: url2,
+        url3: url3
+    }
+    try {
+        const res = await axiosInstance ({
+            url: "/api/blog-article",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
+    }
+}
+
+export const tweetGen = async (title) => {
+    const data = {
+        title: title
+    }
+    try {
+        const res = await axiosInstance ({
+            url: "/api/tweet-ideas",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
+    }
+}
+
+export const coldEmail = async (companyName, coldEmails) => {
+    const data = {
+        companyName: companyName,
+        title: coldEmails,
+    }
+    try {
+        const res = await axiosInstance ({
+            url: "/api/cold-emails",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
+    }
+}
+
+export const socialAd = async (socialMedia) => {
+    const data = {
+        socialMedia: socialMedia
+    }
+    try {
+        const res = await axiosInstance ({
+            url: "/api/social-media",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
+    }
+}
+
+export const codeGen = async (purpose, language) => {
+    const data = {
+        purpose: purpose,
+        language: language
+    }
+    try {
+        const res = await axiosInstance ({
+            url: "/api/code-gen",
+            method:"post",
             data: data
         })
         return res.data;

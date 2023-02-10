@@ -2,6 +2,7 @@ import React from "react";
 import { Input, Label } from "reactstrap";
 import Slider from "react-input-slider";
 import { Button, Tooltip, Switch} from "ui-neumorphism";
+import { emailGen } from "../backend-calls/services"
 import "../styles/ServicePage.css";
 
 class EmailGen extends React.Component {
@@ -31,6 +32,11 @@ class EmailGen extends React.Component {
         }
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
+        }
+        const submitEmail = () => {
+            const { previousMail, bulletPoints, sales, seo, tone, words } = this.state
+            const res = emailGen(previousMail, bulletPoints, sales, words, seo, tone)
+            console.log(res);
         }
         return (
             <div>
@@ -63,7 +69,7 @@ class EmailGen extends React.Component {
                             <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
                             {this.state.words} words
                         </div>
-                        <Button style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email
                         </Button>
                     </div>

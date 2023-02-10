@@ -16,12 +16,15 @@ import Logo from '../assets/saber-logo.png';
 import { Card } from 'ui-neumorphism';
 import "../styles/Toolbar.css";
 import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+import { logOut } from '../backend-calls/authentication';
 
 function Toolbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropDown, setDropDown] = useState (false);
   const [isDropDown1, setDropDown1] = useState (false);
   const [cookies, setCookie]= useCookies()
+  const navigate = useNavigate ()
 
   const toggle = () => setIsOpen(!isOpen);
   const changeDropDown = () => {
@@ -35,6 +38,13 @@ function Toolbar() {
   }
   const changeDropDownClose1 = () => {
     setDropDown1(false)
+  }
+  const submitLogout = () => {
+    const res = logOut ()
+    res.then((result) => {
+      console.log(result)
+    }).catch (err => console.log(err.message))
+    navigate ("/login")
   }
   return (
     <Card>
@@ -94,7 +104,7 @@ function Toolbar() {
                 <DropdownItem className='toolbar-comp' href='/payments'>Pricing</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='https://www.saber-ai.com/t-c'>Terms & Policies</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem className='toolbar-comp'>Log Out</DropdownItem>
+                <DropdownItem onClick={submitLogout} className='toolbar-comp'>Log Out</DropdownItem>
               </DropdownMenu>
           </UncontrolledDropdown> : 
           <NavLink style={{textDecoration:"none"}} href="/login">

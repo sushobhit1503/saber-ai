@@ -4,6 +4,7 @@ import { Card, Button } from "ui-neumorphism";
 import "../styles/ServicePage.css";
 import { signup } from "../backend-calls/authentication";
 import Logo from '../assets/saber-logo.png';
+import { Navigate } from "react-router-dom";
 
 class SignUp extends React.Component {
     constructor () {
@@ -12,7 +13,8 @@ class SignUp extends React.Component {
             name: "",
             email: "",
             password: "",
-            confirmPassword: ""
+            confirmPassword: "",
+            isOtp: false
         }
     }
     render () {
@@ -24,8 +26,12 @@ class SignUp extends React.Component {
             const response = signup(this.state.name, this.state.email, this.state.password, this.state.confirmPassword)
             response.then (result => {
                 console.log(result);
+                localStorage.setItem("email", this.state.email)
+                this.setState ({isOtp: true})
             }).catch (err => console.log(err.message))
         }
+
+        if (this.state.isOtp) return <Navigate to="/otp" />
         return (
             <div style={{marginTop:"2rem"}}>
                 <div style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>

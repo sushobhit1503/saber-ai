@@ -1,13 +1,9 @@
-import axiosInstance from './axiosInstance';
+import {axiosAuthInstance} from './axiosInstance';
 
-export const profileInfo = async (loginInput, inputType) => {
-    const data = {
-        loginInput: loginInput,
-        inputType: inputType
-    }
+export const profileInfo = async () => {
     try {
-        const res = await axiosInstance ({
-            url: "/user_profile",
+        const res = await axiosAuthInstance ({
+            url: "/api/profile",
             method:"get",
             data: data
         })

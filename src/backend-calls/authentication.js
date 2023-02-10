@@ -1,4 +1,4 @@
-import axiosInstance from './axiosInstance';
+import axiosInstance, {axiosAuthInstance} from './axiosInstance';
 
 export const login = async (email, password) => {
     const data = {
@@ -48,6 +48,19 @@ export const verifyEmail = async (email, otp) => {
             url: "/api/verifyEmail",
             method:"post",
             data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return error.message
+    }
+}
+
+export const logOut = async () => {
+    try {
+        const res = await axiosAuthInstance ({
+            url: "/api/logout",
+            method:"post"
         })
         return res.data;
         

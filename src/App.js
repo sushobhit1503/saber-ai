@@ -13,6 +13,7 @@ import Payments from './pages/Payments';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
+import Otp from './pages/Otp';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/code-gen" element={<PrivateRoute><CodeGen /></PrivateRoute>} />
         <Route exact path="/manage-account" element={<Profile />} />
         <Route exact path="/payments" element={<Payments />} />
+        <Route exact path="/otp" element={<Otp />} />
         <Route exact path="/sign-up" element={<SignUp />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/" element={<Home />} />

@@ -17,13 +17,13 @@ const Login = () => {
             else 
                 setPassword (value)
         }
-        const loginCall = () => {
-            const response = login(email, password)
-            response.then (result => {
-                console.log(result.data);
-                localStorage.setItem("token", result.data)
+        const loginCall = async() => {
+            const response = await login(email, password)
+            // response.then (result => {
+                console.log(response.data);
+                localStorage.setItem("token", response.data)
                 navigate("/")
-            }).catch (err => console.log(err.message))
+            // }).catch (err => console.log(err.message))
         }
         return (
             <div style={{marginTop: "5rem"}}>

@@ -18,9 +18,9 @@ class CodeGen extends React.Component {
             const { name, value } = event.target
             this.setState ({[name]: value})
         }
-        const submitCode = async () => {
+        const submitCode = () => {
             const { usecase, language } = this.state
-            const res = await codeGen(usecase, language)
+            const res = codeGen(usecase, language)
             res.then(result => {
                 console.log(result);
             }).catch (err => console.log(err.message))

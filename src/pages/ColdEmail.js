@@ -28,9 +28,10 @@ class ColdEmail extends React.Component {
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
         }
-        const submitEmail = () => {
+        const submitEmail = async () => {
             const { companyName, serviceDescription} = this.state
-            const res = coldEmail(companyName, serviceDescription)
+            console.log('email')
+            const res = await coldEmail(companyName, serviceDescription)
             console.log(res);
         }
         return (

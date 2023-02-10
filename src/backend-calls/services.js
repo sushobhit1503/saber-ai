@@ -10,7 +10,7 @@ export const emailGen = async (prevEmail, bulletPoints, isSales, maxLength, useS
         tone: tone
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/email-gen",
             method:"post",
             data: data

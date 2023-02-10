@@ -33,10 +33,12 @@ class EmailGen extends React.Component {
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
         }
-        const submitEmail = async () => {
+        const submitEmail = () => {
             const { previousMail, bulletPoints, sales, seo, tone, words } = this.state
-            const res = await emailGen(previousMail, bulletPoints, sales, words, seo, tone)
-            console.log(res);
+            const res = emailGen(previousMail, bulletPoints, sales, words, seo, tone)
+            res.then (result => {
+                this.setState ({result: result.data})
+            }).catch (err => console.log(err.message))
         }
         return (
             <div>

@@ -33,7 +33,12 @@ class BlogArticle extends React.Component {
         const submitBlogs = () => {
             const { keywords, articleTitle, words, ref1, ref2, ref3, seo } = this.state
             const res = blogArticle("", articleTitle, "", keywords, words, seo, ref1, ref2, ref3)
-            console.log(res);
+            res.then (result => {
+                this.setState ({result: result.data})
+            }).catch (err => console.log(err.message))
+        }
+        const copyToClipBoard = () => {
+            navigator.clipboard.writeText(this.state.reply)
         }
         return (
             <div>
@@ -78,7 +83,7 @@ class BlogArticle extends React.Component {
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
-                        <Button style={{marginTop: "1rem"}}>
+                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

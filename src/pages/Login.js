@@ -19,11 +19,9 @@ const Login = () => {
         }
         const loginCall = async() => {
             const response = await login(email, password)
-            // response.then (result => {
-                console.log(response.data);
-                localStorage.setItem("token", response.data)
-                navigate("/")
-            // }).catch (err => console.log(err.message))
+            console.log(response.data);
+            localStorage.setItem("token", response.data)
+            navigate("/")
         }
         return (
             <div style={{marginTop: "5rem"}}>

@@ -30,9 +30,11 @@ class ColdEmail extends React.Component {
         }
         const submitEmail = async () => {
             const { companyName, serviceDescription} = this.state
-            console.log('email')
             const res = await coldEmail(companyName, serviceDescription)
-            console.log(res);
+            this.setState ({result: res.data})
+        }
+        const copyToClipBoard = () => {
+            navigator.clipboard.writeText(this.state.reply)
         }
         return (
             <div>
@@ -72,7 +74,7 @@ class ColdEmail extends React.Component {
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
-                        <Button style={{marginTop: "1rem"}}>
+                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

@@ -20,7 +20,12 @@ class GenTweets extends React.Component {
         const submitTweet = () => {
             const { tweet } = this.state
             const res = tweetGen(tweet)
-            console.log(res);
+            res.then (result => {
+                this.setState ({result: result})
+            }).catch (err => console.log(err.message))
+        }
+        const copyToClipBoard = () => {
+            navigator.clipboard.writeText(this.state.reply)
         }
         return (
             <div>
@@ -44,7 +49,7 @@ class GenTweets extends React.Component {
                         <div className="page-card-heading">SEE THE RESULTS HERE</div>
                         <div className="page-card-label">Reply</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
-                        <Button style={{marginTop: "1rem"}}>
+                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

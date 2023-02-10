@@ -36,7 +36,7 @@ export const blogArticle = async (writeUpType, title, description, keywords, max
         url3: url3
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/blog-article",
             method:"post",
             data: data
@@ -53,7 +53,7 @@ export const tweetGen = async (title) => {
         title: title
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/tweet-ideas",
             method:"post",
             data: data
@@ -71,7 +71,7 @@ export const coldEmail = async (companyName, coldEmails) => {
         title: coldEmails,
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/cold-emails",
             method:"post",
             data: data

@@ -17,6 +17,10 @@
     transition: all 0.1s ease-in-out;
 }
 
+.drop-down-show {
+    display: block;
+}
+
 .toolbar-content:hover {
     border: 1px solid var(--white-color);
     border-radius: 8px;

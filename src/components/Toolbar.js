@@ -13,13 +13,26 @@ import {
   DropdownItem
 } from 'reactstrap';
 import Logo from '../assets/saber-logo.png';
-import { Button, Card } from 'ui-neumorphism';
+import { Card } from 'ui-neumorphism';
 import "../styles/Toolbar.css";
 
 function Toolbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropDown, setDropDown] = useState (false);
+  const [isDropDown1, setDropDown1] = useState (false);
   const toggle = () => setIsOpen(!isOpen);
-
+  const changeDropDown = () => {
+    setDropDown(true)
+  }
+  const changeDropDownClose = () => {
+    setDropDown(false)
+  }
+  const changeDropDown1 = () => {
+    setDropDown1(true)
+  }
+  const changeDropDownClose1 = () => {
+    setDropDown1(false)
+  }
   return (
     <Card>
       <Navbar light expand="sm">
@@ -32,18 +45,18 @@ function Toolbar() {
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/">
-                <Button style={{padding:"0.25rem 0.5rem", fontSize:"1rem", backgroundColor:"#BEC8E4"}}>
+                <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
                   Home
-                </Button>
+                </div>
               </NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <Button style={{padding:"0.25rem 0.5rem", margin:"0.5rem", fontSize: "1rem"}}>
-                <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
+            <UncontrolledDropdown onMouseOut={changeDropDownClose} onMouseOver={changeDropDown} nav inNavbar>
+              <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0rem"}}>
+                <DropdownToggle onMou style={{textDecoration:"none"}} nav caret>
                   Services
                 </DropdownToggle>
-              </Button>
-              <DropdownMenu style={{backgroundColor: "#E4EBF5"}} end>
+              </div>
+              <DropdownMenu className={isDropDown ? `drop-down-show` : ``} style={{backgroundColor: "#E4EBF5"}} end>
                 <DropdownItem className='toolbar-comp' href='/email-gen'>Email Gen</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='/blog-article'>Blog Article</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='/twitter-assist'>Twitter Assist</DropdownItem>
@@ -54,24 +67,24 @@ function Toolbar() {
             </UncontrolledDropdown>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
-                <Button style={{padding:"0.25rem 0.5rem"}}>
+                <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
                   Ask me anything
-                </Button>
+                </div>
               </NavLink>
             </NavItem>
           </Nav>
           <NavLink style={{textDecoration:"none"}} href="/payments">
-            <Button>
+            <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
               UPGRADE TO PRO
-            </Button>
+            </div>
           </NavLink>
-          <UncontrolledDropdown>
-              <Button style={{padding:"0.25rem 0rem", margin:"0.5rem"}}>
+          <UncontrolledDropdown onMouseOut={changeDropDownClose1} onMouseOver={changeDropDown1}>
+              <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
                 <DropdownToggle style={{textDecoration:"none", color:"var(--black-color)"}} nav caret>
                   Profile
                 </DropdownToggle>
-              </Button>
-              <DropdownMenu style={{backgroundColor: "#E4EBF5"}} end>
+              </div>
+              <DropdownMenu className={isDropDown1 ? `drop-down-show` : ``} style={{backgroundColor: "#E4EBF5"}} end>
                 <DropdownItem className='toolbar-comp' href='/manage-account'>Manage Account</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='/help'>Help</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='/payments'>Pricing</DropdownItem>

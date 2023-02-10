@@ -20,6 +20,7 @@
     background-color: #E4EBF5;
     border: none;
     outline: none;
+    color: var(--black-color);
 }
 
 .card-inset {

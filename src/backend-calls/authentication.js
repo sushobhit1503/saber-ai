@@ -44,7 +44,7 @@ export const verifyEmail = async (email, otp) => {
         otp: otp
     }
     try {
-        const res = await axiosInstance ({
+        const res = await axiosAuthInstance ({
             url: "/api/verifyEmail",
             method:"post",
             data: data

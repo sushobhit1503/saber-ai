@@ -12,7 +12,7 @@ class BlogArticle extends React.Component {
             keywords: "",
             articleTitle: "",
             reply: "",
-            words: 0,
+            words: 100,
             ref1: "",
             ref2: "",
             ref3: "",
@@ -30,12 +30,14 @@ class BlogArticle extends React.Component {
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
         }
-        const submitBlogs = () => {
+        const submitBlogs = async () => {
             const { keywords, articleTitle, words, ref1, ref2, ref3, seo } = this.state
-            const res = blogArticle("", articleTitle, "", keywords, words, seo, ref1, ref2, ref3)
-            res.then (result => {
-                this.setState ({result: result.data})
-            }).catch (err => console.log(err.message))
+            const res = await blogArticle("", articleTitle, "", keywords, words, seo,0, ref1, ref2, ref3)
+            if(res.error){
+                alert(res.msg)
+            }else{
+                this.setState ({reply: res.data})
+            }
         }
         const copyToClipBoard = () => {
             navigator.clipboard.writeText(this.state.reply)

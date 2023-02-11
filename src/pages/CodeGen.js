@@ -18,12 +18,14 @@ class CodeGen extends React.Component {
             const { name, value } = event.target
             this.setState ({[name]: value})
         }
-        const submitCode = () => {
+        const submitCode = async () => {
             const { usecase, language } = this.state
-            const res = codeGen(usecase, language)
-            res.then(result => {
-                this.setState ({reply: result.data})
-            }).catch (err => console.log(err.message))
+            const res = await codeGen(usecase, language)
+            if(res.error){
+                alert(res.msg)
+            }else{
+                this.setState ({reply: res.data})
+            }
         }
         const copyToClipBoard = () => {
             navigator.clipboard.writeText(this.state.reply)

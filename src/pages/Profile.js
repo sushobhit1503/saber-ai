@@ -11,12 +11,9 @@ class Profile extends React.Component {
             profile: {}
         }
     }
-    componentDidMount () {
-        const res = profileInfo ()
-        res.then (result => {
-            console.log(result);
-            this.setState ({profile: result})
-        }).catch (err => console.log(err.message))
+    async componentDidMount  () {
+        const res = await profileInfo ()
+        this.setState ({profile: res})
     }
     render () {
         return (

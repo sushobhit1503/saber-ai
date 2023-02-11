@@ -25,12 +25,14 @@ class SocialMedia extends React.Component {
         const toggleAdvanced = () => {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
         }
-        const submitAd = () => {
+        const submitAd = async () => {
             const { title } = this.state
-            const res = socialAd(title)
-            res.then(result => {
-                this.setState ({reply: result.data})
-            }).catch(err => console.log(err.message))
+            const res = await socialAd(title)
+            if(res.error){
+                alert(res.msg)
+            }else{
+                this.setState ({reply: res.data})
+            }
         }
         const copyToClipBoard = () => {
             navigator.clipboard.writeText(this.state.reply)

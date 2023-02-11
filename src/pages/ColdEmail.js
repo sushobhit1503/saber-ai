@@ -31,7 +31,11 @@ class ColdEmail extends React.Component {
         const submitEmail = async () => {
             const { companyName, serviceDescription} = this.state
             const res = await coldEmail(companyName, serviceDescription)
-            this.setState ({result: res.data})
+            if(res.error){
+                alert(res.msg)
+            }else{
+                this.setState ({reply: res.data})
+            }
         }
         const copyToClipBoard = () => {
             navigator.clipboard.writeText(this.state.reply)

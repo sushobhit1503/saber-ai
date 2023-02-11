@@ -11,7 +11,8 @@ export const axiosAuthInstance = axios.create ({
     baseURL: "http://www.saberwrite.com:8080/",
     headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Access-Control-Allow-Credentials": "*"
+        "Access-Control-Allow-Credentials": "*",
+        'Access-Control-Allow-Origin': '*'
     }
 })
 

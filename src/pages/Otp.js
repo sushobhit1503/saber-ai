@@ -19,12 +19,15 @@ class Otp extends React.Component {
             const { name, value } = event.target
             this.setState ({[name]: value})
         }
-        const verify = () => {
-            const res = verifyEmail (localStorage.getItem("email"), this.state.otp)
-            res.then (result => {
-                if (result.data === "success")
-                    this.setState ({isVerified: true}, () => localStorage.removeItem("email"))
-            }).catch (err => console.log(err.message))
+        const verify = async () => {
+            const res = await verifyEmail(localStorage.getItem("email"), this.state.otp)
+            console.log(res)
+            if(res.msg === 'success'){
+                this.setState ({isVerified: true}, () => localStorage.removeItem("email"))
+                Navigate('/')
+            }else{
+                console.log(res.msg)
+            }
         }
         if (this.state.isVerified) return <Navigate to="/" />
         return (

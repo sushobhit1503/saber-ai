@@ -57,6 +57,11 @@
     width: 50%;
 }
 
+.video-file {
+    width: 25rem;
+    margin: 1rem;
+}
+
 @media screen and (max-width: 1075px) {
     .home-page-services-card {
         width: 300px;
@@ -71,6 +76,9 @@
         width: 350px;
         display: flex;
         align-self: center;
+    }
+    .video-file {
+        width: 15rem;
     }
 }
 

@@ -1,7 +1,7 @@
 import React from "react"
 import HomeIllustration from "../assets/home.gif"
 import ChatIllustration from "../assets/chat.gif"
-import Extension from "../assets/Extension.mov"
+import Extension from "../assets/Extension.mp4"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
 import { Button, CardContent, Body2, H6 } from "ui-neumorphism"
@@ -90,7 +90,7 @@ class HomePage extends React.Component {
                     </div>
                     <div className="chat-image-container">
                         <video loop autoPlay>
-                            <source src={Extension} type="video/mov" />
+                            <source src={Extension} type="video/mp4" />
                         </video>
                     </div>
                 </div>

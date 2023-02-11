@@ -89,7 +89,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                     <div className="chat-image-container">
-                        <video loop autoPlay>
+                        <video className="video-file" loop autoPlay>
                             <source src={Extension} type="video/mp4" />
                         </video>
                     </div>

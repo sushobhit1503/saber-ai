@@ -17,12 +17,14 @@ class GenTweets extends React.Component {
             const { name, value } = event.target
             this.setState ({[name]: value})
         }
-        const submitTweet = () => {
+        const submitTweet = async () => {
             const { tweet } = this.state
-            const res = tweetGen(tweet)
-            res.then (result => {
-                this.setState ({result: result})
-            }).catch (err => console.log(err.message))
+            const res = await tweetGen(tweet)
+            if(res.error){
+                alert(res.msg)
+            }else{
+                this.setState ({reply: res.data})
+            }
         }
         const copyToClipBoard = () => {
             navigator.clipboard.writeText(this.state.reply)

@@ -50,7 +50,7 @@ export const blogArticle = async (writeUpType, title, description, keywords, max
 
 export const tweetGen = async (title) => {
     const data = {
-        title: title
+        tweetIdeas: title
     }
     try {
         const res = await axiosAuthInstance ({
@@ -68,7 +68,7 @@ export const tweetGen = async (title) => {
 export const coldEmail = async (companyName, coldEmails) => {
     const data = {
         companyName: companyName,
-        title: coldEmails,
+        coldEmails: coldEmails,
     }
     try {
         const res = await axiosAuthInstance ({

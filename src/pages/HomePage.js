@@ -1,11 +1,11 @@
 import React from "react"
 import HomeIllustration from "../assets/home.gif"
 import ChatIllustration from "../assets/chat.gif"
-import Extension from "../assets/Extension.mp4"
 import "../styles/HomePage.css"
 import "../styles/ServicePage.css"
 import { Button, CardContent, Body2, H6 } from "ui-neumorphism"
 import ServiceData from "../data/Data Files.json"
+import ReactPlayer from "react-player/youtube"
 
 class HomePage extends React.Component {
     render () {
@@ -89,10 +89,8 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                     <div className="chat-image-container">
-                        <video className="video-file" loop autoPlay>
-                            <source src={Extension} type="video/mp4" />
-                        </video>
-                    </div>
+                        <ReactPlayer className="video-file" url="https://youtu.be/cJbyy1R7k-o" playing loop controls volume={0} />
+                    </div> 
                 </div>
             </div>
         )

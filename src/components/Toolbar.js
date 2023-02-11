@@ -63,6 +63,7 @@ function Toolbar() {
                 </div>
               </NavLink>
             </NavItem>
+            <NavItem>
             <UncontrolledDropdown onMouseOut={changeDropDownClose} onMouseOver={changeDropDown} nav inNavbar>
               <div className='toolbar-comp card' style={{fontSize:"0.8rem", marginTop:"7px", padding:"0rem"}}>
                 <DropdownToggle style={{textDecoration:"none", color:"black"}} nav caret>
@@ -78,6 +79,7 @@ function Toolbar() {
                 <DropdownItem className='toolbar-comp' href='/code-gen'>Code Gen</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+            </NavItem>
             <NavItem>
               <NavLink style={{textDecoration:"none"}} href="/ask-me-anything">
                 <div className='toolbar-comp card' style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>

@@ -11,26 +11,37 @@
     color: var(--black-color);
 }
 
-.toolbar-content {
-    color: var(--green-color);
-    margin:5px;
-    transition: all 0.1s ease-in-out;
-}
-
 .drop-down-show {
     display: block;
 }
 
 .toolbar-content:hover {
-    border: 1px solid var(--white-color);
-    border-radius: 8px;
-    color: var(--green-color);
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--black-color);
+    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    text-decoration: none;
+}
+
+.toolbar-comp {
+    width: max-content;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--black-color);
+    box-shadow: 5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 4px 8px 4px 8px;
+    padding: 0.5rem;
 }
 
 .toolbar-comp:hover {
     border: none;
     outline: none;
     background: none;
+    color: var(--black-color);
     box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
     text-decoration: none;
 }

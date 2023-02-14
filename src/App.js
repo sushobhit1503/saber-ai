@@ -14,11 +14,12 @@ import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Otp from './pages/Otp';
+import MenuBar from './components/MenuBar';
 
 function App() {
   return (
     <div className="App">
-      <Toolbar />
+      <MenuBar />
       <Routes>
         <Route exact path="/email-gen" element={<PrivateRoute><EmailGen /></PrivateRoute>} />
         <Route exact path="/blog-article" element={<PrivateRoute><BlogArticle /></PrivateRoute>} />

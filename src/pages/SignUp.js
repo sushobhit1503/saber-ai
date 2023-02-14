@@ -58,7 +58,7 @@ class SignUp extends React.Component {
                             Already have an account? <a href="/login" >Login Here</a>
                         </div>
                         <div style={{fontSize:"0.75rem", textAlign:"center"}}>
-                            By clicking Register, you agree to our Terms of Service <br /> and that you have read our Privacy Policy
+                            By clicking Register, you agree to our <a href="https://www.saber-ai.com/termsandconditions"> Terms of Service </a> <br /> and that you have read our <a href="https://www.saber-ai.com/privacypolicy"> Privacy Policy </a>
                         </div>
                     </Card>
                 </div>

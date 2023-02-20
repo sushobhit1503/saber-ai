@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Run 
 npm install ui-neumorphism --force
+npm install react-player --force
 
 ## Available Scripts
 

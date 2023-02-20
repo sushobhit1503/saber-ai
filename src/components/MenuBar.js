@@ -48,6 +48,7 @@ const MenuBar = ()  => {
       localStorage.setItem("mode", "white")
     else 
       localStorage.setItem("mode", "dark")
+    window.location.reload()
   }
   return (
     <div>

@@ -12,7 +12,7 @@ class HomePage extends React.Component {
         return (
             <div>
                 <div className="home-container">
-                    <div>
+                    <div className="home-page-illustration">
                         <img src={HomeIllustration} alt="saber" className="home-page-illustration" />
                     </div>
                     <div style={{color:"var(--white-color)"}}>

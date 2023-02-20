@@ -52,7 +52,7 @@ class BlogArticle extends React.Component {
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>Enter the details of your article:</b></div>
+                        <div className="page-card-heading"><b>Enter The Details Of Your Article:</b></div>
                         <div className="page-card-label">Article Title</div>
                         <Input className="input" placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
                         <div>Enter the title. Be as descriptive as possible</div>
@@ -82,7 +82,7 @@ class BlogArticle extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>Generated article here:</b></div>
+                        <div className="page-card-heading"><b>Generated Article Here:</b></div>
                         <div className="page-card-label">Generated article</div>
                         <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>

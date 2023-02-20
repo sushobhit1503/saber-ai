@@ -39,7 +39,7 @@ class GenTweets extends React.Component {
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>What is your tweet about?</b></div>
+                        <div className="page-card-heading"><b>What Is Your Tweet About?</b></div>
                         <div className="page-card-label">Tweet Prompt</div>
                         <Input className="input" placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
@@ -48,8 +48,8 @@ class GenTweets extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>See the tweet here:</b></div>
-                        <div className="page-card-label">Generated tweet</div>
+                        <div className="page-card-heading"><b>See The Tweet Here:</b></div>
+                        <div className="page-card-label">Generated Tweet</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy

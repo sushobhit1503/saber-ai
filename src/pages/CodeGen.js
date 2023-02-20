@@ -39,7 +39,7 @@ class CodeGen extends React.Component {
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>What is your code's purpose?</b></div>
+                        <div className="page-card-heading"><b>What Is Your Code's Purpose?</b></div>
                         <div className="page-card-label">Describe the usecase of your code</div>
                         <Input className="input" placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
                         <div className="page-card-label">Programming Language</div>
@@ -49,7 +49,7 @@ class CodeGen extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>See the generated code:</b></div>
+                        <div className="page-card-heading"><b>See The Generated Code:</b></div>
                         <div className="page-card-label">Generated Code:</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>

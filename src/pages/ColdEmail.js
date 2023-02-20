@@ -50,7 +50,7 @@ class ColdEmail extends React.Component {
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>Enter the email details here:</b></div>
+                        <div className="page-card-heading"><b>Enter The Email Details Here:</b></div>
                         <div className="page-card-label">Company Name</div>
                         <Input className="input" placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
                         <div className="page-card-label">Services Provided</div>
@@ -75,7 +75,7 @@ class ColdEmail extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>See the generated email here:</b></div>
+                        <div className="page-card-heading"><b>See The Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>

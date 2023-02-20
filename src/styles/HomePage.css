@@ -3,8 +3,6 @@
     justify-content: space-around;
     background-image: url("../assets/background.png");
     background-repeat: repeat;
-    background-position: center;
-    height: 27rem;
     border-radius: 1rem;
     margin: 1rem 5rem 0rem 5rem;
     box-shadow: 15px 15px 8px #BEC8E4, -4px -4px 10px #FFFFFF;
@@ -14,6 +12,11 @@
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
+}
+
+.home-page-illustration {
+    display: flex;
+    align-items: center;
 }
 
 .home-page-desc {
@@ -56,6 +59,9 @@
 
 .chat-text-container {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .video-file {
@@ -75,11 +81,6 @@
 @media screen and (max-width: 900px) {
     .home-page-illustration {
         width: 350px;
-        display: flex;
-        align-self: center;
-        justify-content: center;
-        align-items: center;
-        
     }
     .video-file {
         width: 15rem;

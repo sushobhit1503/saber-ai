@@ -56,7 +56,7 @@ class EmailGen extends React.Component {
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>Enter the email details: </b></div>
+                        <div className="page-card-heading"><b>Enter The Email Details: </b></div>
                         <div className="page-card-label">Enter previous email reply (Optional)</div>
                         <Input className="input mailBox" placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
                         <div className="page-card-label">Enter Bullet Points</div>
@@ -81,7 +81,7 @@ class EmailGen extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading"><b>See generated email here:</b></div>
+                        <div className="page-card-heading"><b>See Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
                         <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>

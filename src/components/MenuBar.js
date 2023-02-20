@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Collapse,
   Navbar,
@@ -23,6 +23,10 @@ const MenuBar = ()  => {
   const [isDropDown1, setDropDown1] = useState (false);
   const navigate = useNavigate ()
   const toggle = () => setIsOpen(!isOpen);
+  const [mode, setMode] = useState ("")
+  useEffect (() => {
+    setMode (localStorage.getItem("mode")) 
+  }, [])
   const submitLogout = () => {
     const res = logOut ()
     res.then((result) => {
@@ -61,12 +65,12 @@ const MenuBar = ()  => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink className='toolbar-comp' href="/">
+              <NavLink className={mode === "dark" ? 'toolbar-comp-dark' :'toolbar-comp'} href="/">
                 Home
               </NavLink>
             </NavItem>
             <UncontrolledDropdown onMouseOut={changeDropDownClose} onMouseOver={changeDropDown} nav inNavbar>
-              <DropdownToggle className='toolbar-comp'  nav caret>
+              <DropdownToggle className={mode === "dark" ? 'toolbar-comp-dark' :'toolbar-comp'}  nav caret>
                 Services
               </DropdownToggle>
               <DropdownMenu className={isDropDown ? `drop-down-show` : ``} right style={{backgroundColor: "#E4EBF5"}}>
@@ -80,16 +84,16 @@ const MenuBar = ()  => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink className='toolbar-comp' href="/ask--me-anything">
+              <NavLink className={mode === "dark" ? 'toolbar-comp-dark' :'toolbar-comp'} href="/ask--me-anything">
                 Ask me Anything
               </NavLink>
             </NavItem>
           </Nav>
-          <NavLink className='toolbar-comp' href="/payments">
+          <NavLink className={mode === "dark" ? 'toolbar-comp-dark' :'toolbar-comp'} href="/payments">
             UPGRADE TO PRO
           </NavLink>
           <UncontrolledDropdown onMouseOut={changeDropDownClose1} onMouseOver={changeDropDown1}>
-              <DropdownToggle className='toolbar-comp' nav caret>
+              <DropdownToggle className={mode === "dark" ? 'toolbar-comp-dark' :'toolbar-comp'} nav caret>
                 Profile
               </DropdownToggle>
               <DropdownMenu className={isDropDown1 ? `drop-down-show` : ``} style={{backgroundColor: "#E4EBF5"}} end>

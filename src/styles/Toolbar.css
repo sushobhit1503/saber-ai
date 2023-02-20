@@ -37,12 +37,34 @@
     padding: 0.5rem;
 }
 
+.toolbar-comp-dark {
+    width: max-content;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--white-color);
+    box-shadow: 5px 5px 12px var(--dark-bg-shadow), -4px -4px 10px var(--light-bg-shadow);
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 4px 8px 4px 8px;
+    padding: 0.5rem;
+}
+
 .toolbar-comp:hover {
     border: none;
     outline: none;
     background: none;
     color: var(--black-color);
     box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    text-decoration: none;
+}
+
+.toolbar-comp-dark:hover {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--white-color);
+    box-shadow: inset -2px -2px 5px var(--light-bg-shadow), 2px 2px 5px var(--dark-bg-shadow);
     text-decoration: none;
 }
 

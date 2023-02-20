@@ -12,7 +12,22 @@ body {
   --white-color: #FFFFFF;
   --black-color: #000000;
   --dark-color: #444444;
+  --dark-bg-shadow: #363636;
+  --light-bg-shadow: #525252;
 }
+
+.box-shadow-dark {
+  box-shadow: 5px 5px 12px var(--dark-bg-shadow), -4px -4px 10px var(--light-bg-shadow);
+}
+
+.box-shadow-hover {
+  box-shadow: 2px 2px 5px var(--dark-bg-shadow), -2px -2px 5px var(--light-bg-shadow);
+}
+
+.box-shadow-inset {
+  box-shadow: inset -2px -2px 5px var(--light-bg-shadow), 2px 2px 5px var(--dark-bg-shadow);
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

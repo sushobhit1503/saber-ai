@@ -21,7 +21,6 @@ function App() {
   const [mode, setMode] = useState ("")
   useEffect (() => {
     setMode (localStorage.getItem("mode")) 
-    console.log(mode);   
   }, [])
   return (
     <div className={mode === "dark" ? "dark" : "white"}>

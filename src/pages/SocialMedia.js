@@ -42,12 +42,12 @@ class SocialMedia extends React.Component {
                 <div className="page-heading">
                 <Tooltip bottom content={<div>Looking for some creative social media advert ideas for your online
                     campaigns on Facebook, Twitter or Instagram? We got you.</div>}>
-                    SOCIAL MEDIA ADVERTS
+                    <b>SOCIAL MEDIA ADVERTS</b>
                 </Tooltip>
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading">WHAT IS YOUR AD CAMPAIGN ABOUT?</div>
+                        <div className="page-card-heading"><b>What is your ad campaign?</b></div>
                         <div className="page-card-label">Subject or Title</div>
                         <Input className="input" placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
                         <div>Describe the subject or title for the ad campaign.</div>
@@ -67,8 +67,8 @@ class SocialMedia extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading">SEE THE RESULTS HERE</div>
-                        <div className="page-card-label">Reply</div>
+                        <div className="page-card-heading"><b>See the generated advertisement here:</b></div>
+                        <div className="page-card-label">Advertisement:</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy

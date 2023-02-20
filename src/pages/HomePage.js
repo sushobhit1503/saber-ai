@@ -18,9 +18,9 @@ class HomePage extends React.Component {
                     <div style={{color:"var(--white-color)"}}>
                         <div className="page-heading page-heading-home">WORLD CLASS AI WRITING SOLUTIONS</div>
                         <div style={{textAlign:"left"}} className="page-description home-page-desc">
-                            Cut down the average emailing time from 28% to 9% ={`>`} Save 40 hours every month. <div style={{marginBottom: "1.5rem"}}></div>
-                            Ultimate platform for all your content needs. <div style={{marginBottom: "1.5rem"}}></div>
-                            Delivering expert copywriting, complete email automation, and SEO-optimised adverts generator  - all in one easy-to-use package. <div style={{marginBottom: "1.5rem"}}></div>
+                            Cut down the average emailing time from 28% to 9% ={`>`} Save 40 hours every month. <div style={{marginBottom: "0.75rem"}}></div>
+                            Ultimate platform for all your content needs. <div style={{marginBottom: "0.75rem"}}></div>
+                            Delivering expert copywriting, complete email automation, and SEO-optimised adverts generator  - all in one easy-to-use package. <div style={{marginBottom: "0.75rem"}}></div>
                             Supercharge your content with Saber!
                         </div>
                         <div className="home-action-button">
@@ -86,6 +86,13 @@ class HomePage extends React.Component {
                         <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
                             Premium Members get access to our magical browser and Outlook extensions. 
                             Compose and Reply to emails in one click! Right from your inbox.
+                        </div>
+                        <div className="home-action-button">
+                            <Button>
+                                <a style={{textDecoration:"none"}} href="/payments">
+                                    TRY NOW
+                                </a>
+                            </Button>
                         </div>
                     </div>
                     <div className="chat-image-container">

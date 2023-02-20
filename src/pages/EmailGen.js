@@ -16,7 +16,7 @@ class EmailGen extends React.Component {
             sales: false,
             seo: false,
             tone: "",
-            words: 0
+            words: 150
         }
     }
     render () {
@@ -42,25 +42,28 @@ class EmailGen extends React.Component {
                 this.setState ({reply: res.data})
             }
         }
+        const copyToClipBoard = () => {
+            navigator.clipboard.writeText(this.state.reply)
+        }
         return (
             <div>
                 <div className="page-heading">
                 <Tooltip bottom content={<div>The Saber writing will allow you to generate full fledged 
                     emails out of bullet points using GPT3’ s advance text 
                     generation AI. </div>}>
-                        EMAIL GENERATION
+                       <b> EMAIL GENERATION </b>
                 </Tooltip>
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading">ENTER THE INPUT HERE</div>
-                        <div className="page-card-label">Enter Previous Email (optional)</div>
+                        <div className="page-card-heading"><b>Enter the email details: </b></div>
+                        <div className="page-card-label">Enter previous email reply (Optional)</div>
                         <Input className="input mailBox" placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
                         <div className="page-card-label">Enter Bullet Points</div>
                         <Input className="input" placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
                         <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a sales email? <br />
+                            <Switch onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a Sales Email? <br />
                             <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
                             <Input onChange={onChange} name="tone" value={this.state.tone} style={{margin:"0px 0px 20px 10px", width:"250px"}} className="input" type="select">
@@ -73,15 +76,15 @@ class EmailGen extends React.Component {
                             <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
                             {this.state.words} words
                         </div>
-                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%", fontSize: "1.2rem"}}>
                             Generate Email
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading">SEE THE RESULTS HERE</div>
-                        <div className="page-card-label">Reply</div>
+                        <div className="page-card-heading"><b>See generated email here:</b></div>
+                        <div className="page-card-label">Generated email</div>
                         <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
-                        <Button style={{marginTop: "1rem"}}>
+                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

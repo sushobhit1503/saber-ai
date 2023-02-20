@@ -14,7 +14,7 @@ class ColdEmail extends React.Component {
             reply: "",
             tone: "",
             seo: false,
-            words: 0
+            words: 150
         }
     }
     render () {
@@ -45,12 +45,12 @@ class ColdEmail extends React.Component {
                 <div className="page-heading">
                 <Tooltip bottom content={<div>This is perfect for marketing agents or companies who need fresh ideas
                     daily on cold email content that is created by AI technology.  </div>}>
-                    COLD EMAIL TEMPLATE
+                    <b>COLD EMAIL TEMPLATE</b>
                 </Tooltip>
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading">ENTER THE SERVICES YOUR COMPANY PROVIDES</div>
+                        <div className="page-card-heading"><b>Enter the email details here:</b></div>
                         <div className="page-card-label">Company Name</div>
                         <Input className="input" placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
                         <div className="page-card-label">Services Provided</div>
@@ -75,8 +75,8 @@ class ColdEmail extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading">SEE THE RESULTS HERE</div>
-                        <div className="page-card-label">Reply</div>
+                        <div className="page-card-heading"><b>See the generated email here:</b></div>
+                        <div className="page-card-label">Generated email</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy

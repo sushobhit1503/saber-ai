@@ -12,7 +12,7 @@ class BlogArticle extends React.Component {
             keywords: "",
             articleTitle: "",
             reply: "",
-            words: 100,
+            words: 250,
             ref1: "",
             ref2: "",
             ref3: "",
@@ -45,18 +45,18 @@ class BlogArticle extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip top content={<div>Generate professional article and blogs by giving outline. 
+                <Tooltip bottom content={<div>Generate professional article and blogs by giving outline. 
                     Give keywords for good fit with Search Engine Optimization. </div>}>
-                    BLOG ARTICLE GENERATION
+                    <b>BLOG ARTICLE GENERATION</b>
                 </Tooltip>
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading">ENTER THE DETAILS OF YOUR ARTICLE</div>
+                        <div className="page-card-heading"><b>Enter the details of your article:</b></div>
                         <div className="page-card-label">Article Title</div>
                         <Input className="input" placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
                         <div>Enter the title. Be as descriptive as possible</div>
-                        <div className="page-card-label">Keywords</div>
+                        <div className="page-card-label">Article description / Keywords</div>
                         <Input className="input mailBox" height={320} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
                         <div>Give keywords that are better searchable</div>
                         <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
@@ -82,9 +82,9 @@ class BlogArticle extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading">SEE THE RESULTS HERE</div>
-                        <div className="page-card-label">Reply</div>
-                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <div className="page-card-heading"><b>Generated article here:</b></div>
+                        <div className="page-card-label">Generated article</div>
+                        <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

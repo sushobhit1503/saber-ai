@@ -60,7 +60,7 @@ const MenuBar = ()  => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink className='toolbar-comp' href="/home">
+              <NavLink className='toolbar-comp' href="/">
                 Home
               </NavLink>
             </NavItem>

@@ -34,12 +34,12 @@ class GenTweets extends React.Component {
                 <div className="page-heading">
                 <Tooltip bottom content={<div>Start generating tweet ideas with hashtags for your online social media campaigns on twitter.
                     Create endless unique tweet ideas, no more writers block.</div>}>
-                    GENERATE TWEETS
+                    <b>GENERATE TWEETS</b>
                 </Tooltip>
                 </div>
                 <div className="page-container">
                     <div className="page-card card">
-                        <div className="page-card-heading">WHAT IS YOUR TWEET ABOUT?</div>
+                        <div className="page-card-heading"><b>What is your tweet about?</b></div>
                         <div className="page-card-label">Tweet Prompt</div>
                         <Input className="input" placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
@@ -48,8 +48,8 @@ class GenTweets extends React.Component {
                         </Button>
                     </div>
                     <div className="page-card card">
-                        <div className="page-card-heading">SEE THE RESULTS HERE</div>
-                        <div className="page-card-label">Reply</div>
+                        <div className="page-card-heading"><b>See the tweet here:</b></div>
+                        <div className="page-card-label">Generated tweet</div>
                         <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy

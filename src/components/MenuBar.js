@@ -42,6 +42,13 @@ const MenuBar = ()  => {
   const changeDropDownClose1 = () => {
     setDropDown1(false)
   }
+  const changeMode = () => {
+    const currentMode = localStorage.getItem ("mode")
+    if (currentMode === "dark")
+      localStorage.setItem("mode", "white")
+    else 
+      localStorage.setItem("mode", "dark")
+  }
   return (
     <div>
       <Navbar style={{boxShadow: "5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF"}}  light expand ="sm" >
@@ -68,6 +75,7 @@ const MenuBar = ()  => {
                 <DropdownItem className='toolbar-content' href='/cold-email'>Cold Email</DropdownItem>
                 <DropdownItem className='toolbar-content' href='/social-ads'>Social Ads</DropdownItem>
                 <DropdownItem className='toolbar-content' href='/code-gen'>Code Gen</DropdownItem>
+                <DropdownItem className='toolbar-content' href='/code-debug'>Code Debug</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
@@ -85,6 +93,7 @@ const MenuBar = ()  => {
               </DropdownToggle>
               <DropdownMenu className={isDropDown1 ? `drop-down-show` : ``} style={{backgroundColor: "#E4EBF5"}} end>
                 <DropdownItem className='toolbar-content' href='/manage-account'>Manage Account</DropdownItem>
+                <DropdownItem className='toolbar-content' onClick={changeMode}>Change Mode</DropdownItem>
                 <DropdownItem className='toolbar-content' href='/help'>Help</DropdownItem>
                 <DropdownItem className='toolbar-content' href='/payments'>Pricing</DropdownItem>
                 <DropdownItem className='toolbar-content' href='https://www.saber-ai.com/t-c'>Terms & Policies</DropdownItem>

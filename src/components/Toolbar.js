@@ -46,8 +46,15 @@ function Toolbar() {
     }).catch (err => console.log(err.message))
     navigate ("/login")
   }
+  const changeMode = () => {
+    const currentMode = localStorage.getItem ("mode")
+    if (currentMode === "dark")
+      localStorage.setItem("mode", "white")
+    else 
+      localStorage.setItem("mode", "dark")
+  }
   return (
-    <Card>
+    <Card dark>
       <Navbar light expand="sm">
       <NavbarBrand href='/' style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
         <img src={Logo} alt="saber-ai" className='logo-image card' />
@@ -102,6 +109,7 @@ function Toolbar() {
               </div>
               <DropdownMenu className={isDropDown1 ? `drop-down-show` : ``} style={{backgroundColor: "#E4EBF5"}} end>
                 <DropdownItem className='toolbar-comp' href='/manage-account'>Manage Account</DropdownItem>
+                <DropdownItem className='toolbar-comp' onClick={changeMode}>Change Mode</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='/help'>Help</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='/payments'>Pricing</DropdownItem>
                 <DropdownItem className='toolbar-comp' href='https://www.saber-ai.com/t-c'>Terms & Policies</DropdownItem>

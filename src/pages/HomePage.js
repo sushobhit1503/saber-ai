@@ -49,7 +49,7 @@ class HomePage extends React.Component {
                                         </CardContent>
                                     </div>
                                     <div>
-                                        <Button>
+                                        <Button dark>
                                             <a style={{textDecoration:"none"}} href={eachElement.link}>
                                                 TRY NOW
                                             </a>

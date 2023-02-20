@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Toolbar from './components/Toolbar';
 import BlogArticle from './pages/BlogArticle';
+import CodeDebug from './pages/CodeDebug';
 import CodeGen from './pages/CodeGen';
 import ColdEmail from './pages/ColdEmail';
 import EmailGen from './pages/EmailGen';
@@ -17,8 +18,13 @@ import Otp from './pages/Otp';
 import MenuBar from './components/MenuBar';
 
 function App() {
+  const [mode, setMode] = useState ("")
+  useEffect (() => {
+    setMode (localStorage.getItem("mode")) 
+    console.log(mode);   
+  }, [])
   return (
-    <div className="App">
+    <div className={mode === "dark" ? "dark" : "white"}>
       <MenuBar />
       <Routes>
         <Route exact path="/email-gen" element={<PrivateRoute><EmailGen /></PrivateRoute>} />
@@ -27,7 +33,8 @@ function App() {
         <Route exact path="/cold-email" element={<PrivateRoute><ColdEmail /></PrivateRoute>} />
         <Route exact path="/social-ads" element={<PrivateRoute><SocialMedia /></PrivateRoute>} />
         <Route exact path="/code-gen" element={<PrivateRoute><CodeGen /></PrivateRoute>} />
-        <Route exact path="/manage-account" element={<Profile />} />
+        <Route exact path="/code-debug" element={<PrivateRoute><CodeDebug /></PrivateRoute>} />
+        <Route exact path="/manage-account" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route exact path="/payments" element={<Payments />} />
         <Route exact path="/otp" element={<Otp />} />
         <Route exact path="/sign-up" element={<SignUp />} />

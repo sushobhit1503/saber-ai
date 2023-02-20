@@ -1,3 +1,13 @@
+.dark {
+    background-color: var(--dark-color);
+}
+  
+.white {
+    color: var(--black-color);
+    background-color: #e4ebf5;
+}
+  
+
 .input, .input:focus {
     border: none;
     outline: none;

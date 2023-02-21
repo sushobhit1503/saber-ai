@@ -47,7 +47,7 @@ class GenTweets extends React.Component {
                         <div className="page-card-label">Tweet Prompt</div>
                         <Input className={`input-${this.state.mode}`}  placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
-                        <Button onClick={submitTweet} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={submitTweet} style={{marginTop: "1rem", width:"100%"}}>
                             Get Recommendations
                         </Button>
                     </div>
@@ -55,7 +55,7 @@ class GenTweets extends React.Component {
                         <div className="page-card-heading"><b>See The Tweet Here:</b></div>
                         <div className="page-card-label">Generated Tweet</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

@@ -3,13 +3,20 @@ import { Card } from "ui-neumorphism";
 import "../styles/Payments.css";
 
 class PaymentsPart extends React.Component {
+    constructor () {
+        super ()
+        this.state = {mode: ""}
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
+    }
     render () {
         return (
             <div style={{width:"80%", margin:"auto"}}>
                 <div className="payment-field-heading">{this.props.elementName}</div>
                 {this.props.element.map((eachElement, index) => {
                     return (
-                        <Card inset={index % 2 === 0 ? true : true} style={{display:"flex", margin:"1rem", padding:"1rem"}} key={index}>
+                        <Card dark={this.state.mode === "dark" ? true : false} inset={index % 2 === 0 ? true : true} style={{display:"flex", margin:"1rem", padding:"1rem"}} key={index}>
                             <div style={{width:"25%"}}>
                                 {eachElement.name}
                             </div>

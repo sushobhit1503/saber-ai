@@ -60,11 +60,11 @@ class ColdEmail extends React.Component {
                         <div className="page-card-label">Services Provided</div>
                         <Input className={`input-${this.state.mode} mailBox`} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" type="textarea" />
                         <div>Describe the service you provide for the email content.</div>
-                        <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
+                        <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                        <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} />  Use keyword optimization for SEO? <br /> 
+                        <Switch dark={this.state.mode === "dark" ? true : false} onChange={onChangeSeo} color="var(--success)" value={this.state.seo} />  Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
-                            <Input style={{width:"250px"}} onChange={onChange} value={this.state.tone} name="tone" className="input" type="select">
+                            <Input style={{width:"250px"}} onChange={onChange} value={this.state.tone} name="tone" className={`input-${this.state.mode}`} type="select">
                                 <option value="Friendly">Friendly</option>
                                 <option value="Professional">Professional</option>
                                 <option value="Celebration">Celebration</option>
@@ -74,7 +74,7 @@ class ColdEmail extends React.Component {
                             <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
                             {this.state.words} words <br />
                         </div>
-                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Email
                         </Button>
                     </div>
@@ -82,7 +82,7 @@ class ColdEmail extends React.Component {
                         <div className="page-card-heading"><b>See The Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

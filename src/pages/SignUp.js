@@ -46,7 +46,7 @@ class SignUp extends React.Component {
                     CREATE AN ACCOUNT
                 </div>
                 <div style={{display:"flex", justifyContent:"center"}}>
-                    <Card className="page-card">
+                    <Card dark={this.state.mode === "dark" ? true : false} className="page-card">
                         <Label>Enter your name</Label>
                         <Input className={`input-${this.state.mode}`} placeholder="Your Name" onChange={onChange} value={this.state.name} name="name" />
                         <Label>Enter your email</Label>

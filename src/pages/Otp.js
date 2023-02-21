@@ -44,7 +44,7 @@ class Otp extends React.Component {
                     ENTER OTP SENT
                 </div>
                 <div style={{display:"flex", justifyContent:"center"}}>
-                    <Card className="page-card">
+                    <Card dark={this.state.mode === "dark" ? true : false} className="page-card">
                         <Label>Enter the otp </Label>
                         <Input className={`input-${this.state.mode}`} placeholder="One Time Password" onChange={onChange} value={this.state.otp} name="otp" />
                         <Button onClick={verify} style={{marginTop: "1rem", marginBottom: "1rem"}}>

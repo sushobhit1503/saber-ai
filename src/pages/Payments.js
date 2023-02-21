@@ -32,7 +32,7 @@ const Payments = () => {
                 <Divider />
                 <div style={{width:"80%", margin:"auto"}}>
                 <div className="payment-field-heading">Description</div>
-                    <Card inset style={{display:"flex", margin:"1rem", padding:"1rem"}}>
+                    <Card dark={mode === "dark" ? true : false} inset style={{display:"flex", margin:"1rem", padding:"1rem"}}>
                         <div style={{width:"25%"}}>
                            
                         </div>

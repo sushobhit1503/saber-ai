@@ -38,7 +38,7 @@ const Login = () => {
                     LOGIN TO YOUR ACCOUNT
                 </div>
                 <div style={{display:"flex", justifyContent:"center"}}>
-                    <Card className="page-card">
+                    <Card dark={mode === "dark" ? true : false} className="page-card">
                         <Label>Enter your email</Label>
                         <Input className={`input-${mode}`}  placeholder="Your Email" onChange={onChange} value={email} name="email" />
                         <Label>Enter Password</Label>

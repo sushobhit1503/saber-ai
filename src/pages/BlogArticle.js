@@ -63,11 +63,11 @@ class BlogArticle extends React.Component {
                         <div className="page-card-label">Article description / Keywords</div>
                         <Input className={`input-${this.state.mode} mailBox`} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
                         <div>Give keywords that are better searchable</div>
-                        <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
+                        <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br />
+                            <Switch dark={this.state.mode === "dark" ? true : false} onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br />
                             <Label style={{padding:"5px"}}>Tone of the email</Label>
-                            <Input style={{width:"250px"}} onChange={onChange} value={this.state.tone} name="tone" className="input" type="select">
+                            <Input style={{width:"250px"}} onChange={onChange} value={this.state.tone} name="tone" className={`input-${this.state.mode}`} type="select">
                                 <option value="Friendly">Friendly</option>
                                 <option value="Professional">Professional</option>
                                 <option value="Celebration">Celebration</option>
@@ -77,11 +77,11 @@ class BlogArticle extends React.Component {
                             <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
                             {this.state.words} words <br />
                             <Label style={{padding:"5px"}}>Add Reference Links</Label> <br />
-                            <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 1" onChange={onChange} value={this.state.ref1} name="ref1" type="text" />
-                            <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 2" onChange={onChange} value={this.state.ref2} name="ref2" type="text" />
-                            <Input style={{marginBottom: "0.5rem"}} className="input" placeholder="Reference Link 3" onChange={onChange} value={this.state.ref3} name="ref3" type="text" />
+                            <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 1" onChange={onChange} value={this.state.ref1} name="ref1" type="text" />
+                            <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 2" onChange={onChange} value={this.state.ref2} name="ref2" type="text" />
+                            <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 3" onChange={onChange} value={this.state.ref3} name="ref3" type="text" />
                         </div>
-                        <Button onClick={submitBlogs} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={submitBlogs} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Article
                         </Button>
                     </div>
@@ -89,7 +89,7 @@ class BlogArticle extends React.Component {
                         <div className="page-card-heading"><b>Generated Article Here:</b></div>
                         <div className="page-card-label">Generated article</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

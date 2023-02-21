@@ -33,7 +33,7 @@ class HomePage extends React.Component {
                             Supercharge your content with Saber!
                         </div>
                         <div className="home-action-button">
-                            <Button>
+                            <Button dark={this.state.mode === "dark" ? true : false}>
                                 <a style={{textDecoration:"none"}} href="/email-gen">
                                     TRY NOW
                                 </a>
@@ -48,7 +48,7 @@ class HomePage extends React.Component {
                             return (
                                 <div className={`home-page-services-card card-${this.state.mode}`}>
                                     <div>
-                                        <CardContent style={{margin:"0px"}}>
+                                        <CardContent dark={this.state.mode === "dark" ? true : false} style={{margin:"0px"}}>
                                             <H6 secondary style={{ marginBottom: '4px' }} >
                                                 {eachElement.name}
                                             </H6>
@@ -58,7 +58,7 @@ class HomePage extends React.Component {
                                         </CardContent>
                                     </div>
                                     <div>
-                                        <Button>
+                                        <Button dark={this.state.mode === "dark" ? true : false}>
                                             <a style={{textDecoration:"none"}} href={eachElement.link}>
                                                 TRY NOW
                                             </a>
@@ -81,7 +81,7 @@ class HomePage extends React.Component {
                             Experience the convenience of a personal AI search engine. Chat Your Way to Knowledge!
                         </div>
                         <div className="home-action-button">
-                            <Button>
+                            <Button dark={this.state.mode === "dark" ? true : false}>
                                 <a style={{textDecoration:"none"}} href="/ask-me-anything">
                                     TRY NOW
                                 </a>
@@ -97,7 +97,7 @@ class HomePage extends React.Component {
                             Compose and Reply to emails in one click! Right from your inbox.
                         </div>
                         <div className="home-action-button">
-                            <Button>
+                            <Button dark={this.state.mode === "dark" ? true : false}>
                                 <a style={{textDecoration:"none"}} href="/payments">
                                     TRY NOW
                                 </a>

@@ -48,7 +48,7 @@ class CodeGen extends React.Component {
                         <Input className={`input-${this.state.mode}`}  placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
                         <div className="page-card-label">Programming Language</div>
                         <Input className={`input-${this.state.mode}`} placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
-                        <Button onClick={submitCode} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={submitCode} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Code
                         </Button>
                     </div>
@@ -56,7 +56,7 @@ class CodeGen extends React.Component {
                         <div className="page-card-heading"><b>See The Generated Code:</b></div>
                         <div className="page-card-label">Generated Code:</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

@@ -65,12 +65,12 @@ class EmailGen extends React.Component {
                         <Input className={`input-${this.state.mode} mailBox`}  placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
                         <div className="page-card-label">Enter Bullet Points</div>
                         <Input className={`input-${this.state.mode}`} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
-                        <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
+                        <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a Sales Email? <br />
-                            <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
+                            <Switch dark={this.state.mode === "dark" ? true : false} onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a Sales Email? <br />
+                            <Switch dark={this.state.mode === "dark" ? true : false} onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
-                            <Input onChange={onChange} name="tone" value={this.state.tone} style={{margin:"0px 0px 20px 10px", width:"250px"}} className="input" type="select">
+                            <Input onChange={onChange} name="tone" value={this.state.tone} style={{margin:"0px 0px 20px 10px", width:"250px"}} className={`input-${this.state.mode}`} type="select">
                                 <option value="Friendly">Friendly</option>
                                 <option value="Professional">Professional</option>
                                 <option value="Celebration">Celebration</option>
@@ -80,7 +80,7 @@ class EmailGen extends React.Component {
                             <Slider style={{marginLeft:"1.5rem"}} axis="x" onChange={({x}) => this.setState({words: x})} x={this.state.words} xstep={50} xmin={100} xmax={1000} /> <br />
                             {this.state.words} words
                         </div>
-                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%", fontSize: "1.2rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={submitEmail} style={{marginTop: "1rem", width:"100%", fontSize: "1.2rem"}}>
                             Generate Email
                         </Button>
                     </div>
@@ -88,7 +88,7 @@ class EmailGen extends React.Component {
                         <div className="page-card-heading"><b>See Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

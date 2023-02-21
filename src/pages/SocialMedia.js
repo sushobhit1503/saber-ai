@@ -55,18 +55,18 @@ class SocialMedia extends React.Component {
                         <div className="page-card-label">Subject or Title</div>
                         <Input className={`input-${this.state.mode}`}  placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
                         <div>Describe the subject or title for the ad campaign.</div>
-                        <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
+                        <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
-                            <Switch onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
+                            <Switch dark={this.state.mode === "dark" ? true : false}  onChange={onChangeSeo} color="var(--success)" value={this.state.seo} /> Use keyword optimization for SEO? <br /> 
                             <Label style={{margin:"10px"}}>Tone of the Email</Label>
-                            <Input style={{width:"250px", margin: "0px 0px 10px 10px"}} onChange={onChange} value={this.state.tone} name="tone" className="input" type="select">
+                            <Input style={{width:"250px", margin: "0px 0px 10px 10px"}} onChange={onChange} value={this.state.tone} name="tone" className={`input-${this.state.mode}`} type="select">
                                 <option value="Friendly">Friendly</option>
                                 <option value="Professional">Professional</option>
                                 <option value="Celebration">Celebration</option>
                                 <option value="Sales">Sales</option>
                             </Input>
                         </div>
-                        <Button onClick={submitAd} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false}  onClick={submitAd} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Ad
                         </Button>
                     </div>
@@ -74,7 +74,7 @@ class SocialMedia extends React.Component {
                         <div className="page-card-heading"><b>See The Generated Advertisement Here:</b></div>
                         <div className="page-card-label">Advertisement:</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} height={320} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

@@ -54,7 +54,7 @@ class CodeDebug extends React.Component {
                         <div className="page-card-label">Error Received</div>
                         <Input className={`input-${this.state.mode} mailBox`}  placeholder="eg. Can not access undefined variable" onChange={onChange} value={this.state.error} name="error" type="textarea" />
                         <div>Describe the service you provide for the email content.</div>
-                        <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Correct Code
                         </Button>
                     </div>
@@ -62,7 +62,7 @@ class CodeDebug extends React.Component {
                         <div className="page-card-heading"><b>See The Fix Here:</b></div>
                         <div className="page-card-label">Follow this to fix your error</div>
                         <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
-                        <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
+                        <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>
                     </div>

@@ -23,7 +23,7 @@ function App() {
     setMode (localStorage.getItem("mode")) 
   }, [])
   return (
-    <div className={mode === "dark" ? "dark" : "white"}>
+    <div className={mode}>
       <MenuBar />
       <Routes>
         <Route exact path="/email-gen" element={<PrivateRoute><EmailGen /></PrivateRoute>} />

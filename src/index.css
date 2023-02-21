@@ -14,10 +14,17 @@ body {
   --dark-color: #444444;
   --dark-bg-shadow: #363636;
   --light-bg-shadow: #525252;
+  --white-bg-shadow: #BEC8E4;
+  --white-bg-color: #E4EBF5;
+  transition: all 0.5s ease;
 }
 
 .box-shadow-dark {
   box-shadow: 5px 5px 12px var(--dark-bg-shadow), -4px -4px 10px var(--light-bg-shadow);
+}
+
+.box-shadow-white {
+  box-shadow: 5px 5px 12px var(--white-bg-shadow), -4px -4px 10px var(--white-color);
 }
 
 .box-shadow-hover {

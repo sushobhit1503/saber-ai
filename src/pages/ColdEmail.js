@@ -14,8 +14,12 @@ class ColdEmail extends React.Component {
             reply: "",
             tone: "",
             seo: false,
-            words: 150
+            words: 150,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -49,12 +53,12 @@ class ColdEmail extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Email Details Here:</b></div>
                         <div className="page-card-label">Company Name</div>
-                        <Input className="input" placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
+                        <Input className={`input-${this.state.mode}`}  placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
                         <div className="page-card-label">Services Provided</div>
-                        <Input className="input mailBox" height={320} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" type="textarea" />
                         <div>Describe the service you provide for the email content.</div>
                         <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
@@ -74,10 +78,10 @@ class ColdEmail extends React.Component {
                             Generate Email
                         </Button>
                     </div>
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
-                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

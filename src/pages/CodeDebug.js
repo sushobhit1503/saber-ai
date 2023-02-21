@@ -13,8 +13,12 @@ class CodeDebug extends React.Component {
             reply: "",
             tone: "",
             seo: false,
-            words: 0
+            words: 0,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -43,21 +47,21 @@ class CodeDebug extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Code Details Here:</b></div>
                         <div className="page-card-label">Code</div>
-                        <Input className="input" col placeholder="Enter the code here" onChange={onChange} value={this.state.code} name="code" type="textarea" />
+                        <Input className={`input-${this.state.mode}`} placeholder="Enter the code here" onChange={onChange} value={this.state.code} name="code" type="textarea" />
                         <div className="page-card-label">Error Received</div>
-                        <Input className="input mailBox" placeholder="eg. Can not access undefined variable" onChange={onChange} value={this.state.error} name="error" type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  placeholder="eg. Can not access undefined variable" onChange={onChange} value={this.state.error} name="error" type="textarea" />
                         <div>Describe the service you provide for the email content.</div>
                         <Button onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Correct Code
                         </Button>
                     </div>
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Fix Here:</b></div>
                         <div className="page-card-label">Follow this to fix your error</div>
-                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

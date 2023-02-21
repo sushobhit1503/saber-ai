@@ -11,8 +11,12 @@ class SocialMedia extends React.Component {
             title: "",
             reply: "",
             tone: "",
-            seo: false
+            seo: false,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -46,10 +50,10 @@ class SocialMedia extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>What Is Your Ad Campaign?</b></div>
                         <div className="page-card-label">Subject or Title</div>
-                        <Input className="input" placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
+                        <Input className={`input-${this.state.mode}`}  placeholder="eg. Samsung S12 Mobile Phone" onChange={onChange} value={this.state.title} name="title" />
                         <div>Describe the subject or title for the ad campaign.</div>
                         <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
@@ -66,10 +70,10 @@ class SocialMedia extends React.Component {
                             Generate Ad
                         </Button>
                     </div>
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Generated Advertisement Here:</b></div>
                         <div className="page-card-label">Advertisement:</div>
-                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} height={320} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

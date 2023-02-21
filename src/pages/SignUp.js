@@ -14,8 +14,12 @@ class SignUp extends React.Component {
             email: "",
             password: "",
             confirmPassword: "",
-            isOtp: false
+            isOtp: false,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -44,13 +48,13 @@ class SignUp extends React.Component {
                 <div style={{display:"flex", justifyContent:"center"}}>
                     <Card className="page-card">
                         <Label>Enter your name</Label>
-                        <Input className="input" placeholder="Your Name" onChange={onChange} value={this.state.name} name="name" />
+                        <Input className={`input-${this.state.mode}`} placeholder="Your Name" onChange={onChange} value={this.state.name} name="name" />
                         <Label>Enter your email</Label>
-                        <Input className="input" placeholder="Your Email" onChange={onChange} value={this.state.email} name="email" />
+                        <Input className={`input-${this.state.mode}`} placeholder="Your Email" onChange={onChange} value={this.state.email} name="email" />
                         <Label>Enter Password</Label>
-                        <Input className="input" placeholder="Password" onChange={onChange} value={this.state.password} name="password" type="password" />
+                        <Input className={`input-${this.state.mode}`} placeholder="Password" onChange={onChange} value={this.state.password} name="password" type="password" />
                         <Label>Re-Enter Password</Label>
-                        <Input className="input" placeholder="Confirm Password" onChange={onChange} value={this.state.confirmPassword} name="confirmPassword" type="password" />
+                        <Input className={`input-${this.state.mode}`} placeholder="Confirm Password" onChange={onChange} value={this.state.confirmPassword} name="confirmPassword" type="password" />
                         <Button onClick={signUpall} style={{marginTop: "1rem", marginBottom: "1rem"}}>
                             Register
                         </Button>

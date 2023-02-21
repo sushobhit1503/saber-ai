@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Payments.css";
 import { plans, services, usage, pricing, integration, description } from "../data/Payments"
 import { Divider, Card } from "ui-neumorphism";
@@ -6,9 +6,13 @@ import { Button } from "reactstrap";
 import PaymentsPart from "../components/PaymentsPart";
 
 const Payments = () => {
+    const [mode, setMode] = useState ("")
+    useEffect (() => {
+        setMode(localStorage.getItem("mode"))
+    }, [])
         return (
             <div style={{marginBottom:"3rem"}}>
-                <div className="page-heading card">
+                <div className={`page-heading card-${mode}`}>
                     PLANS
                 </div>
                 <div style={{display:"flex", margin: "auto", width:"80%"}}>

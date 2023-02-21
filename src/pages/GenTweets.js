@@ -9,8 +9,12 @@ class GenTweets extends React.Component {
         super ()
         this.state = {
             tweet: "",
-            reply: ""
+            reply: "",
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -38,19 +42,19 @@ class GenTweets extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>What Is Your Tweet About?</b></div>
                         <div className="page-card-label">Tweet Prompt</div>
-                        <Input className="input" placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
+                        <Input className={`input-${this.state.mode}`}  placeholder="eg. CRM Software" onChange={onChange} value={this.state.tweet} name="tweet" />
                         <div>Enter topic or subject you would like to generate tweets for.</div>
                         <Button onClick={submitTweet} style={{marginTop: "1rem", width:"100%"}}>
                             Get Recommendations
                         </Button>
                     </div>
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Tweet Here:</b></div>
                         <div className="page-card-label">Generated Tweet</div>
-                        <Input className="input mailBox" disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

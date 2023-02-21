@@ -16,8 +16,12 @@ class EmailGen extends React.Component {
             sales: false,
             seo: false,
             tone: "",
-            words: 150
+            words: 150,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -55,12 +59,12 @@ class EmailGen extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Email Details: </b></div>
                         <div className="page-card-label">Enter previous email reply (Optional)</div>
-                        <Input className="input mailBox" placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
                         <div className="page-card-label">Enter Bullet Points</div>
-                        <Input className="input" placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
+                        <Input className={`input-${this.state.mode}`} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
                         <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
                             <Switch onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a Sales Email? <br />
@@ -80,10 +84,10 @@ class EmailGen extends React.Component {
                             Generate Email
                         </Button>
                     </div>
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
-                        <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

@@ -1,11 +1,21 @@
-.home-container {
+.home-container-white {
     display: flex;
     justify-content: space-around;
     background-image: url("../assets/background.png");
     background-repeat: repeat;
     border-radius: 1rem;
     margin: 1rem 5rem 0rem 5rem;
-    box-shadow: 15px 15px 8px #BEC8E4, -4px -4px 10px #FFFFFF;
+    box-shadow: 15px 15px 8px var(--white-bg-shadow), -4px -4px 10px var(--white-color);
+}
+
+.home-container-dark {
+    display: flex;
+    justify-content: space-around;
+    background-image: url("../assets/background.png");
+    background-repeat: repeat;
+    border-radius: 1rem;
+    margin: 1rem 5rem 0rem 5rem;
+    box-shadow: 15px 15px 8px var(--dark-bg-shadow), -4px -4px 10px var(--light-bg-shadow);
 }
 
 .home-container1 {

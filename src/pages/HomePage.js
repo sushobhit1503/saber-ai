@@ -8,10 +8,19 @@ import ServiceData from "../data/Data Files.json"
 import ReactPlayer from "react-player/youtube"
 
 class HomePage extends React.Component {
+    constructor () {
+        super ()
+        this.state = {
+            mode: ""
+        }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
+    }
     render () {
         return (
             <div>
-                <div className="home-container">
+                <div className={`home-container-${this.state.mode}`}>
                     <div className="home-page-illustration">
                         <img src={HomeIllustration} alt="saber" className="home-page-illustration" />
                     </div>
@@ -33,11 +42,11 @@ class HomePage extends React.Component {
                     </div>
                 </div>
                 <div className="home-page-services-container">
-                    <div style={{marginTop:"3rem"}} className="page-heading card">SERVICES</div>
+                    <div style={{marginTop:"3rem"}} className={`page-heading card-${this.state.mode}`}>SERVICES</div>
                     <div className="home-page-services">
                         {ServiceData.map(eachElement => {
                             return (
-                                <div className="home-page-services-card card">
+                                <div className={`home-page-services-card card-${this.state.mode}`}>
                                     <div>
                                         <CardContent style={{margin:"0px"}}>
                                             <H6 secondary style={{ marginBottom: '4px' }} >
@@ -60,7 +69,7 @@ class HomePage extends React.Component {
                         })}
                     </div>
                 </div>
-                <div className="page-heading card">ASK ME ANYTHING</div>
+                <div className={`page-heading card-${this.state.mode}`}>ASK ME ANYTHING</div>
                 <div className="home-container1">
                     <div className="chat-image-container">
                         <img src={ChatIllustration} alt="saber" className="chat-image-container" />
@@ -80,7 +89,7 @@ class HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="page-heading card">UPGRADE TO PREMIUM</div>
+                <div className={`page-heading card-${this.state.mode}`}>UPGRADE TO PREMIUM</div>
                 <div className="home-container1">
                     <div className="chat-text-container">
                         <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">

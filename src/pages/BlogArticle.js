@@ -16,8 +16,12 @@ class BlogArticle extends React.Component {
             ref1: "",
             ref2: "",
             ref3: "",
-            seo: false
+            seo: false,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -51,13 +55,13 @@ class BlogArticle extends React.Component {
                 </Tooltip>
                 </div>
                 <div className="page-container">
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Details Of Your Article:</b></div>
                         <div className="page-card-label">Article Title</div>
-                        <Input className="input" placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
+                        <Input className={`input-${this.state.mode}`} placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
                         <div>Enter the title. Be as descriptive as possible</div>
                         <div className="page-card-label">Article description / Keywords</div>
-                        <Input className="input mailBox" height={320} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
                         <div>Give keywords that are better searchable</div>
                         <div onClick={toggleAdvanced} className="advanced-options" style={{boxShadow:"5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF", padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
@@ -81,10 +85,10 @@ class BlogArticle extends React.Component {
                             Generate Article
                         </Button>
                     </div>
-                    <div className="page-card card">
+                    <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Generated Article Here:</b></div>
                         <div className="page-card-label">Generated article</div>
-                        <Input className="input mailBox" disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
                         <Button onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

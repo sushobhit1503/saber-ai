@@ -11,8 +11,12 @@ class Otp extends React.Component {
         super ()
         this.state = {
             otp: "",
-            isVerified: false
+            isVerified: false,
+            mode: ""
         }
+    }
+    componentDidMount () {
+        this.setState ({mode: localStorage.getItem("mode")})
     }
     render () {
         const onChange = (event) => {
@@ -42,7 +46,7 @@ class Otp extends React.Component {
                 <div style={{display:"flex", justifyContent:"center"}}>
                     <Card className="page-card">
                         <Label>Enter the otp </Label>
-                        <Input className="input" placeholder="One Time Password" onChange={onChange} value={this.state.otp} name="otp" />
+                        <Input className={`input-${this.state.mode}`} placeholder="One Time Password" onChange={onChange} value={this.state.otp} name="otp" />
                         <Button onClick={verify} style={{marginTop: "1rem", marginBottom: "1rem"}}>
                             Register
                         </Button>

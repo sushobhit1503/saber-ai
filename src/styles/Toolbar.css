@@ -2,35 +2,51 @@
     width: 2.5rem;
     padding: 0.3rem;
     margin: 0rem;
+    margin-right: 0.5rem;
     background-color: var(--black-color);
 }
 
-.logo-name {
+.logo-name-white {
     font-size: 1.5rem;
     margin-left: 1rem;
     color: var(--black-color);
+}
+
+.logo-name-dark {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: var(--white-color);
 }
 
 .drop-down-show {
     display: block;
 }
 
-.toolbar-content:hover {
+.toolbar-content-white:hover {
     border: none;
     outline: none;
     background: none;
     color: var(--black-color);
-    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    box-shadow: inset -2px -2px 5px var(--white-color), inset 2px 2px 5px var(--white-bg-shadow);
     text-decoration: none;
 }
 
-.toolbar-comp {
+.toolbar-content-dark:hover {
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--white-color);
+    box-shadow: inset -2px -2px 5px var(--light-bg-shadow), 2px 2px 5px var(--dark-bg-shadow);
+    text-decoration: none;
+}
+
+.toolbar-comp-white {
     width: max-content;
     border: none;
     outline: none;
     background: none;
     color: var(--black-color);
-    box-shadow: 5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF;
+    box-shadow: 5px 5px 12px var(--white-bg-shadow), -4px -4px 10px var(--white-color);
     text-decoration: none;
     border-radius: 4px;
     margin: 4px 8px 4px 8px;
@@ -50,12 +66,12 @@
     padding: 0.5rem;
 }
 
-.toolbar-comp:hover {
+.toolbar-comp-white:hover {
     border: none;
     outline: none;
     background: none;
     color: var(--black-color);
-    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    box-shadow: inset -2px -2px 5px var(--white-color), inset 2px 2px 5px var(--white-bg-shadow);
     text-decoration: none;
 }
 

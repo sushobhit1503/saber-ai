@@ -5,38 +5,70 @@
   
 .white {
     color: var(--black-color);
-    background-color: #e4ebf5;
+    background-color: var(--white-bg-color)
 }
   
 
-.input, .input:focus {
+.input-white, .input-white:focus {
     border: none;
     outline: none;
     background: none;
-    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    box-shadow: inset -2px -2px 5px var(--white-color), inset 2px 2px 5px var(--white-bg-shadow);
     text-align: start;
     display: flex;
     align-items: flex-start;
     justify-content: center;
 }
 
-.card {
-    box-shadow: 5px 5px 12px #BEC8E4, -4px -4px 10px #FFFFFF;
+.input-dark, .input-dark:focus {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: inset -2px -2px 5px var(--light-bg-shadow), 2px 2px 5px var(--dark-bg-shadow);
+    text-align: start;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card-white {
+    box-shadow: 5px 5px 12px var(--white-bg-shadow), -4px -4px 10px var(--white-color);
     width: max-content;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     margin: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    background-color: #E4EBF5;
+    background-color: var(--white-bg-color);
     border: none;
     outline: none;
     color: var(--black-color);
 }
 
-.card-inset {
+.card-dark {
+    box-shadow: 5px 5px 12px var(--dark-bg-shadow), -4px -4px 10px var(--light-bg-shadow);
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--dark-color);
+    border: none;
+    outline: none;
+    color: var(--white-color);
+}
+
+.card-inset-white {
     border: none;
     outline: none;
     background: none;
-    box-shadow: inset -2px -2px 5px #FFFFFF, inset 2px 2px 5px #BEC8E4;
+    box-shadow: inset -2px -2px 5px var(--white-color), inset 2px 2px 5px var(--white-bg-shadow);
+}
+
+.card-inset-dark {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: inset -2px -2px 5px var(--light-bg-shadow), 2px 2px 5px var(--dark-bg-shadow);
 }

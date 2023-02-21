@@ -52,7 +52,7 @@ class EmailGen extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>The Saber writing will allow you to generate full fledged 
+                <Tooltip dark={this.state.mode === "dark" ? true : false} bottom content={<div>The Saber writing will allow you to generate full fledged 
                     emails out of bullet points using GPT3’ s advance text 
                     generation AI. </div>}>
                        <b> EMAIL GENERATION </b>

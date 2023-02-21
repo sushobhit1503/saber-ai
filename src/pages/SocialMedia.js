@@ -11,6 +11,9 @@ class SocialMedia extends React.Component {
             title: "",
             reply: "",
             tone: "",
+            ref1: "",
+            ref2: "",
+            ref3: "",
             seo: false,
             mode: ""
         }
@@ -44,7 +47,7 @@ class SocialMedia extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>Looking for some creative social media advert ideas for your online
+                <Tooltip dark={this.state.mode === "dark" ? true : false} bottom content={<div>Looking for some creative social media advert ideas for your online
                     campaigns on Facebook, Twitter or Instagram? We got you.</div>}>
                     <b>SOCIAL MEDIA ADVERTS</b>
                 </Tooltip>
@@ -65,6 +68,10 @@ class SocialMedia extends React.Component {
                                 <option value="Celebration">Celebration</option>
                                 <option value="Sales">Sales</option>
                             </Input>
+                            <Label style={{padding:"5px"}}>Add Reference Links</Label> <br />
+                            <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 1" onChange={onChange} value={this.state.ref1} name="ref1" type="text" />
+                            <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 2" onChange={onChange} value={this.state.ref2} name="ref2" type="text" />
+                            <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 3" onChange={onChange} value={this.state.ref3} name="ref3" type="text" />
                         </div>
                         <Button dark={this.state.mode === "dark" ? true : false}  onClick={submitAd} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Ad

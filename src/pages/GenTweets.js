@@ -36,7 +36,7 @@ class GenTweets extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>Start generating tweet ideas with hashtags for your online social media campaigns on twitter.
+                <Tooltip dark={this.state.mode === "dark" ? true : false} bottom content={<div>Start generating tweet ideas with hashtags for your online social media campaigns on twitter.
                     Create endless unique tweet ideas, no more writers block.</div>}>
                     <b>GENERATE TWEETS</b>
                 </Tooltip>

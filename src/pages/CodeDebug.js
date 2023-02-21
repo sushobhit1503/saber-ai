@@ -40,7 +40,7 @@ class CodeDebug extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div> 
+                <Tooltip dark={this.state.mode === "dark" ? true : false}  bottom content={<div> 
                     Enter your code and the error to generate your fix
                 </div>}>
                    <b>CODE DEBUGGING</b>

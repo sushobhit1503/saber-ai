@@ -49,7 +49,7 @@ class BlogArticle extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>Generate professional article and blogs by giving outline. 
+                <Tooltip dark={this.state.mode === "dark" ? true : false} bottom content={<div>Generate professional article and blogs by giving outline. 
                     Give keywords for good fit with Search Engine Optimization. </div>}>
                     <b>BLOG ARTICLE GENERATION</b>
                 </Tooltip>

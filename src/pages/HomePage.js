@@ -34,7 +34,7 @@ class HomePage extends React.Component {
                         </div>
                         <div className="home-action-button">
                             <Button style={{width:"12rem"}} dark={this.state.mode === "dark" ? true : false}>
-                                <a style={{textDecoration:"none"}} href="/email-gen">
+                                <a className={this.state.mode} style={{textDecoration:"none"}} href="/email-gen">
                                     TRY NOW
                                 </a>
                             </Button>

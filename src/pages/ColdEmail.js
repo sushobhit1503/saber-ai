@@ -47,7 +47,7 @@ class ColdEmail extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>This is perfect for marketing agents or companies who need fresh ideas
+                <Tooltip dark={this.state.mode === "dark" ? true : false}  bottom content={<div>This is perfect for marketing agents or companies who need fresh ideas
                     daily on cold email content that is created by AI technology.  </div>}>
                     <b>COLD EMAIL TEMPLATE</b>
                 </Tooltip>

@@ -37,7 +37,7 @@ class CodeGen extends React.Component {
         return (
             <div>
                 <div className="page-heading">
-                <Tooltip bottom content={<div>Generate code by giving the usecase.</div>}>
+                <Tooltip dark={this.state.mode === "dark" ? true : false}  bottom content={<div>Generate code by giving the usecase.</div>}>
                     <b>CODE GENERATION</b>
                 </Tooltip>
                 </div>

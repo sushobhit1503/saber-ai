@@ -31,10 +31,7 @@
 
 .page-card-label {
     font-size: 1.25rem;
-}
-
-.mailBox {
-    height: 20rem;
+    margin-top: 1rem;
 }
 
 .advanced-options {

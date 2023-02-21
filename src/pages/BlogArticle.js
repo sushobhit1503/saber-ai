@@ -58,10 +58,10 @@ class BlogArticle extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Details Of Your Article:</b></div>
                         <div className="page-card-label">Article Title</div>
-                        <Input className={`input-${this.state.mode}`} placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"12rem"}} placeholder="eg. Top 10 CRM Software" onChange={onChange} value={this.state.articleTitle} name="articleTitle" type="textarea" />
                         <div>Enter the title. Be as descriptive as possible</div>
                         <div className="page-card-label">Article description / Keywords</div>
-                        <Input className={`input-${this.state.mode} mailBox`} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"20rem"}} placeholder="eg. CRM, Manager, Customer" onChange={onChange} value={this.state.keywords} name="keywords" type="textarea" />
                         <div>Give keywords that are better searchable</div>
                         <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
@@ -88,7 +88,7 @@ class BlogArticle extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Generated Article Here:</b></div>
                         <div className="page-card-label">Generated article</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"30rem"}} value={this.state.reply} type="textarea" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

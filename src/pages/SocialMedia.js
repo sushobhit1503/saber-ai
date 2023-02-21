@@ -73,7 +73,7 @@ class SocialMedia extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Generated Advertisement Here:</b></div>
                         <div className="page-card-label">Advertisement:</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} height={320} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode} mailBox`}   d={true} height={320} value={this.state.reply} type="textarea" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

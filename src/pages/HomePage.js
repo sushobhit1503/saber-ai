@@ -33,7 +33,7 @@ class HomePage extends React.Component {
                             Supercharge your content with Saber!
                         </div>
                         <div className="home-action-button">
-                            <Button dark={this.state.mode === "dark" ? true : false}>
+                            <Button style={{width:"12rem"}} dark={this.state.mode === "dark" ? true : false}>
                                 <a style={{textDecoration:"none"}} href="/email-gen">
                                     TRY NOW
                                 </a>
@@ -59,7 +59,7 @@ class HomePage extends React.Component {
                                     </div>
                                     <div>
                                         <Button dark={this.state.mode === "dark" ? true : false}>
-                                            <a style={{textDecoration:"none"}} href={eachElement.link}>
+                                            <a className={this.state.mode} style={{textDecoration:"none"}} href={eachElement.link}>
                                                 TRY NOW
                                             </a>
                                         </Button>
@@ -76,13 +76,13 @@ class HomePage extends React.Component {
                     </div>
                     <div className="chat-text-container">
                         <div className="page-heading">BEST RESPONSES</div>
-                        <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
+                        <div className="page-description home-page-desc">
                             AI at Your Fingertips with Ask Me Anything. Get accurate answers, fast. 
                             Experience the convenience of a personal AI search engine. Chat Your Way to Knowledge!
                         </div>
                         <div className="home-action-button">
                             <Button dark={this.state.mode === "dark" ? true : false}>
-                                <a style={{textDecoration:"none"}} href="/ask-me-anything">
+                                <a className={this.state.mode} style={{textDecoration:"none"}} href="/ask-me-anything">
                                     TRY NOW
                                 </a>
                             </Button>
@@ -92,13 +92,13 @@ class HomePage extends React.Component {
                 <div className={`page-heading card-${this.state.mode}`}>UPGRADE TO PREMIUM</div>
                 <div className="home-container1">
                     <div className="chat-text-container">
-                        <div style={{color:"var(--black-color)"}} className="page-description home-page-desc">
+                        <div className="page-description home-page-desc">
                             Premium Members get access to our magical browser and Outlook extensions. 
                             Compose and Reply to emails in one click! Right from your inbox.
                         </div>
                         <div className="home-action-button">
                             <Button dark={this.state.mode === "dark" ? true : false}>
-                                <a style={{textDecoration:"none"}} href="/payments">
+                                <a className={this.state.mode} style={{textDecoration:"none"}} href="/payments">
                                     TRY NOW
                                 </a>
                             </Button>

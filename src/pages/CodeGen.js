@@ -45,7 +45,7 @@ class CodeGen extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>What Is Your Code's Purpose?</b></div>
                         <div className="page-card-label">Describe the usecase of your code</div>
-                        <Input className={`input-${this.state.mode}`}  placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"20rem"}} placeholder="eg. Swap 2 variables" onChange={onChange} value={this.state.usecase} name="usecase" type="textarea" />
                         <div className="page-card-label">Programming Language</div>
                         <Input className={`input-${this.state.mode}`} placeholder="eg. Python" onChange={onChange} value={this.state.language} name="language" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={submitCode} style={{marginTop: "1rem", width:"100%"}}>
@@ -55,7 +55,7 @@ class CodeGen extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Generated Code:</b></div>
                         <div className="page-card-label">Generated Code:</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"30rem"}} value={this.state.reply} type="textarea" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

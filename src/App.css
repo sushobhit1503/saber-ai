@@ -18,6 +18,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    color: var(--black-color);
 }
 
 .input-dark, .input-dark:focus {
@@ -29,6 +30,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    color: var(--white-color);
 }
 
 .card-white {

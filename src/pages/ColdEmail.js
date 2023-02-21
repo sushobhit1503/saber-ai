@@ -58,7 +58,7 @@ class ColdEmail extends React.Component {
                         <div className="page-card-label">Company Name</div>
                         <Input className={`input-${this.state.mode}`}  placeholder="eg. Saber AI" onChange={onChange} value={this.state.companyName} name="companyName" />
                         <div className="page-card-label">Services Provided</div>
-                        <Input className={`input-${this.state.mode} mailBox`} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"20rem"}} placeholder="eg. AI based email and content writing" onChange={onChange} value={this.state.serviceDescription} name="serviceDescription" type="textarea" />
                         <div>Describe the service you provide for the email content.</div>
                         <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
@@ -81,7 +81,7 @@ class ColdEmail extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"30rem"}} value={this.state.reply} type="textarea" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

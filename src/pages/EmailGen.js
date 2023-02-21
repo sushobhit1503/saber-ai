@@ -62,9 +62,9 @@ class EmailGen extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Email Details: </b></div>
                         <div className="page-card-label">Enter previous email reply (Optional)</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"20rem"}}  placeholder="Dear Saber, Thank you for writing to us ...." onChange={onChange} value={this.state.previousMail} name="previousMail" type="textarea" />
                         <div className="page-card-label">Enter Bullet Points</div>
-                        <Input className={`input-${this.state.mode}`} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"12rem"}} placeholder="eg. Meeting, 8 am, tomorrow" onChange={onChange} value={this.state.bulletPoints} name="bulletPoints" type="textarea" />
                         <div onClick={toggleAdvanced} className={`advanced-options box-shadow-${this.state.mode}`} style={{padding: "0.5rem 1rem", borderRadius:"0.5rem", width:"max-content"}}>Advanced Options <i style={{padding:"5px"}} className="fa fa-angle-down"></i></div>
                         <div className={this.state.showAdvancedOptions ? `` : `display-options`}>
                             <Switch dark={this.state.mode === "dark" ? true : false} onChange={onChangeSales} color="var(--success)" value={this.state.sales} /> Is this a Sales Email? <br />
@@ -87,7 +87,7 @@ class EmailGen extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See Generated Email Here:</b></div>
                         <div className="page-card-label">Generated email</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"30rem"}} value={this.state.reply} type="textarea" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

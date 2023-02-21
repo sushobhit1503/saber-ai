@@ -50,9 +50,9 @@ class CodeDebug extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>Enter The Code Details Here:</b></div>
                         <div className="page-card-label">Code</div>
-                        <Input className={`input-${this.state.mode}`} placeholder="Enter the code here" onChange={onChange} value={this.state.code} name="code" type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"20rem"}} placeholder="Enter the code here" onChange={onChange} value={this.state.code} name="code" type="textarea" />
                         <div className="page-card-label">Error Received</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  placeholder="eg. Can not access undefined variable" onChange={onChange} value={this.state.error} name="error" type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"12rem"}}  placeholder="eg. Can not access undefined variable" onChange={onChange} value={this.state.error} name="error" type="textarea" />
                         <div>Describe the service you provide for the email content.</div>
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={submitEmail} style={{marginTop: "1rem", width:"100%"}}>
                             Generate Correct Code
@@ -61,7 +61,7 @@ class CodeDebug extends React.Component {
                     <div className={`page-card card-${this.state.mode}`}>
                         <div className="page-card-heading"><b>See The Fix Here:</b></div>
                         <div className="page-card-label">Follow this to fix your error</div>
-                        <Input className={`input-${this.state.mode} mailBox`}  disabled={true} value={this.state.reply} type="textarea" />
+                        <Input className={`input-${this.state.mode}`} style={{height:"30rem"}} value={this.state.reply} type="textarea" />
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={copyToClipBoard} style={{marginTop: "1rem"}}>
                             Copy
                         </Button>

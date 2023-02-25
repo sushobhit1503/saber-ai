@@ -22,6 +22,10 @@
     display: block;
 }
 
+.toolbar-content-dark {
+    color: var(--white-color);
+}
+
 .toolbar-content-white:hover {
     border: none;
     outline: none;

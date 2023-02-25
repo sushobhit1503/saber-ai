@@ -74,7 +74,7 @@ class HomePage extends React.Component {
                                     <div>
                                         <CardContent dark={this.state.mode === "dark" ? true : false} style={{ margin: "0px" }}>
                                             <h6 secondary style={{ marginBottom: '4px' }} >
-                                                {eachElement.name}
+                                                <b>{eachElement.name}</b>
                                             </h6>
                                             <Body2>
                                                 <Typewriter onInit={(typewriter) => {
@@ -96,6 +96,29 @@ class HomePage extends React.Component {
                                 </div>
                             )
                         })}
+                    </div>
+                </div>
+                <div className={`page-heading card-${this.state.mode}`}>UPGRADE TO PREMIUM</div>
+                <div className="home-container1">
+                    <div className="chat-text-container">
+                        <div className="page-description home-page-desc">
+                            <Typewriter onInit={(typewriter) => {
+                                typewriter.typeString("Premium Members get access to our magical browser and Outlook extensions. Compose and Reply to emails in one click! Right from your inbox.")
+                                    .pauseFor(500).changeDelay(0.1)
+                                    .start();
+                            }}
+                            />
+                        </div>
+                        <div className="home-action-button">
+                            <Button dark={this.state.mode === "dark" ? true : false}>
+                                <a className={this.state.mode} style={{ textDecoration: "none" }} href="/payments">
+                                    TRY NOW
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="chat-image-container">
+                        <ReactPlayer className="video-file" url="https://youtu.be/cJbyy1R7k-o" playing loop controls volume={0} />
                     </div>
                 </div>
                 <div className={`page-heading card-${this.state.mode}`}>ASK ME ANYTHING</div>
@@ -121,29 +144,6 @@ class HomePage extends React.Component {
                                 </a>
                             </Button>
                         </div>
-                    </div>
-                </div>
-                <div className={`page-heading card-${this.state.mode}`}>UPGRADE TO PREMIUM</div>
-                <div className="home-container1">
-                    <div className="chat-text-container">
-                        <div className="page-description home-page-desc">
-                            <Typewriter onInit={(typewriter) => {
-                                typewriter.typeString("Premium Members get access to our magical browser and Outlook extensions. Compose and Reply to emails in one click! Right from your inbox.")
-                                    .pauseFor(500).changeDelay(0.1)
-                                    .start();
-                            }}
-                            />
-                        </div>
-                        <div className="home-action-button">
-                            <Button dark={this.state.mode === "dark" ? true : false}>
-                                <a className={this.state.mode} style={{ textDecoration: "none" }} href="/payments">
-                                    TRY NOW
-                                </a>
-                            </Button>
-                        </div>
-                    </div>
-                    <div className="chat-image-container">
-                        <ReactPlayer className="video-file" url="https://youtu.be/cJbyy1R7k-o" playing loop controls volume={0} />
                     </div>
                 </div>
             </div>

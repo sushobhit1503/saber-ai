@@ -49,7 +49,7 @@ class SocialMedia extends React.Component {
             navigator.clipboard.writeText(this.state.reply)
         }
         return (
-            <div>
+            <div style={{height:"100vh"}}>
                 <div className="page-heading">
                     <Tooltip dark={this.state.mode === "dark" ? true : false} bottom content={<div>Looking for some creative social media advert ideas for your online
                         campaigns on Facebook, Twitter or Instagram? We got you.</div>}>

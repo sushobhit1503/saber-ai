@@ -29,7 +29,7 @@ const Login = () => {
             navigate("/")
         }
         return (
-            <div style={{marginTop: "5rem"}}>
+            <div style={{paddingTop:"5rem", height:"100vh"}}>
                 <div style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
                     <img src={Logo} alt="saber-ai" className='logo-image card' />
                     <div className='logo-name'>SABER AI</div>

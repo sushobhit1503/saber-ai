@@ -58,10 +58,10 @@ const MenuBar = ()  => {
   }
   return (
     <div>
-      <Navbar className={`box-shadow-${mode}`}  light={mode === "white"} dark={mode === "dark"} expand ="sm" >
+      <Navbar className={`box-shadow-${mode}`} expand ="sm" >
         <NavbarBrand href="/" style={{display:"flex", alignItems:"center", justifyContent:"center", textDecoration:"none"}}>
             <img src={Logo} alt="saber-ai" className={`logo-image card-${mode}`} />
-            <div className='logo-name'>SABER AI</div>
+            <div className={`logo-name-${mode}`}>SABER AI</div>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

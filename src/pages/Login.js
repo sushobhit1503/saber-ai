@@ -41,7 +41,7 @@ const Login = () => {
                     <Card dark={mode === "dark" ? true : false} className="page-card">
                         <Label>Enter your email</Label>
                         <Input className={`input-${mode}`}  placeholder="Your Email" onChange={onChange} value={email} name="email" />
-                        <Label>Enter Password</Label>
+                        <Label style={{marginTop: "1rem"}}>Enter Password</Label>
                         <Input className={`input-${mode}`}  placeholder="Password" onChange={onChange} value={password} name="password" type="password" />
                         <Button onClick={loginCall} style={{marginTop: "1rem", marginBottom: "1rem"}}>
                             Login

@@ -1,6 +1,6 @@
 import React from "react";
-import { Input, Label } from "reactstrap";
-import { Button, Tooltip, Switch } from "ui-neumorphism";
+import { Input, Label, Spinner } from "reactstrap";
+import { Button, Tooltip, Switch, Alert } from "ui-neumorphism";
 import Slider from "react-input-slider";
 import "../styles/ServicePage.css";
 import { blogArticle } from "../backend-calls/services";
@@ -17,7 +17,9 @@ class BlogArticle extends React.Component {
             ref2: "",
             ref3: "",
             seo: false,
-            mode: ""
+            mode: "",
+            isLoading: false,
+            alert: ""
         }
     }
     componentDidMount () {
@@ -35,12 +37,14 @@ class BlogArticle extends React.Component {
             this.setState ({showAdvancedOptions: !this.state.showAdvancedOptions})
         }
         const submitBlogs = async () => {
+            this.setState ({isLoading: true})
             const { keywords, articleTitle, words, ref1, ref2, ref3, seo } = this.state
             const res = await blogArticle("", articleTitle, "", keywords, words, seo,0, ref1, ref2, ref3)
-            if(res.error){
-                alert(res.msg)
-            }else{
-                this.setState ({reply: res.data})
+            if (res.error) {
+                this.setState({ alert: res.error })
+                setTimeout(() => this.setState({ alert: "" }), 3000)
+            } else {
+                this.setState({ reply: res.data, isLoading: false })
             }
         }
         const copyToClipBoard = () => {
@@ -53,6 +57,12 @@ class BlogArticle extends React.Component {
                     Give keywords for good fit with Search Engine Optimization. </div>}>
                     <b>BLOG ARTICLE GENERATION</b>
                 </Tooltip>
+                </div>
+                <div style={{ margin: "auto", width: "max-content" }}>
+                    {this.state.alert &&
+                        <Alert dark={this.state.mode === "dark" ? true : false} type="error">
+                            {this.state.alert}
+                        </Alert>}
                 </div>
                 <div className="page-container">
                     <div className={`page-card card-${this.state.mode}`}>
@@ -82,7 +92,7 @@ class BlogArticle extends React.Component {
                             <Input style={{marginBottom: "0.5rem"}} className={`input-${this.state.mode}`} placeholder="Reference Link 3" onChange={onChange} value={this.state.ref3} name="ref3" type="text" />
                         </div>
                         <Button dark={this.state.mode === "dark" ? true : false} onClick={submitBlogs} style={{marginTop: "1rem", width:"100%"}}>
-                            Generate Article
+                        {this.state.isLoading ? <Spinner /> : "Generate Article"}
                         </Button>
                     </div>
                     <div className={`page-card card-${this.state.mode}`}>

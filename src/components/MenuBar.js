@@ -14,6 +14,7 @@ import {
 } from 'reactstrap';
 import "../styles/Toolbar.css";
 import Logo from '../assets/saber-logo.png';
+import { useCookies } from 'react-cookie';
 import { logOut } from '../backend-calls/authentication';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ const MenuBar = ()  => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropDown, setDropDown] = useState (false);
   const [isDropDown1, setDropDown1] = useState (false);
+  const [cookies, setCookie]= useCookies()
   const navigate = useNavigate ()
   const toggle = () => setIsOpen(!isOpen);
   const [mode, setMode] = useState ("")
@@ -73,7 +75,7 @@ const MenuBar = ()  => {
               <DropdownToggle className={`toolbar-comp-${mode}`}  nav caret>
                 Services
               </DropdownToggle>
-              <DropdownMenu className={isDropDown ? `drop-down-show` : ``} right style={{backgroundColor: "#E4EBF5"}}>
+              <DropdownMenu className={isDropDown ? `drop-down-show ${mode}` : `${mode}`} right>
                 <DropdownItem className={`toolbar-content-${mode}`} href='/email-gen'>Email Gen</DropdownItem>
                 <DropdownItem className={`toolbar-content-${mode}`} href='/blog-article'>Blog Article</DropdownItem>
                 <DropdownItem className={`toolbar-content-${mode}`} href='/twitter-assist'>Twitter Assist</DropdownItem>
@@ -92,11 +94,12 @@ const MenuBar = ()  => {
           <NavLink className={`toolbar-comp-${mode}`} href="/payments">
             UPGRADE TO PRO
           </NavLink>
+          {cookies.user ? 
           <UncontrolledDropdown onMouseOut={changeDropDownClose1} onMouseOver={changeDropDown1}>
               <DropdownToggle className={`toolbar-comp-${mode}`} nav caret>
                 Profile
               </DropdownToggle>
-              <DropdownMenu className={isDropDown1 ? `drop-down-show` : ``} style={{backgroundColor: "#E4EBF5"}} end>
+              <DropdownMenu className={isDropDown1 ? `drop-down-show ${mode}` : `${mode}`} end>
                 <DropdownItem className={`toolbar-content-${mode}`} href='/manage-account'>Manage Account</DropdownItem>
                 <DropdownItem className={`toolbar-content-${mode}`} onClick={changeMode}>Change Mode</DropdownItem>
                 <DropdownItem className={`toolbar-content-${mode}`} href='/help'>Help</DropdownItem>
@@ -105,7 +108,13 @@ const MenuBar = ()  => {
                 <DropdownItem divider />
                 <DropdownItem className={`toolbar-content-${mode}`} onClick={submitLogout}>Log Out</DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </UncontrolledDropdown> :
+            <NavLink style={{textDecoration:"none"}} href="/login">
+              <div className={`toolbar-comp-${mode}`} style={{fontSize:"1rem", margin:"0px", padding:"0.25rem 0.5rem"}}>
+               LOGIN
+              </div>
+            </NavLink>
+          }
         </Collapse>
       </Navbar>
     </div>

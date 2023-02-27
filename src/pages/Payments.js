@@ -4,12 +4,19 @@ import { plans, services, usage, pricing, integration, description } from "../da
 import { Divider, Card } from "ui-neumorphism";
 import { Button } from "reactstrap";
 import PaymentsPart from "../components/PaymentsPart";
+import {CardElement, Elements, PaymentElement, useElements, useStripe} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import { axiosAuthInstance } from "../backend-calls/axiosInstance";
+import CheckoutForm from "./CheckoutForm";
+
+const stripePromise = loadStripe('pk_live_51McJ30SCDuNL0Movi3X6euihrTLlcbKsfQGyImf1XUvusXBdslBUDnLkt9EmGcWuVGMehD8aVDNrYHYgzKVkzQhc00LbxbmLet');
 
 const Payments = () => {
     const [mode, setMode] = useState ("")
-    useEffect (() => {
-        setMode(localStorage.getItem("mode"))
-    }, [])
+    // useEffect (() => {
+    //     setMode(localStorage.getItem("mode"))
+    // }, [])
+
         return (
             <div style={{marginBottom:"3rem"}}>
                 <div className={`page-heading card-${mode}`}>
@@ -59,11 +66,9 @@ const Payments = () => {
                         </div>
                     </div>
                     <div style={{width:"25%"}}>
-                        <div style={{display:"flex", justifyContent:"center"}}>
-                            <Button style={{fontSize:"1.25rem", margin:"0px"}} color="danger">
-                                SUBSCRIBE
-                            </Button>
-                        </div> <br />
+                        <Elements stripe={stripePromise} >
+                            <CheckoutForm />
+                        </Elements>
                         <div style={{display:"flex", justifyContent:"center"}}>
                             <Button style={{fontSize:"0.75rem"}}>
                                 TRY FOR 1 MONTH

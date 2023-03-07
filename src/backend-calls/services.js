@@ -65,6 +65,23 @@ export const tweetGen = async (title) => {
     }
 }
 
+export const askMeAnything = async (text) => {
+    const data = {
+        text
+    }
+    try {
+        const res = await axiosAuthInstance ({
+            url: "/api/ask-me-anything",
+            method:"post",
+            data: data
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
+    }
+}
+
 export const coldEmail = async (companyName, coldEmails) => {
     const data = {
         companyName: companyName,
@@ -115,5 +132,18 @@ export const codeGen = async (purpose, language) => {
         
     } catch (error) {
         return error.message
+    }
+}
+
+export const paymentSuccessRedirect = async() => {
+    try {
+        const res = await axiosAuthInstance ({
+            url: "/api/paymentSuccessRedirect",
+            method:"get",
+        })
+        return res.data;
+        
+    } catch (error) {
+        return "Some Error Occurred"
     }
 }
